@@ -33,38 +33,39 @@ export function WaitlistForm({
 
   const getVariantStyles = () => {
     const baseButton =
-      "rounded-lg font-bold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 cursor-pointer disabled:cursor-not-allowed flex items-center justify-center";
+      "rounded-full font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent-lavender)] cursor-pointer disabled:cursor-not-allowed flex items-center justify-center";
     switch (variant) {
       case "hero":
       case "final":
         return {
           form: "flex gap-3",
           input:
-            "flex-1 h-11 text-base bg-white/10 border border-white/20 text-white placeholder:text-indigo-100 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all px-4",
-          button: `${baseButton} w-48 h-11 bg-white text-purple-700 border border-purple-200 text-sm font-semibold tracking-wide px-6 py-2`,
-          count: "text-sm text-indigo-200 mt-3",
+            "flex-1 h-12 text-base bg-white border border-[var(--color-border)] text-[var(--color-text-main)] placeholder:text-[var(--color-text-muted)] rounded-full focus:ring-2 focus:ring-[var(--color-accent-lavender)] focus:border-[var(--color-accent-lavender)] transition-all px-5",
+          button: `${baseButton} w-48 h-12 button-accent`,
+          count: "text-sm text-[var(--color-text-muted)] mt-3",
         };
       case "footer":
         return {
           form: "flex gap-3 max-w-md",
           input:
-            "flex-1 min-w-[220px] bg-white border-purple-200 text-indigo-900 placeholder:text-indigo-400 h-11 shadow-sm rounded-lg",
-          button: `${baseButton} h-11 px-6 bg-purple-700 text-white text-base`,
-          count: "text-xs text-indigo-500",
+            "flex-1 min-w-[220px] bg-white border-[var(--color-border)] text-[var(--color-text-main)] placeholder:text-[var(--color-text-muted)] h-12 shadow-sm rounded-full",
+          button: `${baseButton} h-12 px-6 button-accent`,
+          count: "text-xs text-[var(--color-text-muted)]",
         };
       case "demo":
         return {
           form: "flex gap-3 max-w-md mx-auto",
-          input: "flex-1 h-11 text-base",
-          button: `${baseButton} h-11 px-5 bg-purple-700 text-white text-base`,
-          count: "text-sm text-indigo-600 mb-4",
+          input:
+            "flex-1 h-12 text-base rounded-full border border-[var(--color-border)] px-5",
+          button: `${baseButton} h-12 px-5 button-accent`,
+          count: "text-sm text-[var(--color-text-muted)] mb-4",
         };
       default:
         return {
           form: "flex gap-3",
-          input: "flex-1",
-          button: `${baseButton} bg-purple-700 text-white`,
-          count: "text-sm text-indigo-600",
+          input: "flex-1 rounded-full border border-[var(--color-border)] px-5",
+          button: `${baseButton} button-accent`,
+          count: "text-sm text-[var(--color-text-muted)]",
         };
     }
   };

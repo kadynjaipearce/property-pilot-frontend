@@ -55,82 +55,58 @@ const WaitlistLanding = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-[var(--color-bg)]">
       {/* Add smooth scroll behavior */}
       <style>{`html { scroll-behavior: smooth; }`}</style>
 
       {/* Hero Section */}
-      <section id="hero" className="relative overflow-hidden">
-        <div className="relative flex flex-col items-center justify-center min-h-[600px] md:min-h-[700px] w-full">
-          <div className="max-w-2xl mx-auto p-4 w-full z-10 flex flex-col items-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.7, ease: "easeOut" }}
-              className="text-5xl md:text-6xl font-bold mb-4 leading-tight bg-clip-text text-transparent bg-gradient-to-b from-purple-200 via-pink-200 to-indigo-400 text-center"
-            >
-              The Future of Airbnb
-              <br />
-              <span className="block text-purple-100">Management is Here</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25, duration: 0.7, ease: "easeOut" }}
-              className="text-xl md:text-2xl mb-6 text-indigo-100 max-w-3xl mx-auto leading-relaxed text-center"
-            >
-              Join thousands of Airbnb hosts getting early access to the
-              platform that will revolutionise your rental business
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
-              className="max-w-md mx-auto w-full"
-            >
-              <WaitlistForm source="hero" variant="hero" showCount={true} />
-            </motion.div>
+      <section
+        id="hero"
+        className="flex flex-col items-center justify-center min-h-[80vh] text-center relative bg-[var(--color-bg-alt)]"
+      >
+        <div className="max-w-2xl mx-auto px-4 py-24">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            The Future of Airbnb
+            <br />
+            <span className="block text-[var(--color-accent-lavender)]">
+              Management is Here
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+            Join thousands of Airbnb hosts getting early access to the platform
+            that will revolutionise your rental business
+          </p>
+          <div className="max-w-md mx-auto w-full">
+            <WaitlistForm source="hero" variant="hero" showCount={true} />
           </div>
-          <BackgroundBeams />
         </div>
       </section>
 
       {/* Demo Video Section */}
-      <section
-        id="demo"
-        className="py-20 bg-gradient-to-br from-white to-indigo-50"
-      >
-        <div className="container mx-auto px-4 text-center">
-          <Badge className="mb-6 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-4 py-2 border border-purple-200">
+      <section id="demo" className="bg-[var(--color-bg)]">
+        <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+          <span className="inline-block mb-6 px-4 py-2 rounded-full bg-[var(--color-accent-peach)] text-[var(--color-text-main)] font-semibold text-sm">
             Exclusive Preview
-          </Badge>
-
-          <h2 className="text-4xl font-bold mb-6 text-indigo-900">
+          </span>
+          <h2 className="text-4xl font-bold mb-6">
             Sneak Peek: Airbnb Management Made Simple
           </h2>
-
-          <p className="text-xl text-indigo-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-[var(--color-text-muted)] mb-12 max-w-2xl mx-auto">
             Watch how Property Pilot transforms Airbnb hosting with intelligent
             automation and revenue optimization
           </p>
-
-          {/* Video Player Mockup */}
-          <div className="max-w-4xl mx-auto relative">
-            <div className="aspect-video bg-gradient-to-br from-indigo-800 via-purple-800 to-pink-800 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20" />
-              <Button className="relative z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/20 h-20 w-20 rounded-full">
-                <RiPlayFill size={32} className="ml-1" />
+          <div className="max-w-3xl mx-auto relative">
+            <div className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden">
+              <Button className="button-accent relative z-10 h-20 w-20 rounded-full flex items-center justify-center text-3xl">
+                <RiPlayFill size={36} />
               </Button>
-              <div className="absolute bottom-6 left-6 text-white">
-                <p className="text-sm opacity-80">
-                  Exclusive preview for waitlist members
-                </p>
+              <div className="absolute bottom-6 left-6 text-[var(--color-text-main)] opacity-70 text-sm">
+                Exclusive preview for waitlist members
               </div>
             </div>
           </div>
-
           <div className="mt-8">
-            <p className="text-indigo-600 mb-4">
+            <p className="text-[var(--color-text-muted)] mb-4">
               Enter email to watch full demo
             </p>
             <WaitlistForm
@@ -145,40 +121,32 @@ const WaitlistLanding = () => {
       </section>
 
       {/* Features Preview */}
-      <section
-        id="features"
-        className="py-20 bg-gradient-to-br from-purple-50 via-indigo-50 to-pink-50"
-      >
-        <div className="container mx-auto px-4">
+      <section id="features" className="bg-[var(--color-bg-accent)]">
+        <div className="max-w-6xl mx-auto px-4 py-20">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-indigo-900">
+            <h2 className="text-4xl font-bold mb-6">
               Coming Soon: Game-Changing Features
             </h2>
-            <p className="text-xl text-indigo-600 max-w-2xl mx-auto">
+            <p className="text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto">
               Built specifically for serious Airbnb hosts who demand excellence
             </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-white/80 backdrop-blur-sm"
+                className="flex flex-col items-center text-center"
               >
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <feature.icon size={32} color="#7c3aed" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-indigo-900">
-                    {feature.title}
-                  </h3>
-                  <p className="text-indigo-600 mb-4 leading-relaxed">
-                    {feature.description}
-                  </p>
-                  <p className="text-purple-700 font-semibold">
-                    {feature.benefit}
-                  </p>
-                </CardContent>
+                <div className="w-16 h-16 rounded-2xl bg-[var(--color-accent-lavender)] flex items-center justify-center mb-6">
+                  <feature.icon size={32} color="var(--color-text-main)" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
+                <p className="text-[var(--color-text-muted)] mb-4 leading-relaxed">
+                  {feature.description}
+                </p>
+                <p className="text-[var(--color-accent-lavender)] font-semibold">
+                  {feature.benefit}
+                </p>
               </Card>
             ))}
           </div>
@@ -186,141 +154,98 @@ const WaitlistLanding = () => {
       </section>
 
       {/* Waitlist Benefits */}
-      <section
-        id="waitlist-benefits"
-        className="py-20 bg-gradient-to-br from-white to-purple-50"
-      >
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6 text-indigo-900">
-              Why Join the Waitlist?
-            </h2>
-            <p className="text-xl text-indigo-600 mb-12">
-              Early members get exclusive benefits and shape the future of
-              Property Pilot
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              {waitlistBenefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="flex items-center p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-100"
-                >
-                  <RiCheckLine
-                    size={24}
-                    color="#7c3aed"
-                    className="mr-4 flex-shrink-0"
-                  />
-                  <span className="text-indigo-800 font-medium">{benefit}</span>
-                </div>
-              ))}
-            </div>
+      <section id="waitlist-benefits" className="bg-[var(--color-bg)]">
+        <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+          <h2 className="text-4xl font-bold mb-6">Why Join the Waitlist?</h2>
+          <p className="text-xl text-[var(--color-text-muted)] mb-12">
+            Early members get exclusive benefits and shape the future of
+            Property Pilot
+          </p>
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {waitlistBenefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)]"
+              >
+                <RiCheckLine
+                  size={24}
+                  color="var(--color-accent-lavender)"
+                  className="mr-4 flex-shrink-0"
+                />
+                <span className="text-[var(--color-text-main)] font-medium">
+                  {benefit}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works & Pricing Section (modern redesign) */}
-      <section
-        id="how-it-works"
-        className="py-24 bg-gradient-to-br from-indigo-50 to-purple-50 text-indigo-900"
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12 mb-16">
-            {/* How It Works Stepper */}
-            <div className="flex-1">
-              <h2 className="text-4xl font-extrabold mb-8 text-indigo-900 text-center md:text-left">
-                How It Works
-              </h2>
-              <div className="flex flex-col md:flex-row md:items-start md:space-x-8 gap-8 md:gap-0">
-                {/* Step 1 */}
-                <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center mb-4 shadow-lg">
-                    <span className="text-white text-2xl font-bold">1</span>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-1">
-                    Forward Airbnb Emails
-                  </h3>
-                  <p className="text-indigo-700 text-sm">
-                    Set up Airbnb to auto-forward booking, inquiry, and guest
-                    emails to your unique Property Pilot address.
-                  </p>
-                </div>
-                {/* Step 2 */}
-                <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center mb-4 shadow-lg">
-                    <span className="text-white text-2xl font-bold">2</span>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-1">
-                    We Parse & Automate
-                  </h3>
-                  <p className="text-indigo-700 text-sm">
-                    We securely receive and parse your Airbnb emails, extracting
-                    booking and guest data to automate messaging, calendar
-                    updates, and more.
-                  </p>
-                </div>
-                {/* Step 3 */}
-                <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center mb-4 shadow-lg">
-                    <span className="text-white text-2xl font-bold">3</span>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-1">
-                    Enjoy Automation
-                  </h3>
-                  <p className="text-indigo-700 text-sm">
-                    Sit back as Property Pilot handles guest messaging,
-                    reminders, and more—saving you hours every week and
-                    optimising your Airbnb operations.
-                  </p>
-                </div>
+      {/* How It Works Section */}
+      <section id="how-it-works" className="bg-[var(--color-bg-accent)]">
+        <div className="max-w-4xl mx-auto px-4 py-24">
+          <h2 className="text-4xl font-extrabold mb-12 text-center">
+            How It Works
+          </h2>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative">
+            {/* Connecting line for stepper */}
+            <div
+              className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-[var(--color-border)] z-0"
+              style={{ transform: "translateY(-50%)" }}
+            />
+            {/* Step 1 */}
+            <div className="flex flex-col items-center text-center flex-1 z-10">
+              <div className="w-16 h-16 rounded-full bg-[var(--color-accent-lavender)] flex items-center justify-center mb-4 shadow-[var(--color-shadow)] text-3xl font-bold text-[var(--color-text-main)]">
+                1
               </div>
+              <h3 className="text-lg font-semibold mb-1">
+                Forward Airbnb Emails
+              </h3>
+              <p className="text-[var(--color-text-muted)] text-sm max-w-xs">
+                Set up Airbnb to auto-forward booking, inquiry, and guest emails
+                to your unique Property Pilot address.
+              </p>
             </div>
-            {/* Pricing Card */}
-            <div className="flex-1 flex items-center justify-center">
-              <div
-                className="bg-white/90 rounded-3xl shadow-2xl border-4 border-transparent bg-clip-padding p-10 max-w-sm w-full relative flex flex-col items-center"
-                style={{
-                  borderImage:
-                    "linear-gradient(135deg, #a21caf, #db2777, #7c3aed, #f472b6) 1",
-                }}
-              >
-                <span className="inline-block px-4 py-1 mb-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 text-white text-xs font-semibold tracking-wide uppercase shadow">
-                  Waitlist Special
-                </span>
-                <span className="text-5xl font-extrabold text-purple-700 mb-2">
-                  $12.99
-                </span>
-                <span className="text-indigo-700 text-base mb-4">
-                  per property per month
-                </span>
-                <p className="text-indigo-500 text-sm text-center mb-2">
-                  Lock in this exclusive rate by joining the waitlist. Pricing
-                  will increase after launch.
-                </p>
-                <p className="text-indigo-400 text-xs text-center">
-                  Final pricing may depend on features and volume. Early
-                  adopters get the best rates!
-                </p>
+            {/* Step 2 */}
+            <div className="flex flex-col items-center text-center flex-1 z-10">
+              <div className="w-16 h-16 rounded-full bg-[var(--color-accent-mint)] flex items-center justify-center mb-4 shadow-[var(--color-shadow)] text-3xl font-bold text-[var(--color-text-main)]">
+                2
               </div>
+              <h3 className="text-lg font-semibold mb-1">
+                We Parse & Automate
+              </h3>
+              <p className="text-[var(--color-text-muted)] text-sm max-w-xs">
+                We securely receive and parse your Airbnb emails, extracting
+                booking and guest data to automate messaging, calendar updates,
+                and more.
+              </p>
+            </div>
+            {/* Step 3 */}
+            <div className="flex flex-col items-center text-center flex-1 z-10">
+              <div className="w-16 h-16 rounded-full bg-[var(--color-accent-peach)] flex items-center justify-center mb-4 shadow-[var(--color-shadow)] text-3xl font-bold text-[var(--color-text-main)]">
+                3
+              </div>
+              <h3 className="text-lg font-semibold mb-1">Enjoy Automation</h3>
+              <p className="text-[var(--color-text-muted)] text-sm max-w-xs">
+                Sit back as Property Pilot handles guest messaging, reminders,
+                and more—saving you hours every week and optimising your Airbnb
+                operations.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section
-        id="final-cta"
-        className="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white"
-      >
-        <div className="container mx-auto px-4 text-center">
+      <section id="final-cta" className="bg-[var(--color-bg)]">
+        <div className="max-w-xl mx-auto px-4 py-20 text-center">
           <h2 className="text-4xl font-bold mb-6">
             Don&apos;t Miss the Launch
           </h2>
-          <p className="text-xl mb-12 text-indigo-100 max-w-2xl mx-auto">
+          <p className="text-xl mb-12 text-[var(--color-text-muted)] max-w-2xl mx-auto">
             Be among the first to transform your Airbnb business with Property
             Pilot
           </p>
-
           <div className="max-w-md mx-auto">
             <WaitlistForm
               source="final"
@@ -329,7 +254,7 @@ const WaitlistLanding = () => {
               buttonText="Reserve Spot"
               showCount={false}
             />
-            <div className="flex items-center justify-center mt-6 text-sm text-purple-200">
+            <div className="flex items-center justify-center mt-6 text-sm text-[var(--color-accent-lavender)]">
               <RiUserLine size={16} className="mr-2" />
               <span>
                 Join thousands of Airbnb hosts already on the waitlist
@@ -342,58 +267,39 @@ const WaitlistLanding = () => {
       {/* Footer */}
       <footer
         id="footer"
-        className="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-indigo-900 pt-20 pb-12 border-t border-purple-200"
+        className="bg-white border-t border-[var(--color-border)] text-[var(--color-text-muted)] pt-12 pb-8"
       >
-        <div className="container mx-auto px-4">
-          {/* Main Footer Content */}
-          <div className="mb-12">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-              {/* Brand Section */}
-              <div className="space-y-4 md:max-w-lg">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">P</span>
-                  </div>
-                  <span className="text-2xl font-bold text-indigo-900">
-                    Property Pilot
-                  </span>
-                </div>
-                <p className="text-lg text-indigo-700 max-w-md leading-relaxed">
-                  The future of Airbnb management is here. Join thousands of
-                  Airbnb hosts revolutionizing their rental business.
-                </p>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8">
+            {/* Brand Section */}
+            <div className="flex items-center space-x-3 mb-4 md:mb-0">
+              <div className="w-10 h-10 rounded-full bg-[var(--color-accent-lavender)] flex items-center justify-center">
+                <span className="text-[var(--color-text-main)] font-bold text-lg">
+                  PP
+                </span>
               </div>
-
-              {/* Newsletter Section */}
-              <div className="space-y-2 md:space-y-0 md:ml-8 md:flex md:flex-col md:items-end md:justify-center">
-                <div>
-                  <h3 className="text-lg font-semibold text-indigo-900 mb-2 md:mb-1 text-right md:text-right">
-                    Stay Updated
-                  </h3>
-                  <p className="text-indigo-600 text-sm mb-2 md:mb-3 text-right md:text-right">
-                    Get early access and exclusive updates about Property Pilot
-                  </p>
-                </div>
-                <div className="w-full md:w-auto">
-                  <WaitlistForm
-                    source="footer"
-                    variant="footer"
-                    placeholder="Enter your email"
-                    buttonText="Subscribe"
-                    showCount={false}
-                  />
-                </div>
-              </div>
+              <span className="text-2xl font-bold text-[var(--color-text-main)]">
+                Property Pilot
+              </span>
+            </div>
+            <div className="text-base text-[var(--color-text-muted)]">
+              The future of Airbnb management is here. Join thousands of Airbnb
+              hosts revolutionizing their rental business.
+            </div>
+            <div className="w-full md:w-auto">
+              <WaitlistForm
+                source="footer"
+                variant="footer"
+                placeholder="Enter your email"
+                buttonText="Subscribe"
+                showCount={false}
+              />
             </div>
           </div>
-
-          {/* Bottom Bar */}
-          <div className="border-t border-purple-200 pt-8">
-            <div className="text-center">
-              <p className="text-sm text-indigo-600">
-                © 2025 Property Pilot. All rights reserved.
-              </p>
-            </div>
+          <div className="border-t border-[var(--color-border)] pt-6 text-center">
+            <p className="text-sm">
+              © 2025 Property Pilot. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

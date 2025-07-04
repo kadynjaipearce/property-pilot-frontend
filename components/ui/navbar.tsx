@@ -12,15 +12,17 @@ export default function NavbarComponent() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-purple-100 shadow-sm">
-      <div className="container mx-auto px-4">
+    <nav className="sticky top-0 z-50 w-full bg-white border-b border-[var(--color-border)] shadow-sm">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">P</span>
+            <div className="w-8 h-8 rounded-full bg-[var(--color-accent-lavender)] flex items-center justify-center">
+              <span className="text-[var(--color-text-main)] font-bold text-lg">
+                PP
+              </span>
             </div>
-            <span className="text-xl font-bold text-indigo-900">
+            <span className="text-xl font-bold text-[var(--color-text-main)] tracking-tight">
               Property Pilot
             </span>
           </div>
@@ -31,7 +33,7 @@ export default function NavbarComponent() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-indigo-600 hover:text-purple-700 font-medium transition-colors"
+                className="text-[var(--color-text-muted)] hover:text-[var(--color-text-main)] font-medium transition-colors px-2 py-1 rounded-full"
               >
                 {link.name}
               </a>
@@ -40,7 +42,7 @@ export default function NavbarComponent() {
 
           {/* CTA Button - Desktop & Mobile */}
           <div>
-            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-lg text-sm px-4 py-2">
+            <Button className="button px-6 py-2 text-base font-semibold shadow-none">
               Join Waitlist
             </Button>
           </div>
