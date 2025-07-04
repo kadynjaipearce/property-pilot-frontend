@@ -8,7 +8,7 @@ export default function NavbarComponent() {
     { name: "Demo", href: "#demo" },
     { name: "Features", href: "#features" },
     { name: "Benefits", href: "#waitlist-benefits" },
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "How It Works", href: "#how-it-works" },
   ];
 
   return (
