@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { HeroUIProvider } from "@heroui/react";
+import { Toaster } from "sonner";
 import NavbarComponent from "@/components/ui/navbar";
 import "./globals.css";
 
@@ -91,7 +92,8 @@ export default function RootLayout({
       <html lang="en">
         <NavbarComponent />
         <body className={`${inter.variable} font-sans antialiased`}>
-          {children}
+          <main>{children}</main>
+          <Toaster />
         </body>
       </html>
     </HeroUIProvider>

@@ -1,47 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { WaitlistForm } from "@/components/ui/waitlist-form";
 import {
-  RiMailLine,
   RiStarFill,
-  RiTimeLine,
   RiUserLine,
   RiCalendarLine,
   RiMessage2Line,
-  RiRidingLine,
-  RiShieldCheckLine,
   RiCheckLine,
-  RiArrowRightLine,
   RiPlayFill,
-  RiMenuLine,
-  RiCloseLine,
 } from "@remixicon/react";
 import "./globals.css";
 
 const WaitlistLanding = () => {
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleEmailSubmit = async (e: React.FormEvent, source: string) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setIsSubmitting(true);
-
-    // Simulate API call
-    setTimeout(() => {
-      console.log("Welcome to the waitlist! 🎉");
-      setEmail("");
-      setIsSubmitting(false);
-    }, 1000);
-  };
-
   const features = [
     {
       icon: RiMessage2Line,
@@ -73,13 +48,6 @@ const WaitlistLanding = () => {
     "Direct input on final features",
   ];
 
-  const navigationLinks = [
-    { name: "Features", href: "#features" },
-    { name: "Demo", href: "#demo" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "About", href: "#about" },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       {/* Add smooth scroll behavior */}
@@ -91,42 +59,18 @@ const WaitlistLanding = () => {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-40" />
         <div className="relative container mx-auto px-4 py-20 text-center text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            The Future of Property
+            The Future of Airbnb
             <br />
-            <span className="text-purple-300">Management is Coming</span>
+            <span className="text-purple-300">Management is Here</span>
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-indigo-100 max-w-3xl mx-auto leading-relaxed">
-            Join 2,847+ property managers getting early access to the platform
-            that will revolutionize your Airbnb empire
+            Join thousands of Airbnb hosts getting early access to the platform
+            that will revolutionize your rental business
           </p>
           <div className="max-w-md mx-auto">
-            <form className="flex gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1 h-14 text-lg bg-white/10 border border-white/20 text-white placeholder:text-indigo-100 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all px-4"
-                aria-label="Email address"
-              />
-              <button
-                type="submit"
-                className="h-14 px-8 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <span
-                    className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"
-                    aria-label="Loading"
-                  />
-                ) : (
-                  "Join Waitlist"
-                )}
-              </button>
-            </form>
+            <WaitlistForm source="hero" variant="hero" showCount={true} />
             <p className="text-sm text-indigo-200 mt-3">
-              No spam, launch updates only • 2,847 managers ahead of you
+              No spam, launch updates only
             </p>
           </div>
         </div>
@@ -143,12 +87,12 @@ const WaitlistLanding = () => {
           </Badge>
 
           <h2 className="text-4xl font-bold mb-6 text-indigo-900">
-            Sneak Peek: Property Pilot in Action
+            Sneak Peek: Airbnb Management Made Simple
           </h2>
 
           <p className="text-xl text-indigo-600 mb-12 max-w-2xl mx-auto">
-            Watch how Property Pilot transforms property management with
-            intelligent automation and data-driven insights
+            Watch how Property Pilot transforms Airbnb hosting with intelligent
+            automation and revenue optimization
           </p>
 
           {/* Video Player Mockup */}
@@ -170,26 +114,13 @@ const WaitlistLanding = () => {
             <p className="text-indigo-600 mb-4">
               Enter email to watch full demo
             </p>
-            <form
-              onSubmit={(e) => handleEmailSubmit(e, "demo")}
-              className="flex gap-3 max-w-md mx-auto"
-            >
-              <Input
-                type="email"
-                placeholder="Your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1"
-                required
-              />
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
-              >
-                Watch Demo
-              </Button>
-            </form>
+            <WaitlistForm
+              source="demo"
+              variant="demo"
+              placeholder="Your email address"
+              buttonText="Watch Demo"
+              showCount={false}
+            />
           </div>
         </div>
       </section>
@@ -205,8 +136,7 @@ const WaitlistLanding = () => {
               Coming Soon: Game-Changing Features
             </h2>
             <p className="text-xl text-indigo-600 max-w-2xl mx-auto">
-              Built specifically for serious property managers who demand
-              excellence
+              Built specifically for serious Airbnb hosts who demand excellence
             </p>
           </div>
 
@@ -276,9 +206,7 @@ const WaitlistLanding = () => {
         className="py-20 bg-gradient-to-br from-indigo-50 to-purple-50 text-indigo-900"
       >
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-12">
-            Trusted by Property Professionals
-          </h2>
+          <h2 className="text-3xl font-bold mb-12">Trusted by Airbnb Hosts</h2>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
             <div className="p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-purple-100">
@@ -288,12 +216,12 @@ const WaitlistLanding = () => {
                 ))}
               </div>
               <p className="text-indigo-900 mb-4 italic">
-                "Finally, a platform built by property managers, for property
-                managers. Can't wait for the launch!"
+                &ldquo;Finally, a platform built by Airbnb hosts, for Airbnb
+                hosts. Can&apos;t wait for the launch!&rdquo;
               </p>
               <p className="text-indigo-900 font-semibold">Sarah Chen</p>
               <p className="text-indigo-600 text-sm">
-                12 Properties • Beta Tester
+                12 Airbnb Listings • Beta Tester
               </p>
             </div>
 
@@ -304,12 +232,12 @@ const WaitlistLanding = () => {
                 ))}
               </div>
               <p className="text-indigo-900 mb-4 italic">
-                "The automation features alone will save me 15+ hours every
-                week. This is the future."
+                &ldquo;The automation features alone will save me 15+ hours
+                every week. This is the future of Airbnb hosting.&rdquo;
               </p>
               <p className="text-indigo-900 font-semibold">Marcus Rodriguez</p>
               <p className="text-indigo-600 text-sm">
-                25 Properties • Beta Tester
+                25 Airbnb Listings • Beta Tester
               </p>
             </div>
 
@@ -320,12 +248,12 @@ const WaitlistLanding = () => {
                 ))}
               </div>
               <p className="text-indigo-900 mb-4 italic">
-                "Property Pilot understands the challenges we face. Every
-                feature solves a real problem."
+                &ldquo;Property Pilot understands the challenges Airbnb hosts
+                face. Every feature solves a real problem.&rdquo;
               </p>
               <p className="text-indigo-900 font-semibold">Jennifer Walsh</p>
               <p className="text-indigo-600 text-sm">
-                8 Properties • Beta Tester
+                8 Airbnb Listings • Beta Tester
               </p>
             </div>
           </div>
@@ -338,37 +266,27 @@ const WaitlistLanding = () => {
         className="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white"
       >
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Don't Miss the Launch</h2>
+          <h2 className="text-4xl font-bold mb-6">
+            Don&apos;t Miss the Launch
+          </h2>
           <p className="text-xl mb-12 text-indigo-100 max-w-2xl mx-auto">
-            Be among the first to transform your property business with Property
+            Be among the first to transform your Airbnb business with Property
             Pilot
           </p>
 
           <div className="max-w-md mx-auto">
-            <form
-              onSubmit={(e) => handleEmailSubmit(e, "final")}
-              className="flex gap-3"
-            >
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 h-14 text-lg bg-white/10 border-white/20 text-white placeholder:text-indigo-200 rounded-lg"
-                required
-              />
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="h-14 px-8 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold rounded-lg"
-              >
-                Reserve Spot
-                <RiArrowRightLine size={16} className="ml-2" />
-              </Button>
-            </form>
+            <WaitlistForm
+              source="final"
+              variant="hero"
+              placeholder="Enter your email address"
+              buttonText="Reserve Spot"
+              showCount={false}
+            />
             <div className="flex items-center justify-center mt-6 text-sm text-purple-200">
               <RiUserLine size={16} className="mr-2" />
-              <span>2,847 property managers already joined</span>
+              <span>
+                Join thousands of Airbnb hosts already on the waitlist
+              </span>
             </div>
           </div>
         </div>
@@ -395,8 +313,8 @@ const WaitlistLanding = () => {
                   </span>
                 </div>
                 <p className="text-lg text-indigo-700 max-w-md leading-relaxed">
-                  The future of property management is coming. Join thousands of
-                  property managers revolutionizing their rental business.
+                  The future of Airbnb management is here. Join thousands of
+                  Airbnb hosts revolutionizing their rental business.
                 </p>
               </div>
 
@@ -410,28 +328,15 @@ const WaitlistLanding = () => {
                     Get early access and exclusive updates about Property Pilot
                   </p>
                 </div>
-                <form
-                  onSubmit={(e) => handleEmailSubmit(e, "footer")}
-                  className="flex gap-3 max-w-md"
-                >
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 bg-white border-purple-200 text-indigo-900 placeholder:text-indigo-400 h-11 shadow-sm rounded-lg"
-                    required
-                  />
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="h-11 px-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-lg"
-                  >
-                    Subscribe
-                  </Button>
-                </form>
+                <WaitlistForm
+                  source="footer"
+                  variant="footer"
+                  placeholder="Enter your email"
+                  buttonText="Subscribe"
+                  showCount={false}
+                />
                 <p className="text-xs text-indigo-500">
-                  Join 2,847+ property managers already on the waitlist
+                  Join thousands of Airbnb hosts already on the waitlist
                 </p>
               </div>
             </div>
@@ -485,9 +390,7 @@ const WaitlistLanding = () => {
                       <p className="text-2xl font-bold text-indigo-900">
                         2,847+
                       </p>
-                      <p className="text-sm text-indigo-600">
-                        Property Managers
-                      </p>
+                      <p className="text-sm text-indigo-600">Airbnb Hosts</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">

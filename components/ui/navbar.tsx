@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "./button";
-import { RiCloseLine, RiMenuLine } from "@remixicon/react";
 
 export default function NavbarComponent() {
   const navigationLinks = [

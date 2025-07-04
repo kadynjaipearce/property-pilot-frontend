@@ -34,6 +34,8 @@ Built with a modern, vibrant design featuring:
 - **Styling**: Tailwind CSS with custom gradients
 - **Icons**: Remix Icons
 - **UI Components**: Custom components with modern design
+- **Backend**: Supabase for database and API
+- **Notifications**: Sonner for toast notifications
 - **Deployment**: Ready for Vercel deployment
 
 ## 🚀 Getting Started
@@ -42,6 +44,7 @@ Built with a modern, vibrant design featuring:
 
 - Node.js 18+
 - npm or yarn
+- Supabase account (for waitlist functionality)
 
 ### Installation
 
@@ -58,13 +61,19 @@ Built with a modern, vibrant design featuring:
    npm install
    ```
 
-3. **Run the development server**
+3. **Set up Supabase** (see [DATABASE_SETUP.md](./DATABASE_SETUP.md))
+
+   - Create a Supabase project
+   - Run the database schema
+   - Add environment variables to `.env.local`
+
+4. **Run the development server**
 
    ```bash
    npm run dev
    ```
 
-4. **Open your browser**
+5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📱 Pages & Sections
@@ -76,7 +85,23 @@ Built with a modern, vibrant design featuring:
 - **Testimonials** - What property professionals say
 - **Final CTA** - Join the waitlist
 
-## 🎯 Waitlist Benefits
+## 🎯 Waitlist System
+
+### Features
+
+- **Email Collection** - Secure email capture with validation
+- **Real-time Counter** - Dynamic signup count display
+- **Optimistic Updates** - Instant UI feedback
+- **Toast Notifications** - Success/error feedback with Sonner
+- **Source Tracking** - Track signups from different sections
+- **Duplicate Prevention** - Prevents duplicate email submissions
+
+### API Endpoints
+
+- `POST /api/waitlist` - Add email to waitlist
+- `GET /api/waitlist/count` - Get total signup count
+
+### Waitlist Benefits
 
 Join the exclusive waitlist to get:
 
@@ -126,18 +151,9 @@ Ready for integration with:
 
 This is a private project, but we welcome feedback and suggestions for future features.
 
-## 📄 License
-
-This project is proprietary software. All rights reserved.
-
 ## 📞 Contact
 
-- **Website**: [Property Pilot](https://propertypilot.com)
+- **Website**: [Property Pilot](https://propertypilot.com.au)
 - **Email**: [Contact us for early access]
-- **Twitter**: [@propertypilot](https://twitter.com/propertypilot)
 
 ---
-
-**Built with ❤️ for property managers**
-
-_Join 2,847+ property managers already on the waitlist_
