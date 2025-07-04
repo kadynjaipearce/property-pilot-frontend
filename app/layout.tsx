@@ -95,7 +95,7 @@ export default function RootLayout({
         >
           <NavbarComponent />
           <main>{children}</main>
-          <Toaster />
+          {/* <Toaster /> */}
         </body>
       </html>
     </HeroUIProvider>

@@ -314,10 +314,10 @@ const WaitlistLanding = () => {
       {/* Footer */}
       <footer
         id="footer"
-        className="bg-white border-t border-[var(--color-border)] text-[var(--color-text-muted)] pt-12 pb-8 mt-auto"
+        className="bg-white border-t border-[var(--color-border)] text-[var(--color-text-muted)] pt-12 pb-8"
       >
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8 mt-8">
             {/* Brand Section */}
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <div className="w-10 h-10 rounded-full bg-[var(--color-accent-lavender)] flex items-center justify-center">
