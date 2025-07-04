@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "./button";
-import { useState } from "react";
 import { RiCloseLine, RiMenuLine } from "@remixicon/react";
 
 export default function NavbarComponent() {
@@ -13,15 +12,16 @@ export default function NavbarComponent() {
     { name: "Testimonials", href: "#testimonials" },
   ];
 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-purple-100 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <span className="text-xl font-bold text-slate-900">
+            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">P</span>
+            </div>
+            <span className="text-xl font-bold text-indigo-900">
               Property Pilot
             </span>
           </div>
@@ -32,53 +32,20 @@ export default function NavbarComponent() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-slate-600 hover:text-slate-900 font-medium transition-colors"
+                className="text-indigo-600 hover:text-purple-700 font-medium transition-colors"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Button className="bg-blue-600 hover:bg-blue-700">
+          {/* CTA Button - Desktop & Mobile */}
+          <div>
+            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium rounded-lg text-sm px-4 py-2">
               Join Waitlist
             </Button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-slate-600 hover:text-slate-900"
-          >
-            {mobileMenuOpen ? (
-              <RiCloseLine size={20} />
-            ) : (
-              <RiMenuLine size={20} />
-            )}
-          </button>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-slate-200">
-            <div className="flex flex-col space-y-4">
-              {navigationLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-slate-600 hover:text-slate-900 font-medium transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <Button className="bg-blue-600 hover:bg-blue-700 w-full">
-                Join Waitlist
-              </Button>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 import { HeroUIProvider } from "@heroui/react";
 import NavbarComponent from "@/components/ui/navbar";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -90,7 +90,9 @@ export default function RootLayout({
     <HeroUIProvider>
       <html lang="en">
         <NavbarComponent />
-        <body className={`${geistSans.variable} antialiased`}>{children}</body>
+        <body className={`${inter.variable} font-sans antialiased`}>
+          {children}
+        </body>
       </html>
     </HeroUIProvider>
   );
