@@ -90,14 +90,6 @@ const WaitlistLanding = () => {
             >
               <WaitlistForm source="hero" variant="hero" showCount={true} />
             </motion.div>
-            <motion.p
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 0.7, ease: "easeOut" }}
-              className="text-sm text-indigo-200 mt-4 text-center"
-            >
-              No spam, launch updates only
-            </motion.p>
           </div>
           <BackgroundBeams />
         </div>
@@ -354,11 +346,10 @@ const WaitlistLanding = () => {
       >
         <div className="container mx-auto px-4">
           {/* Main Footer Content */}
-          <div className="grid lg:grid-cols-2 gap-12 mb-12">
-            {/* Left Column - Brand & Newsletter */}
-            <div className="space-y-8">
+          <div className="mb-12">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               {/* Brand Section */}
-              <div className="space-y-4">
+              <div className="space-y-4 md:max-w-lg">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
                     <span className="text-white font-bold text-lg">P</span>
@@ -374,80 +365,23 @@ const WaitlistLanding = () => {
               </div>
 
               {/* Newsletter Section */}
-              <div className="space-y-4">
+              <div className="space-y-2 md:space-y-0 md:ml-8 md:flex md:flex-col md:items-end md:justify-center">
                 <div>
-                  <h3 className="text-lg font-semibold text-indigo-900 mb-2">
+                  <h3 className="text-lg font-semibold text-indigo-900 mb-2 md:mb-1 text-right md:text-right">
                     Stay Updated
                   </h3>
-                  <p className="text-indigo-600 text-sm">
+                  <p className="text-indigo-600 text-sm mb-2 md:mb-3 text-right md:text-right">
                     Get early access and exclusive updates about Property Pilot
                   </p>
                 </div>
-                <WaitlistForm
-                  source="footer"
-                  variant="footer"
-                  placeholder="Enter your email"
-                  buttonText="Subscribe"
-                  showCount={false}
-                />
-                <p className="text-xs text-indigo-500">
-                  Join thousands of Airbnb hosts already on the waitlist
-                </p>
-              </div>
-            </div>
-
-            {/* Right Column - Links & Stats */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Quick Links */}
-              <div className="space-y-6">
-                <h3 className="text-lg font-semibold text-indigo-900">
-                  Quick Links
-                </h3>
-                <div className="space-y-3">
-                  <Link
-                    href="#features"
-                    className="block text-indigo-600 hover:text-indigo-800 transition-colors font-medium"
-                  >
-                    Features
-                  </Link>
-                  <Link
-                    href="#demo"
-                    className="block text-indigo-600 hover:text-indigo-800 transition-colors font-medium"
-                  >
-                    Demo
-                  </Link>
-                  <Link
-                    href="#waitlist-benefits"
-                    className="block text-indigo-600 hover:text-indigo-800 transition-colors font-medium"
-                  >
-                    Benefits
-                  </Link>
-                  <Link
-                    href="#how-it-works"
-                    className="block text-indigo-600 hover:text-indigo-800 transition-colors font-medium"
-                  >
-                    How It Works
-                  </Link>
-                </div>
-              </div>
-
-              {/* Stats */}
-              <div className="space-y-6">
-                <h3 className="text-lg font-semibold text-indigo-900">
-                  Community
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex flex-col items-center space-y-2">
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <RiUserLine size={20} color="#7c3aed" />
-                    </div>
-                    <p className="text-2xl font-bold text-indigo-900 text-center">
-                      {isLoading ? "..." : `${signupCount}+`}
-                    </p>
-                    <p className="text-sm text-indigo-600 text-center">
-                      Airbnb Hosts
-                    </p>
-                  </div>
+                <div className="w-full md:w-auto">
+                  <WaitlistForm
+                    source="footer"
+                    variant="footer"
+                    placeholder="Enter your email"
+                    buttonText="Subscribe"
+                    showCount={false}
+                  />
                 </div>
               </div>
             </div>

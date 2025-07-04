@@ -48,7 +48,7 @@ export function WaitlistForm({
         return {
           form: "flex gap-3 max-w-md",
           input:
-            "flex-1 bg-white border-purple-200 text-indigo-900 placeholder:text-indigo-400 h-11 shadow-sm rounded-lg",
+            "flex-1 min-w-[220px] bg-white border-purple-200 text-indigo-900 placeholder:text-indigo-400 h-11 shadow-sm rounded-lg",
           button: `${baseButton} h-11 px-6 bg-purple-700 text-white text-base`,
           count: "text-xs text-indigo-500",
         };
@@ -127,7 +127,14 @@ export function WaitlistForm({
         )}
       </form>
 
-      {showCount && !isLoading && (
+      {variant === "hero" && showCount && !isLoading && (
+        <p className="text-xs text-indigo-200 mt-6 text-center w-full">
+          {signupCount > 0
+            ? `${signupCount}+ Airbnb hosts ahead of you • No spam, launch updates only`
+            : "Be the first to join the waitlist!"}
+        </p>
+      )}
+      {variant !== "hero" && showCount && !isLoading && (
         <p className={styles.count + " text-center w-full"}>
           {signupCount > 0
             ? `${signupCount}+ Airbnb hosts ahead of you`
