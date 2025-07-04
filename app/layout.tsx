@@ -90,7 +90,9 @@ export default function RootLayout({
   return (
     <HeroUIProvider>
       <html lang="en">
-        <body className={`${inter.variable} font-sans antialiased`}>
+        <body
+          className={`${inter.variable} font-sans antialiased flex flex-col`}
+        >
           <NavbarComponent />
           <main>{children}</main>
           <Toaster />

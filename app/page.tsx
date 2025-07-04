@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +22,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const WaitlistLanding = () => {
   const { signupCount, isLoading } = useWaitlist();
+  const [videoOpen, setVideoOpen] = useState(false);
 
   const features = [
     {
@@ -55,7 +56,7 @@ const WaitlistLanding = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--color-bg)]">
+    <div className="min-h-screen bg-[var(--color-bg)] flex flex-col">
       {/* Add smooth scroll behavior */}
       <style>{`html { scroll-behavior: smooth; }`}</style>
 
@@ -97,13 +98,62 @@ const WaitlistLanding = () => {
           </p>
           <div className="max-w-3xl mx-auto relative">
             <div className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden">
-              <Button className="button-accent relative z-10 h-20 w-20 rounded-full flex items-center justify-center text-3xl">
-                <RiPlayFill size={36} />
+              <Button
+                className="button-accent relative z-10 h-16 w-36 rounded-xl flex items-center justify-center text-xl px-0 cursor-pointer"
+                onClick={() => setVideoOpen(true)}
+                aria-label="Play demo video"
+              >
+                <RiPlayFill size={32} />
               </Button>
               <div className="absolute bottom-6 left-6 text-[var(--color-text-main)] opacity-70 text-sm">
                 Exclusive preview for waitlist members
               </div>
             </div>
+            {/* Video Modal */}
+            {videoOpen && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+                style={{ animation: "fadeIn 0.2s" }}
+              >
+                <div
+                  className="relative bg-white rounded-2xl shadow-xl w-full max-w-3xl mx-auto p-0 overflow-hidden flex flex-col video-modal-mobile"
+                  style={{
+                    maxHeight: "90vh",
+                    width: "90vw",
+                  }}
+                >
+                  {/* Close Button (always visible, square) */}
+                  <button
+                    className="absolute top-4 right-4 w-10 h-10 bg-[var(--color-bg-alt)] rounded-lg flex items-center justify-center text-2xl text-[var(--color-text-main)] shadow hover:bg-[var(--color-bg-peach)] transition cursor-pointer border border-[var(--color-border)]"
+                    onClick={() => setVideoOpen(false)}
+                    aria-label="Close video"
+                  >
+                    ×
+                  </button>
+                  {/* 16:9 Aspect Ratio Wrapper */}
+                  <div className="w-full aspect-video bg-black flex items-center justify-center">
+                    <video
+                      src="/demo.mp4"
+                      controls
+                      autoPlay
+                      className="w-full h-full object-contain rounded-2xl bg-black"
+                      style={{ background: "#000" }}
+                    />
+                  </div>
+                </div>
+                <style>{`
+                  @media (max-width: 768px) {
+                    .video-modal-mobile {
+                      width: 100vw !important;
+                      height: 100vh !important;
+                      max-width: 100vw !important;
+                      max-height: 100vh !important;
+                      border-radius: 0 !important;
+                    }
+                  }
+                `}</style>
+              </div>
+            )}
           </div>
           <div className="mt-8">
             <p className="text-[var(--color-text-muted)] mb-4">
@@ -189,10 +239,7 @@ const WaitlistLanding = () => {
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative">
             {/* Connecting line for stepper */}
-            <div
-              className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-[var(--color-border)] z-0"
-              style={{ transform: "translateY(-50%)" }}
-            />
+
             {/* Step 1 */}
             <div className="flex flex-col items-center text-center flex-1 z-10">
               <div className="w-16 h-16 rounded-full bg-[var(--color-accent-lavender)] flex items-center justify-center mb-4 shadow-[var(--color-shadow)] text-3xl font-bold text-[var(--color-text-main)]">
@@ -267,7 +314,7 @@ const WaitlistLanding = () => {
       {/* Footer */}
       <footer
         id="footer"
-        className="bg-white border-t border-[var(--color-border)] text-[var(--color-text-muted)] pt-12 pb-8"
+        className="bg-white border-t border-[var(--color-border)] text-[var(--color-text-muted)] pt-12 pb-8 mt-auto"
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8">
