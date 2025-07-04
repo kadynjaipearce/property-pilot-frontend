@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Property Pilot 🏠
 
-## Getting Started
+**The Future of Property Management is Coming**
 
-First, run the development server:
+Property Pilot is a revolutionary platform designed specifically for Airbnb hosts and property managers who want to streamline their rental operations with intelligent automation and data-driven insights.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+### 🚀 Coming Soon
+
+- **Smart Email Automation** - Automatically send check-in instructions, house rules, and checkout reminders
+- **Revenue-Optimized Calendar** - See all bookings, track profits, and get AI-powered pricing suggestions
+- **Review Collection & Management** - Automatically collect and manage guest reviews across all platforms
+
+### 🎯 Target Audience
+
+- Airbnb hosts
+- Property managers
+- Vacation rental owners
+- Real estate investors
+
+## 🎨 Design
+
+Built with a modern, vibrant design featuring:
+
+- **Purple & Pink Color Scheme** - Modern and professional
+- **Responsive Design** - Works perfectly on all devices
+- **Smooth Animations** - Enhanced user experience
+- **Clean Typography** - Easy to read and navigate
+
+## 🛠️ Technology Stack
+
+- **Frontend**: Next.js 15 with React 19
+- **Styling**: Tailwind CSS with custom gradients
+- **Icons**: Remix Icons
+- **UI Components**: Custom components with modern design
+- **Deployment**: Ready for Vercel deployment
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/kadynjaipearce/property-pilot-frontend.git
+   cd property-pilot-frontend
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📱 Pages & Sections
+
+- **Hero Section** - Main landing with email signup
+- **Demo Preview** - Sneak peek of the platform
+- **Features** - Game-changing features overview
+- **Waitlist Benefits** - Exclusive early access perks
+- **Testimonials** - What property professionals say
+- **Final CTA** - Join the waitlist
+
+## 🎯 Waitlist Benefits
+
+Join the exclusive waitlist to get:
+
+- **50% off first year** (Early Bird Special)
+- **Exclusive beta access** before public launch
+- **Free onboarding and setup**
+- **Direct input on final features**
+
+## 🔧 Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+### Project Structure
+
+```
+property-pilot-frontend/
+├── app/                 # Next.js app directory
+├── components/          # React components
+│   └── ui/             # UI components
+├── public/             # Static assets
+└── lib/                # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The project is optimized for deployment on Vercel:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Connect your GitHub repository to Vercel
+2. Deploy automatically on every push
+3. Get a production URL instantly
 
-## Learn More
+## 📈 Analytics & Tracking
 
-To learn more about Next.js, take a look at the following resources:
+Ready for integration with:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Google Analytics
+- Facebook Pixel
+- Google Workspace
+- Email marketing platforms
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
+This is a private project, but we welcome feedback and suggestions for future features.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is proprietary software. All rights reserved.
+
+## 📞 Contact
+
+- **Website**: [Property Pilot](https://propertypilot.com)
+- **Email**: [Contact us for early access]
+- **Twitter**: [@propertypilot](https://twitter.com/propertypilot)
+
+---
+
+**Built with ❤️ for property managers**
+
+_Join 2,847+ property managers already on the waitlist_
