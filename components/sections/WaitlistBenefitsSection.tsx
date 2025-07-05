@@ -13,7 +13,10 @@ const waitlistBenefits = [
 
 export default function WaitlistBenefitsSection() {
   return (
-    <section id="waitlist-benefits" className="bg-[var(--color-bg)]">
+    <section
+      id="waitlist-benefits"
+      className="bg-[var(--color-bg)] overflow-x-hidden"
+    >
       <div className="max-w-4xl mx-auto px-4 py-20 text-center">
         <motion.h2
           initial={{ opacity: 0, y: -40 }}

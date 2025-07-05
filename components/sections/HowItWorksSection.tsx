@@ -6,7 +6,10 @@ import { RiMailLine, RiUserAddLine, RiRocketLine } from "@remixicon/react";
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="bg-[var(--color-bg-accent)]">
+    <section
+      id="how-it-works"
+      className="bg-[var(--color-bg-accent)] overflow-x-hidden"
+    >
       <div className="max-w-4xl mx-auto px-4 py-24">
         <motion.h2
           initial={{ opacity: 0, y: -40 }}

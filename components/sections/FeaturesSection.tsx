@@ -30,7 +30,10 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="bg-[var(--color-bg-accent)]">
+    <section
+      id="features"
+      className="bg-[var(--color-bg-accent)] overflow-x-hidden"
+    >
       <div className="max-w-6xl mx-auto px-4 py-20">
         <motion.div
           initial={{ opacity: 0, y: -40 }}
