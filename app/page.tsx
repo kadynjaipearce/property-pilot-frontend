@@ -49,9 +49,8 @@ const WaitlistLanding = () => {
   ];
 
   const waitlistBenefits = [
-    "50% off first year (Early Bird Special)",
+    "Reduced monthly price",
     "Exclusive beta access before public launch",
-    "Free onboarding and setup",
     "Direct input on final features",
   ];
 
@@ -211,22 +210,42 @@ const WaitlistLanding = () => {
             Early members get exclusive benefits and shape the future of
             Property Pilot
           </p>
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {waitlistBenefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)]"
-              >
+          <div className="space-y-6 mb-12">
+            {/* First and third benefits - side by side */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)]">
                 <RiCheckLine
                   size={24}
                   color="var(--color-accent-lavender)"
                   className="mr-4 flex-shrink-0"
                 />
                 <span className="text-[var(--color-text-main)] font-medium">
-                  {benefit}
+                  {waitlistBenefits[0]}
                 </span>
               </div>
-            ))}
+              <div className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)]">
+                <RiCheckLine
+                  size={24}
+                  color="var(--color-accent-lavender)"
+                  className="mr-4 flex-shrink-0"
+                />
+                <span className="text-[var(--color-text-main)] font-medium">
+                  {waitlistBenefits[2]}
+                </span>
+              </div>
+            </div>
+
+            {/* Second benefit - full width (longest text) */}
+            <div className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)]">
+              <RiCheckLine
+                size={24}
+                color="var(--color-accent-lavender)"
+                className="mr-4 flex-shrink-0"
+              />
+              <span className="text-[var(--color-text-main)] font-medium">
+                {waitlistBenefits[1]}
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -246,11 +265,11 @@ const WaitlistLanding = () => {
                 1
               </div>
               <h3 className="text-lg font-semibold mb-1">
-                Forward Airbnb Emails
+                Configure Email Integration
               </h3>
               <p className="text-[var(--color-text-muted)] text-sm max-w-xs">
-                Set up Airbnb to auto-forward booking, inquiry, and guest emails
-                to your unique Property Pilot address.
+                Set up email forwarding rules or configure your Airbnb contact
+                email to use our dedicated Property Pilot address.
               </p>
             </div>
             {/* Step 2 */}
