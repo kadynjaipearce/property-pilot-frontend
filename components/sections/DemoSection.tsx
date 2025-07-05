@@ -16,19 +16,19 @@ export default function DemoSection() {
   return (
     <section
       id="demo"
-      className="bg-[var(--color-bg)]"
+      className="bg-[var(--color-bg)] overflow-x-hidden"
       aria-labelledby="demo-heading"
     >
       <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="max-w-4xl mx-auto px-4 py-20 text-center"
       >
         <motion.span
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="inline-block mb-6 px-4 py-2 rounded-full bg-[var(--color-accent-peach)] text-[var(--color-text-main)] font-semibold text-sm"
@@ -37,8 +37,8 @@ export default function DemoSection() {
         </motion.span>
         <motion.h2
           id="demo-heading"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-4xl font-bold mb-6"
@@ -46,8 +46,8 @@ export default function DemoSection() {
           Sneak Peek: Airbnb Management Made Simple
         </motion.h2>
         <motion.p
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-xl text-[var(--color-text-muted)] mb-12 max-w-2xl mx-auto"
@@ -56,8 +56,8 @@ export default function DemoSection() {
           automation and revenue optimization
         </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="max-w-3xl mx-auto relative"
@@ -135,8 +135,8 @@ export default function DemoSection() {
           )}
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           className="mt-8"

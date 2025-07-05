@@ -41,12 +41,24 @@ export function useWaitlist() {
 
   const submitEmail = async (source: string = "website") => {
     if (!email.trim()) {
-      toast.error("Please enter your email address");
+      toast.error("Please enter your email address", {
+        style: {
+          background: "var(--error-bg)",
+          color: "var(--error-text)",
+          border: "1px solid var(--error-border)",
+        },
+      });
       return;
     }
 
     if (!validateEmail(email)) {
-      toast.error("Please enter a valid email address");
+      toast.error("Please enter a valid email address", {
+        style: {
+          background: "var(--error-bg)",
+          color: "var(--error-text)",
+          border: "1px solid var(--error-border)",
+        },
+      });
       return;
     }
 
@@ -68,16 +80,41 @@ export function useWaitlist() {
         setSignupCount((prev) => prev + 1);
         setEmail("");
         toast.success(
-          "🎉 You're on the waitlist! We'll notify you when we launch."
+          "You're on the waitlist! We'll notify you when we launch.",
+          {
+            style: {
+              background: "var(--success-bg)",
+              color: "var(--success-text)",
+              border: "1px solid var(--success-border)",
+            },
+          }
         );
       } else if (response.status === 409 && data.duplicate) {
-        toast.error("📧 You're already on our waitlist!");
+        toast.error("You're already on our waitlist!", {
+          style: {
+            background: "var(--error-bg)",
+            color: "var(--error-text)",
+            border: "1px solid var(--error-border)",
+          },
+        });
       } else {
-        toast.error("😕 Something went wrong. Please try again.");
+        toast.error("Something went wrong. Please try again.", {
+          style: {
+            background: "var(--error-bg)",
+            color: "var(--error-text)",
+            border: "1px solid var(--error-border)",
+          },
+        });
       }
     } catch (error) {
       console.error("Waitlist submission error:", error);
-      toast.error("😕 Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again.", {
+        style: {
+          background: "var(--error-bg)",
+          color: "var(--error-text)",
+          border: "1px solid var(--error-border)",
+        },
+      });
     } finally {
       setIsSubmitting(false);
     }
