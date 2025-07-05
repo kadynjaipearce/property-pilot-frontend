@@ -73,7 +73,7 @@ export default function HowItWorksSection() {
             <p className="text-[var(--color-text-muted)] text-sm max-w-xs">
               Sit back as Property Pilot handles guest messaging, reminders, and
               more—saving you hours every week and optimising your Airbnb
-              operations.
+              operations across Australia.
             </p>
           </motion.div>
         </div>

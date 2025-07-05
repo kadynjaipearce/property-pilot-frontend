@@ -9,7 +9,7 @@ Property Pilot is a revolutionary platform designed specifically for Airbnb host
 ### 🚀 Coming Soon
 
 - **Smart Email Automation** - Automatically send check-in instructions, house rules, and checkout reminders
-- **Revenue-Optimized Calendar** - See all bookings, track profits, and get AI-powered pricing suggestions
+- **Revenue-Optimised Calendar** - See all bookings, track profits, and get AI-powered pricing suggestions
 - **Review Collection & Management** - Automatically collect and manage guest reviews across all platforms
 
 ### 🎯 Target Audience
@@ -132,7 +132,7 @@ property-pilot-frontend/
 
 ## 🚀 Deployment
 
-The project is optimized for deployment on Vercel:
+The project is optimised for deployment on Vercel:
 
 1. Connect your GitHub repository to Vercel
 2. Deploy automatically on every push

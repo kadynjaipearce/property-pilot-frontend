@@ -14,10 +14,10 @@ const features = [
   },
   {
     icon: RiCalendarLine,
-    title: "Revenue-Optimized Calendar",
+    title: "Revenue-Optimised Calendar",
     description:
-      "See all bookings, track profits, and get AI-powered pricing suggestions for holidays and peak seasons",
-    benefit: "Maximize revenue with data-driven insights",
+      "See all bookings, track profits, and get AI-powered pricing suggestions for school holidays and peak seasons",
+    benefit: "Maximise revenue with data-driven insights",
   },
   {
     icon: RiStarFill,

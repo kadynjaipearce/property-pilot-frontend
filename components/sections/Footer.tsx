@@ -22,8 +22,8 @@ export default function Footer() {
             </span>
           </div>
           <div className="text-base text-[var(--color-text-muted)]">
-            The future of Airbnb management is here. Join thousands of Airbnb
-            hosts revolutionizing their rental business.
+            The future of Airbnb management is here. Join other Airbnb hosts
+            revolutionising their rental business.
           </div>
           <div className="w-full md:w-auto max-w-full">
             <WaitlistForm

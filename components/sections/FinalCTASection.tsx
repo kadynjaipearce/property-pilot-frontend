@@ -34,7 +34,7 @@ export default function FinalCTASection() {
           />
           <div className="flex items-center justify-center mt-6 text-sm text-[var(--color-accent-lavender)]">
             <RiUserLine size={16} className="mr-2" />
-            <span>Join thousands of Airbnb hosts already on the waitlist</span>
+            <span>Join Australian Airbnb hosts already on the waitlist</span>
           </div>
         </div>
       </motion.div>

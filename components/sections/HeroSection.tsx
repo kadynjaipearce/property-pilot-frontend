@@ -26,8 +26,8 @@ export default function HeroSection() {
           </span>
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
-          Join thousands of Airbnb hosts getting early access to the platform
-          that will revolutionise your rental business
+          Join Australian Airbnb hosts getting early access to the platform that
+          will revolutionise your rental business across Australia
         </p>
         <div className="max-w-md mx-auto w-full">
           <WaitlistForm source="hero" variant="hero" showCount={true} />

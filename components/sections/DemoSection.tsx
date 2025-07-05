@@ -53,7 +53,7 @@ export default function DemoSection() {
           className="text-xl text-[var(--color-text-muted)] mb-12 max-w-2xl mx-auto"
         >
           Watch how Property Pilot transforms Airbnb hosting with intelligent
-          automation and revenue optimization
+          automation and revenue optimisation
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}

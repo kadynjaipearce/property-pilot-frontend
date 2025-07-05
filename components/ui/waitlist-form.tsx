@@ -112,14 +112,14 @@ export function WaitlistForm({
       {variant === "hero" && showCount && !isLoading && (
         <p className="text-xs text-gray-800 mt-6 text-center w-full">
           {signupCount > 0
-            ? `${signupCount}+ Airbnb hosts ahead of you • No spam, launch updates only`
+            ? `${signupCount} Australian Airbnb hosts ahead of you • No spam, launch updates only`
             : "Be the first to join the waitlist!"}
         </p>
       )}
       {variant !== "hero" && showCount && !isLoading && (
         <p className={styles.count + " text-center w-full"}>
           {signupCount > 0
-            ? `${signupCount}+ Airbnb hosts ahead of you`
+            ? `${signupCount} Australian Airbnb hosts ahead of you`
             : "Be the first to join the waitlist!"}
         </p>
       )}

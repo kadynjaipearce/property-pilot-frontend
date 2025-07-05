@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | Property Pilot",
   },
   description:
-    "Property Pilot is the ultimate property management platform that streamlines your real estate operations. Join our waitlist for early access to smart property management tools.",
+    "Property Pilot is the ultimate property management platform that streamlines your real estate operations. Join our waitlist for early access to smart property management tools designed for Australian property investors.",
   keywords: [
     "property management",
     "real estate",
@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     "property investment",
     "real estate technology",
     "property pilot",
+    "Australian property",
+    "Airbnb Australia",
+    "short-term rentals",
   ],
   authors: [{ name: "Property Pilot Team" }],
   creator: "Property Pilot",
@@ -35,17 +38,17 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://propertypilot.com"),
+  metadataBase: new URL("https://propertypilot.com.au"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://propertypilot.com",
+    locale: "en_AU",
+    url: "https://propertypilot.com.au",
     title: "Property Pilot - Smart Property Management Platform",
     description:
-      "Streamline your property management with Property Pilot. Join our waitlist for early access to smart real estate tools.",
+      "Streamline your property management with Property Pilot. Join our waitlist for early access to smart real estate tools designed for Australian property investors.",
     siteName: "Property Pilot",
     images: [
       {
@@ -60,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Property Pilot - Smart Property Management Platform",
     description:
-      "Streamline your property management with Property Pilot. Join our waitlist for early access to smart real estate tools.",
+      "Streamline your property management with Property Pilot. Join our waitlist for early access to smart real estate tools designed for Australian property investors.",
     images: ["/og-image.jpg"],
     creator: "@propertypilot",
   },
