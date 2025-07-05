@@ -11,6 +11,22 @@ export default function NavbarComponent() {
     { name: "How It Works", href: "#how-it-works" },
   ];
 
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-[var(--color-border)] shadow-sm">
       <div className="max-w-7xl mx-auto px-6">
@@ -33,7 +49,8 @@ export default function NavbarComponent() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-[var(--color-text-muted)] hover:text-[var(--color-text-main)] font-medium transition-colors px-2 py-1 rounded-full"
+                onClick={(e) => handleClick(e, link.href)}
+                className="text-[var(--color-text-muted)] hover:text-[var(--color-text-main)] font-medium transition-colors px-2 py-1 rounded-full cursor-pointer"
               >
                 {link.name}
               </a>
