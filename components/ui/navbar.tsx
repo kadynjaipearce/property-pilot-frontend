@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "./button";
 
 export default function NavbarComponent() {
@@ -33,35 +34,34 @@ export default function NavbarComponent() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded-full bg-[var(--color-accent-lavender)] flex items-center justify-center">
-              <span className="text-[var(--color-text-main)] font-bold text-lg">
-                PP
+            <Link href="/">
+              <span className="text-xl font-bold text-[var(--color-text-main)] tracking-tight">
+                Property Pilot
               </span>
-            </div>
-            <span className="text-xl font-bold text-[var(--color-text-main)] tracking-tight">
-              Property Pilot
-            </span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigationLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
                 className="text-[var(--color-text-muted)] hover:text-[var(--color-text-main)] font-medium transition-colors px-2 py-1 rounded-full cursor-pointer"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* CTA Button - Desktop & Mobile */}
           <div>
-            <Button className="button px-6 py-2 text-base font-semibold shadow-none">
-              Join Waitlist
-            </Button>
+            <Link href="#waitlist-benefits">
+              <Button className="button px-6 py-2 text-base font-semibold shadow-none cursor-pointer">
+                Join Waitlist
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

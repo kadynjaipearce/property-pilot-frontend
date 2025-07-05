@@ -178,7 +178,7 @@ h3 {
 .button,
 button,
 .btn {
-  border-radius: 9999px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 1rem;
   padding: 0.75rem 2rem;
@@ -186,40 +186,81 @@ button,
   color: #fff;
   border: none;
   box-shadow: none;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
+
+.button:hover,
+button:hover,
+.btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(34, 34, 59, 0.15);
+}
+
 .button-accent {
   background: var(--color-accent-lavender);
   color: var(--color-text-main);
 }
+
+.button-accent:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(165, 148, 249, 0.25);
+}
+
 .button-mint {
   background: var(--color-accent-mint);
   color: var(--color-text-main);
 }
+
+.button-mint:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(110, 231, 183, 0.25);
+}
+
 .button-peach {
   background: var(--color-accent-peach);
   color: var(--color-text-main);
 }
+
+.button-peach:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 214, 165, 0.25);
+}
+
 .button-outline {
   background: #fff;
   color: var(--color-text-main);
   border: 1.5px solid var(--color-border);
 }
 
+.button-outline:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(34, 34, 59, 0.1);
+}
+
 input,
 .input {
-  border-radius: 9999px;
+  border-radius: 10px;
   border: 1.5px solid var(--color-border);
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   background: #fff;
   color: var(--color-text-main);
   outline: none;
-  transition: border 0.2s;
+  transition: all 0.3s ease;
 }
+
+input:hover,
+.input:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(34, 34, 59, 0.08);
+}
+
 input:focus,
 .input:focus {
   border-color: var(--color-accent-lavender);
+  box-shadow: 0 0 0 3px rgba(165, 148, 249, 0.1);
+  transform: scale(1.01);
 }
 
 nav {

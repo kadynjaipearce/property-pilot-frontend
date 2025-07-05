@@ -19,23 +19,19 @@ export default function HeroSection() {
         className="max-w-2xl mx-auto px-4 py-24 relative z-10"
       >
         <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          The Future of Airbnb
+          Affordable Airbnb
           <br />
           <span className="block text-[var(--color-accent-lavender)]">
-            Management is Here
+            Management Made Simple
           </span>
         </h1>
-        <p className="text-xl md:text-2xl mb-8 text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
-          Join Australian Airbnb hosts getting early access to the platform that
-          will revolutionise your rental business across Australia
+        <p className="text-xl md:text-xl mb-8 text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+          Get the core features you need to manage your Airbnb properties
+          without the premium price tag. Join hosts saving money while
+          streamlining their operations.
         </p>
         <div className="max-w-md mx-auto w-full">
           <WaitlistForm source="hero" variant="hero" showCount={true} />
-          <style>{`
-            .hero-signup-count {
-              color: var(--color-text-main);
-            }
-          `}</style>
         </div>
       </motion.div>
     </section>
