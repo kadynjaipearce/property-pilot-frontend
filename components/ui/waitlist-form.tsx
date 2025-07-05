@@ -38,18 +38,18 @@ export function WaitlistForm({
       case "hero":
       case "final":
         return {
-          form: "flex gap-3",
+          form: "flex flex-col sm:flex-row gap-3 w-full",
           input:
-            "flex-1 h-12 text-base bg-white border border-[var(--color-border)] text-[var(--color-text-main)] placeholder:text-[var(--color-text-muted)] rounded-full focus:ring-2 focus:ring-[var(--color-accent-lavender)] focus:border-[var(--color-accent-lavender)] transition-all px-5",
-          button: `${baseButton} w-48 h-12`,
+            "flex-1 w-full sm:w-auto h-12 text-base bg-white border border-[var(--color-border)] text-[var(--color-text-main)] placeholder:text-[var(--color-text-muted)] rounded-full focus:ring-2 focus:ring-[var(--color-accent-lavender)] focus:border-[var(--color-accent-lavender)] transition-all px-5",
+          button: `${baseButton} w-full sm:w-48 h-12 mt-2 sm:mt-0`,
           count: "text-sm text-[var(--color-text-muted)] mt-3",
         };
       case "footer":
         return {
-          form: "flex gap-3 max-w-md",
+          form: "flex flex-col sm:flex-row gap-3 w-full max-w-md",
           input:
-            "flex-1 min-w-[300px] w-[340px] bg-white border-[var(--color-border)] text-[var(--color-text-main)] placeholder:text-[var(--color-text-muted)] h-12 shadow-sm rounded-full",
-          button: `${baseButton} h-12 px-6`,
+            "flex-1 w-full sm:w-auto min-w-0 bg-white border-[var(--color-border)] text-[var(--color-text-main)] placeholder:text-[var(--color-text-muted)] h-12 shadow-sm rounded-full",
+          button: `${baseButton} w-full sm:w-auto h-12 px-6 mt-2 sm:mt-0`,
           count: "text-xs text-[var(--color-text-muted)]",
         };
       case "demo":
@@ -110,7 +110,7 @@ export function WaitlistForm({
       </form>
 
       {variant === "hero" && showCount && !isLoading && (
-        <p className="text-xs text-indigo-200 mt-6 text-center w-full">
+        <p className="text-xs text-gray-800 mt-6 text-center w-full">
           {signupCount > 0
             ? `${signupCount}+ Airbnb hosts ahead of you • No spam, launch updates only`
             : "Be the first to join the waitlist!"}
