@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { RiPlayFill, RiCloseLine } from "@remixicon/react";
+import Image from "next/image";
 
-// Replace this with your actual YouTube video ID and custom thumbnail
 const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ";
 const CUSTOM_THUMBNAIL = "/demo-thumbnail.jpg";
 
@@ -67,9 +67,11 @@ export default function DemoSection() {
             className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group cursor-pointer"
             onClick={() => setVideoOpen(true)}
           >
-            <img
+            <Image
               src={CUSTOM_THUMBNAIL}
               alt="Demo video thumbnail"
+              width={800}
+              height={450}
               className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0"
               draggable={false}
             />
@@ -92,20 +94,17 @@ export default function DemoSection() {
               {/* Responsive modal: fullscreen black on md and below, centered and max-w-3xl on larger screens */}
               <div
                 className="relative bg-white rounded-2xl shadow-xl w-full max-w-3xl mx-auto p-0 overflow-hidden flex flex-col aspect-video
-                  md:bg-black md:rounded-none md:w-screen md:h-screen md:max-w-none md:max-h-none md:p-0 md:items-center md:justify-center md:aspect-auto"
-                style={{
-                  maxHeight: "90vh",
-                  width: "90vw",
-                }}
+                  md:bg-black md:rounded-none md:w-screen md:h-screen md:max-w-none md:max-h-none md:p-0 md:items-center md:justify-center md:aspect-auto
+                  max-h-[90vh] w-[90vw]"
               >
                 {/* Close Button (always visible, square) */}
-                <button
+                <Button
                   className="absolute top-4 right-4 button-accent rounded-lg flex items-center justify-center text-2xl text-[var(--color-text-main)] shadow hover:bg-[var(--color-bg-peach)] transition cursor-pointer border border-[var(--color-border)] z-10"
                   onClick={() => setVideoOpen(false)}
                   aria-label="Close video"
                 >
                   <RiCloseLine size={24} />
-                </button>
+                </Button>
                 {/* Responsive iframe wrapper */}
                 <div className="w-full h-full flex items-center justify-center">
                   <iframe
