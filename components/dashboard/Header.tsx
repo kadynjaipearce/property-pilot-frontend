@@ -41,8 +41,8 @@ const Header = () => {
   const unreadCount = notifications.filter((n) => n.unread).length;
 
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4">
-      <div className="flex items-center justify-between">
+    <header className="bg-white border-b border-gray-200 px-6 py-4 sticky top-0 z-10 h-16 flex items-center">
+      <div className="flex items-center justify-between w-full">
         <div className="flex items-center space-x-3">
           <div>
             <h1 className="text-sm font-bold text-gray-800">Dashboard</h1>

@@ -30,15 +30,17 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
     <div
       className={`bg-white border-r border-gray-200 ${
         isCollapsed ? "w-16" : "w-64"
-      } min-h-screen`}
+      } min-h-screen sticky top-0 h-screen overflow-y-auto`}
     >
       <div
-        className={`${isCollapsed ? "p-2" : "p-4"} border-b border-gray-200`}
+        className={`${
+          isCollapsed ? "p-2" : "p-4"
+        } border-b border-gray-200 h-16 flex items-center`}
       >
         <div
           className={`flex items-center ${
             isCollapsed ? "justify-center" : "justify-between"
-          }`}
+          } w-full`}
         >
           {!isCollapsed && (
             <div className="flex items-center space-x-2">
