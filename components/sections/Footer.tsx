@@ -1,38 +1,42 @@
 "use client";
 
 import { WaitlistForm } from "@/components/ui/waitlist-form";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer
       id="footer"
-      className="bg-white border-t border-[var(--color-border)] text-[var(--color-text-muted)] pt-12 pb-8 overflow-x-hidden"
+      className="bg-white border-t border-[var(--color-border)] text-[var(--color-text-muted)] pt-8 pb-4 overflow-x-hidden"
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8 mt-8">
-          {/* Brand Section */}
-          <div className="flex items-center space-x-3 mb-4 md:mb-0">
-            <div className="w-10 h-10 rounded-full bg-[var(--color-accent-lavender)] flex items-center justify-center">
-              <span className="text-[var(--color-text-main)] font-bold text-lg">
-                PP
+        <div className="flex flex-col items-center md:flex-row md:items-start md:justify-between gap-6 mb-6 mt-4">
+          <div className="flex flex-col items-center md:items-start gap-2 w-full md:w-auto">
+            <div className="flex items-center gap-2 flex-nowrap whitespace-nowrap">
+              <Image
+                src="/logo.png"
+                alt="Property Pilot Logo"
+                width={24}
+                height={24}
+                style={{ objectFit: "contain" }}
+              />
+              <span className="text-lg font-bold text-[var(--color-text-main)]">
+                Property Pilot
               </span>
             </div>
-            <span className="text-2xl font-bold text-[var(--color-text-main)]">
-              Property Pilot
-            </span>
+            <div className="text-sm text-[var(--color-text-muted)] text-center md:text-left max-w-xs">
+              The future of Airbnb management is here. Join other Airbnb hosts
+              revolutionising their rental business.
+            </div>
           </div>
-          <div className="text-base text-[var(--color-text-muted)]">
-            The future of Airbnb management is here. Join other Airbnb hosts
-            revolutionising their rental business.
-          </div>
-          <div className="w-full md:w-auto max-w-full">
+          <div className="w-full md:w-auto max-w-full flex justify-center md:justify-end">
             <WaitlistForm
               source="footer"
               variant="footer"
               placeholder="Enter your email"
-              buttonText="Subscribe"
+              buttonText="Join the Waitlist"
               showCount={false}
-              className="w-full max-w-full"
+              className="w-full max-w-md"
             />
           </div>
         </div>
