@@ -12,6 +12,7 @@ interface WaitlistFormProps {
   variant?: "hero" | "footer" | "demo" | "final";
   placeholder?: string;
   buttonText?: string;
+  onSuccess?: () => void;
 }
 
 export function WaitlistForm({
@@ -21,13 +22,24 @@ export function WaitlistForm({
   variant = "hero",
   placeholder = "Enter your email address",
   buttonText = "Join Waitlist",
+  onSuccess,
 }: WaitlistFormProps) {
-  const { email, setEmail, isSubmitting, signupCount, isLoading, submitEmail } =
-    useWaitlist();
+  const {
+    email,
+    setEmail,
+    isSubmitting,
+    signupCount,
+    isLoading,
+    submitEmail,
+    validateEmail,
+  } = useWaitlist();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await submitEmail(source);
+    if (onSuccess && validateEmail(email)) {
+      onSuccess();
+    }
   };
 
   const getVariantStyles = () => {

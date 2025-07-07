@@ -6,12 +6,15 @@ import { Button } from "@/components/ui/button";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { RiPlayFill, RiCloseLine } from "@remixicon/react";
 import Image from "next/image";
+import { useWaitlist } from "@/hooks/use-waitlist";
 
 const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ";
 const CUSTOM_THUMBNAIL = "/demo-thumbnail.jpg";
 
 export default function DemoSection() {
   const [videoOpen, setVideoOpen] = useState(false);
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const { email, validateEmail } = useWaitlist();
 
   return (
     <section
@@ -62,29 +65,56 @@ export default function DemoSection() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="max-w-3xl mx-auto relative"
         >
-          {/* Thumbnail with play button */}
-          <div
-            className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group cursor-pointer"
-            onClick={() => setVideoOpen(true)}
-          >
-            <Image
-              src={CUSTOM_THUMBNAIL}
-              alt="Demo video thumbnail"
-              width={800}
-              height={450}
-              className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0"
-              draggable={false}
-            />
-            <Button
-              className="button-accent relative z-10 h-16 w-36 rounded-xl flex items-center justify-center text-xl px-0 cursor-pointer group-hover:scale-105 transition-transform"
-              aria-label="Play demo video"
+          {/* Only show the thumbnail and play button if email has been submitted */}
+          {emailSubmitted ? (
+            <div
+              className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group cursor-pointer"
+              onClick={() => setVideoOpen(true)}
             >
-              <RiPlayFill size={32} />
-            </Button>
-            <div className="absolute bottom-6 left-6 text-[var(--color-text-main)] opacity-70 text-sm z-10">
-              Exclusive preview for waitlist members
+              <Image
+                src={CUSTOM_THUMBNAIL}
+                alt="Demo video thumbnail"
+                width={800}
+                height={450}
+                className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0"
+                draggable={false}
+              />
+              <Button
+                className="button-accent relative z-10 h-16 w-36 rounded-xl flex items-center justify-center text-xl px-0 cursor-pointer group-hover:scale-105 transition-transform"
+                aria-label="Play demo video"
+              >
+                <RiPlayFill size={32} />
+              </Button>
+              <div className="absolute bottom-6 left-6 text-[var(--color-text-main)] opacity-70 text-sm z-10">
+                Exclusive preview for waitlist members
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group">
+              <Image
+                src={CUSTOM_THUMBNAIL}
+                alt="Demo video thumbnail"
+                width={800}
+                height={450}
+                className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0 opacity-60"
+                draggable={false}
+              />
+              <div className="z-10">
+                <p className="text-lg font-semibold text-[var(--color-text-main)] mb-4">
+                  Enter your email to watch the demo
+                </p>
+                <WaitlistForm
+                  source="demo"
+                  variant="demo"
+                  placeholder="Your email address"
+                  buttonText="Watch Demo"
+                  showCount={false}
+                  className="max-w-md mx-auto"
+                  onSuccess={() => setEmailSubmitted(true)}
+                />
+              </div>
+            </div>
+          )}
           {/* Video Modal */}
           {videoOpen && (
             <div
@@ -132,24 +162,6 @@ export default function DemoSection() {
               `}</style>
             </div>
           )}
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-          className="mt-8"
-        >
-          <p className="text-[var(--color-text-muted)] mb-4">
-            Enter email to watch full demo
-          </p>
-          <WaitlistForm
-            source="demo"
-            variant="demo"
-            placeholder="Your email address"
-            buttonText="Watch Demo"
-            showCount={false}
-          />
         </motion.div>
       </motion.div>
     </section>

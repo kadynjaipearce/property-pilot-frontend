@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "./button";
+import Image from "next/image";
 
 export default function NavbarComponent() {
   const navigationLinks = [
@@ -35,8 +36,16 @@ export default function NavbarComponent() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <Link href="/">
-              <span className="text-xl font-bold text-[var(--color-text-main)] tracking-tight">
-                Property Pilot
+              <span className="flex items-center space-x-2">
+                <Image
+                  src="/logo.png"
+                  alt="Property Pilot Logo"
+                  width={32}
+                  height={32}
+                />
+                <span className="text-xl font-bold text-[var(--color-text-main)] tracking-tight">
+                  Property Pilot
+                </span>
               </span>
             </Link>
           </div>
@@ -57,9 +66,9 @@ export default function NavbarComponent() {
 
           {/* CTA Button - Desktop & Mobile */}
           <div>
-            <Link href="#waitlist-benefits">
+            <Link href="#demo" onClick={(e) => handleClick(e, "#demo")}>
               <Button className="button px-6 py-2 text-base font-semibold shadow-none cursor-pointer">
-                Join Waitlist
+                Watch Demo
               </Button>
             </Link>
           </div>
