@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Dashboard-specific styles */
+/* This file is separate from globals.css for dashboard-specific styling */
+
+/* Basic dashboard styles */
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  font-size: 14px;
+  line-height: 1.5;
+}

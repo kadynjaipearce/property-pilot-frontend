@@ -36,7 +36,7 @@ export default function Footer() {
               placeholder="Enter your email"
               buttonText="Join the Waitlist"
               showCount={false}
-              className="w-full max-w-md"
+              className="w-full max-w-md hidden md:block"
             />
           </div>
         </div>

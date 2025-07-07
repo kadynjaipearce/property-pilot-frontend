@@ -5,10 +5,12 @@ import WaitlistBenefitsSection from "@/components/sections/WaitlistBenefitsSecti
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import FinalCTASection from "@/components/sections/FinalCTASection";
 import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/ui/navbar";
 
 export default function Home() {
   return (
     <>
+      <Navbar />
       <HeroSection />
       <DemoSection />
       <FeaturesSection />
