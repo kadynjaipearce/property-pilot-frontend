@@ -8,6 +8,7 @@ import MessagingSection from "../../../components/dashboard/MessagingSection";
 import RevenueSection from "../../../components/dashboard/RevenueSection";
 import ReviewsSection from "../../../components/dashboard/ReviewsSection";
 import SettingsSection from "../../../components/dashboard/SettingsSection";
+import PropertiesSection from "@/components/dashboard/PropertiesSection";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("bookings");
@@ -24,6 +25,8 @@ const Index = () => {
         return <ReviewsSection />;
       case "settings":
         return <SettingsSection />;
+      case "properties":
+        return <PropertiesSection />;
       default:
         return <BookingsSection />;
     }

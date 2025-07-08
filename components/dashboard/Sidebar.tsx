@@ -6,6 +6,7 @@ import {
   RiSettings3Line,
   RiMenuLine,
   RiCloseLine,
+  RiHome6Line,
 } from "@remixicon/react";
 import { useState } from "react";
 import Image from "next/image";
@@ -19,18 +20,19 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const menuItems = [
+    { id: "properties", label: "Properties", icon: RiHome6Line },
     { id: "bookings", label: "Bookings", icon: RiCalendarLine },
     { id: "messaging", label: "Messaging", icon: RiMessage2Line },
     { id: "revenue", label: "Revenue", icon: RiMoneyDollarCircleLine },
     { id: "reviews", label: "Reviews", icon: RiStarLine },
-    { id: "settings", label: "Settings", icon: RiSettings3Line },
+    // Settings will be rendered separately at the bottom
   ];
 
   return (
     <div
       className={`bg-white border-r border-gray-200 ${
         isCollapsed ? "w-16" : "w-64"
-      } min-h-screen sticky top-0 h-screen overflow-y-auto`}
+      } min-h-screen sticky top-0 h-screen overflow-y-auto flex flex-col`}
     >
       <div
         className={`${
@@ -67,7 +69,7 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
         </div>
       </div>
 
-      <nav className={`${isCollapsed ? "p-2" : "p-4"}`}>
+      <nav className={`${isCollapsed ? "p-2" : "p-4"} flex-1 flex flex-col`}>
         <ul className="space-y-2">
           {menuItems.map((item) => {
             const Icon = item.icon;
@@ -93,6 +95,23 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
             );
           })}
         </ul>
+        {/* Settings at the bottom */}
+        <div className="mt-auto pt-4">
+          <button
+            onClick={() => onSectionChange("settings")}
+            className={`w-full flex items-center rounded-lg transition-colors cursor-pointer ${
+              isCollapsed ? "px-2 py-2 justify-center" : "px-3 py-2"
+            } ${
+              activeSection === "settings"
+                ? "bg-[#a594f9]/20 border-2 border-[#a594f9] text-[#a594f9]"
+                : "text-gray-600 hover:bg-[#a594f9]/10 border-2 border-transparent"
+            }`}
+            style={{ minHeight: 40 }}
+          >
+            <RiSettings3Line size={20} />
+            {!isCollapsed && <span className="ml-3">Settings</span>}
+          </button>
+        </div>
       </nav>
     </div>
   );
