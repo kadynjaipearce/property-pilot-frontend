@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import AddPropertyInput, { PropertyData } from "./AddPropertyInput";
-import { RiAddLine } from "@remixicon/react";
+import { RiAddLine, RiStarFill, RiEdit2Line } from "@remixicon/react";
 
 const initialProperties = [
   {
@@ -13,6 +13,8 @@ const initialProperties = [
     bedrooms: 4,
     bathrooms: 3,
     guest: { name: "Sarah Johnson", checkOut: "Dec 15" },
+    rating: 4.9,
+    review_count: 210,
   },
   {
     id: 2,
@@ -95,6 +97,12 @@ const initialProperties = [
 
 const PropertiesSection = () => {
   const [properties, setProperties] = useState<any[]>(initialProperties);
+  const [showAdd, setShowAdd] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [inputValue, setInputValue] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
 
   const handleAddProperty = (property: PropertyData) => {
     setProperties([
@@ -102,74 +110,175 @@ const PropertiesSection = () => {
         id: Date.now(),
         name: property.name,
         image: property.image,
-        address: "(Imported from Airbnb)",
+        address: "",
         type: "Airbnb Listing",
         bedrooms: property.beds,
         bathrooms: property.baths,
         guest: null,
         airbnbId: property.property_id,
-        reviews: property.reviews,
+        rating: property.rating,
+        review_count: property.review_count,
         platform: property.platform,
         extracted_at: property.extracted_at,
       },
       ...properties,
     ]);
+    setShowAdd(false);
+    setInputValue("");
+    setLoading(false);
+    setError(null);
+    setSuccess(true);
+    setTimeout(() => setSuccess(false), 2000);
+  };
+
+  const isValidAirbnbUrl = (url: string) =>
+    /https?:\/\/(www\.)?airbnb\.com(\.[a-z]{2,})?\/rooms\//i.test(url);
+
+  const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInputValue(value);
+    setError(null);
+    if (isValidAirbnbUrl(value)) {
+      setLoading(true);
+      try {
+        const res = await fetch("/api/parse-airbnb", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url: value }),
+        });
+        const data = await res.json();
+        if (!res.ok)
+          throw new Error(data.error || "Failed to extract property data.");
+        handleAddProperty(data);
+      } catch (err: any) {
+        setError(err.message || "Failed to extract property data.");
+      } finally {
+        setLoading(false);
+      }
+    }
   };
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-2xl font-semibold text-[#22223b]">Properties</h2>
-        <button className="flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#a594f9] text-[#a594f9] bg-white font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer">
-          <RiAddLine size={20} /> Add Property
-        </button>
-      </div>
-      <AddPropertyInput onAdd={handleAddProperty} />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {properties.map((property) => (
-          <div
-            key={property.id}
-            className="bg-white rounded-lg border-2 border-[#a594f9]/20 shadow-sm p-4 flex flex-col"
-          >
-            <img
-              src={property.image}
-              alt={property.name}
-              className="w-full h-40 object-cover rounded-md mb-4"
-            />
-            <div className="flex-1">
-              <h3 className="text-lg font-semibold text-[#22223b] mb-1">
-                {property.name}
-              </h3>
-              <p className="text-sm text-[#a594f9] mb-1">{property.type}</p>
-              <p className="text-sm text-[#22223b] mb-1">{property.address}</p>
-              <div className="flex items-center gap-4 text-xs text-[#22223b] mb-2">
-                <span>{property.bedrooms} beds</span>
-                <span>·</span>
-                <span>{property.bathrooms} baths</span>
-              </div>
-              {property.guest ? (
-                <div className="mt-2 p-2 rounded bg-[#a594f9]/10 border border-[#a594f9]/20 text-[#a594f9] text-xs">
-                  Guest:{" "}
-                  <span className="font-medium">{property.guest.name}</span>{" "}
-                  until{" "}
-                  <span className="font-medium">{property.guest.checkOut}</span>
-                </div>
-              ) : (
-                <div className="mt-2 p-2 rounded bg-[#6ee7b7]/10 border border-[#6ee7b7]/20 text-[#6ee7b7] text-xs">
-                  No current guests
-                </div>
-              )}
-              {property.reviews && (
-                <div className="mt-2 text-xs text-[#a594f9]">
-                  {property.reviews}
-                </div>
-              )}
-            </div>
-            <button className="mt-4 px-4 py-2 rounded-md border-2 border-[#a594f9] text-[#a594f9] bg-white font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer self-end">
-              Edit
+      {success && (
+        <div className="bg-[#6ee7b7]/20 border border-[#6ee7b7] text-[#065f46] px-4 py-3 rounded-lg font-semibold flex items-center gap-2 animate-fadeIn">
+          <span className="inline-block w-2 h-2 rounded-full bg-[#6ee7b7] mr-2"></span>
+          Property added successfully!
+        </div>
+      )}
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+        <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+          <h3 className="text-lg font-semibold text-gray-800">
+            Your Properties
+          </h3>
+          <div className="relative flex justify-end">
+            <button
+              className={`flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#a594f9] text-[#a594f9] bg-white font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer`}
+              onClick={() => setShowAdd((v) => !v)}
+              type="button"
+            >
+              <RiAddLine size={20} /> Add Property
             </button>
+            {showAdd && (
+              <div
+                className="absolute right-0 mt-14 w-[340px] bg-[#f8f8ff] border border-[#a594f9]/40 rounded-xl shadow-xl z-10 p-5 flex flex-col gap-2 animate-fadeIn"
+                style={{ minWidth: 280 }}
+              >
+                <label
+                  htmlFor="airbnb-url"
+                  className="block text-xs font-semibold text-[#22223b] mb-1"
+                >
+                  Airbnb Property URL
+                </label>
+                <input
+                  id="airbnb-url"
+                  ref={inputRef}
+                  type="url"
+                  value={inputValue}
+                  onChange={handleInputChange}
+                  placeholder="e.g. https://airbnb.com/rooms/12345678"
+                  className="w-full px-3 py-2 border border-[#a594f9]/40 rounded-md focus:outline-none focus:ring-2 focus:ring-[#a594f9]/30 text-[#22223b] bg-white text-sm shadow-sm"
+                  disabled={loading}
+                  autoFocus
+                />
+                {loading && (
+                  <div className="text-xs text-[#a594f9] mt-1">
+                    Extracting property...
+                  </div>
+                )}
+                {error && (
+                  <div className="text-xs text-[#e11d48] mt-1">{error}</div>
+                )}
+              </div>
+            )}
           </div>
-        ))}
+        </div>
+        <div className="divide-y divide-gray-100">
+          {properties.map((property) => (
+            <div
+              key={property.id}
+              className="p-6 hover:bg-gray-50 transition-colors"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-24 h-20 rounded-lg overflow-hidden bg-[#f4f4fa] flex items-center justify-center">
+                  {property.image ? (
+                    <img
+                      src={property.image}
+                      alt={property.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-2xl text-[#a594f9]">
+                      🏠
+                    </div>
+                  )}
+                </div>
+                <div className="flex-1 min-w-0 flex flex-col justify-center">
+                  <div className="flex items-center gap-3 mb-1">
+                    <h3 className="text-base font-bold text-[#22223b] truncate flex-1">
+                      {property.name}
+                    </h3>
+                    {typeof property.rating === "number" &&
+                      property.rating > 0 && (
+                        <span className="flex items-center gap-2 bg-[#a594f9]/10 px-4 py-2 rounded-lg min-w-[90px] justify-center text-lg">
+                          <RiStarFill
+                            size={24}
+                            className="text-[#a594f9] p-1"
+                          />
+                          <span className="text-[#a594f9] font-bold text-lg leading-none">
+                            {property.rating.toFixed(1)}
+                          </span>
+                          {typeof property.review_count === "number" &&
+                            property.review_count > 0 && (
+                              <span className="text-[#a594f9] text-base font-medium ml-1">
+                                ({property.review_count})
+                              </span>
+                            )}
+                        </span>
+                      )}
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-[#22223b] mb-1">
+                    <span className="text-[#a594f9] font-medium">
+                      {property.type}
+                    </span>
+                    {property.address && <span>· {property.address}</span>}
+                    {property.bedrooms > 0 && (
+                      <span>· {property.bedrooms} beds</span>
+                    )}
+                    {property.bathrooms > 0 && (
+                      <span>· {property.bathrooms} baths</span>
+                    )}
+                  </div>
+                </div>
+                <div className="flex flex-col justify-center items-end">
+                  <button className="px-4 py-2 rounded-md border-2 border-[#a594f9] text-[#a594f9] bg-white font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer flex items-center gap-2">
+                    <RiEdit2Line size={20} /> Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

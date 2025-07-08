@@ -21,7 +21,8 @@ export interface PropertyData {
   guests: number;
   beds: number;
   baths: number;
-  reviews: string; // e.g., "4.8 (127 reviews)" or "No reviews"
+  rating: number | null; // e.g. 4.8
+  review_count: number | null; // e.g. 127
   platform: "airbnb";
   extracted_at: string; // ISO date
 }
@@ -52,7 +53,7 @@ async function extractWithOpenAI(
 ): Promise<PropertyData> {
   const propertyIdMatch = url.match(/rooms\/(\d+)/);
   const property_id = propertyIdMatch ? propertyIdMatch[1] : "";
-  const prompt = `Extract the following fields from this Airbnb HTML/meta content and return as JSON. If a field is missing, use null or a reasonable fallback.\n\nFields:\n- property_id (from URL if not in content)\n- name (property title)\n- image (main property image URL)\n- guests (number)\n- beds (number)\n- baths (number)\n- reviews (e.g. '4.8 (127 reviews)' or 'No reviews')\n- platform ('airbnb')\n- extracted_at (current ISO date)\n\nReturn only the JSON object, no explanation.\n\nContent:\n${content}`;
+  const prompt = `Extract the following fields from this Airbnb HTML/meta content and return as JSON.\n\nFields:\n- property_id (from URL if not in content)\n- name (property title)\n- image (main property image URL)\n- guests (number)\n- beds (number)\n- baths (number)\n- rating (number, e.g. 4.8, not a string or with stars)\n- review_count (number, e.g. 127)\n- platform ('airbnb')\n- extracted_at (current ISO date)\n\nReturn only the JSON object, no explanation.\n\nContent:\n${content}`;
 
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error("Missing OPENAI_API_KEY in environment");
@@ -64,7 +65,7 @@ async function extractWithOpenAI(
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
       messages: [
         {
           role: "system",
@@ -73,37 +74,11 @@ async function extractWithOpenAI(
         },
         { role: "user", content: prompt },
       ],
-      max_tokens: 600,
+      max_tokens: 400,
       temperature: 0,
     }),
   });
-  if (!res.ok) {
-    // fallback to gpt-3.5-turbo if gpt-4 fails
-    const res35 = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [
-          {
-            role: "system",
-            content:
-              "You are a helpful assistant that extracts structured data from HTML.",
-          },
-          { role: "user", content: prompt },
-        ],
-        max_tokens: 600,
-        temperature: 0,
-      }),
-    });
-    if (!res35.ok) throw new Error("OpenAI API error: " + (await res35.text()));
-    const data35 = await res35.json();
-    const jsonText35 = data35.choices[0].message.content.trim();
-    return JSON.parse(jsonText35);
-  }
+  if (!res.ok) throw new Error("OpenAI API error: " + (await res.text()));
   const data = await res.json();
   const jsonText = data.choices[0].message.content.trim();
   return JSON.parse(jsonText);
@@ -130,13 +105,13 @@ export async function POST(req: NextRequest) {
         { status: 500 }
       );
     }
-    // Trim to meta tags and first 1000 chars of body
+    // Trim to meta tags and first 500 chars of body
     const $ = cheerio.load(html);
     let metaTags = "";
     $("meta").each((_, el) => {
       metaTags += $.html(el) + "\n";
     });
-    const bodyText = $("body").text().slice(0, 1000);
+    const bodyText = $("body").text().slice(0, 500);
     const trimmedContent = metaTags + "\n" + bodyText;
 
     // Use OpenAI to extract property data

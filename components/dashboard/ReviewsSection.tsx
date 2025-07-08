@@ -1,3 +1,5 @@
+import { RiReplyLine, RiRobot2Line } from "@remixicon/react";
+
 const ReviewsSection = () => {
   const reviews = [
     {
@@ -95,9 +97,12 @@ const ReviewsSection = () => {
 
         <div className="divide-y divide-gray-100">
           {reviews.map((review) => (
-            <div key={review.id} className="p-6">
-              <div className="flex items-start justify-between mb-3">
-                <div className="flex items-center space-x-3">
+            <div
+              key={review.id}
+              className="p-6 flex flex-col justify-between min-h-[140px]"
+            >
+              <div className="flex items-center mb-3 gap-6">
+                <div className="flex items-center space-x-3 flex-1">
                   <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                     <span className="text-gray-600 font-medium text-sm">
                       {review.guestName.split(" ")[0][0]}
@@ -117,31 +122,33 @@ const ReviewsSection = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-2">
-                  <span
-                    className={`px-2 py-1 rounded-full text-xs font-medium ${getSentimentColor(
-                      review.sentiment
-                    )}`}
-                  >
-                    {review.sentiment}
-                  </span>
-                  {review.replied && (
-                    <span className="px-2 py-1 rounded-full text-xs font-medium text-[#6ee7b7] bg-[#6ee7b7]/20 border border-[#6ee7b7]/40">
-                      Replied
+                <div className="flex items-center gap-4 min-w-fit">
+                  <div className="flex items-center space-x-2">
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-medium ${getSentimentColor(
+                        review.sentiment
+                      )}`}
+                    >
+                      {review.sentiment}
                     </span>
-                  )}
+                    {review.replied && (
+                      <span className="px-2 py-1 rounded-full text-xs font-medium text-[#6ee7b7] bg-[#6ee7b7]/20 border border-[#6ee7b7]/40">
+                        Replied
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
-
-              <p className="text-[#22223b] mb-4">{review.comment}</p>
-
+              <p className="text-[#22223b] text-left w-full max-w-md mb-0">
+                {review.comment}
+              </p>
               {!review.replied && (
-                <div className="flex space-x-2">
-                  <button className="px-4 py-2 bg-[#a594f9]/20 border-2 border-[#a594f9] text-[#a594f9] rounded-md text-sm font-medium hover:bg-[#a594f9]/40 transition-colors cursor-pointer">
-                    Reply
+                <div className="flex justify-end mt-4 space-x-2">
+                  <button className="px-4 py-2 bg-[#a594f9]/20 border-2 border-[#a594f9] text-[#a594f9] rounded-md text-sm font-medium hover:bg-[#a594f9]/40 transition-colors cursor-pointer flex items-center gap-2">
+                    <RiReplyLine size={18} /> Reply
                   </button>
-                  <button className="px-4 py-2 border-2 border-[#a594f9] text-[#a594f9] rounded-md text-sm font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer">
-                    Auto-Reply
+                  <button className="px-4 py-2 border-2 border-[#a594f9] text-[#a594f9] rounded-md text-sm font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer flex items-center gap-2">
+                    <RiRobot2Line size={18} /> Auto-Reply
                   </button>
                 </div>
               )}

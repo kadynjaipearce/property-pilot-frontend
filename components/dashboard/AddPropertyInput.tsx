@@ -14,7 +14,8 @@ export interface PropertyData {
   guests: number;
   beds: number;
   baths: number;
-  reviews: string;
+  rating: number | null;
+  review_count: number | null;
   platform: "airbnb";
   extracted_at: string;
 }
