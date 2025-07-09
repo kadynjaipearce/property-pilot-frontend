@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { RiMessage2Line } from "@remixicon/react";
 
 const MessagingSection = () => {
   const [automations, setAutomations] = useState([
@@ -42,6 +43,20 @@ const MessagingSection = () => {
 
   return (
     <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Messaging</h1>
+          <p className="text-gray-600 mt-1">
+            Automate guest communications and manage message templates.
+          </p>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-500">
+          <RiMessage2Line size={16} />
+          <span>Last updated: {new Date().toLocaleDateString()}</span>
+        </div>
+      </div>
+
       <div className="bg-white rounded-lg shadow-sm border border-gray-200">
         <div className="p-6 border-b border-gray-200">
           <h3 className="text-lg font-semibold text-gray-800">

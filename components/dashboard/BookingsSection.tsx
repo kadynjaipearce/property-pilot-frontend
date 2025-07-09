@@ -147,6 +147,20 @@ const BookingsSection = () => {
 
   return (
     <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Bookings</h1>
+          <p className="text-gray-600 mt-1">
+            Manage your upcoming reservations and guest check-ins.
+          </p>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-500">
+          <RiCalendarLine size={16} />
+          <span>Last updated: {new Date().toLocaleDateString()}</span>
+        </div>
+      </div>
+
       <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
         <h2 className="text-xl font-semibold text-gray-800 mb-2">
           Nice! You've got 2 check-ins today 🎉

@@ -1,4 +1,4 @@
-import { RiReplyLine, RiRobot2Line } from "@remixicon/react";
+import { RiReplyLine, RiRobot2Line, RiStarLine } from "@remixicon/react";
 
 const ReviewsSection = () => {
   const reviews = [
@@ -62,6 +62,20 @@ const ReviewsSection = () => {
 
   return (
     <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Reviews</h1>
+          <p className="text-gray-600 mt-1">
+            Monitor guest feedback and respond to reviews.
+          </p>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-500">
+          <RiStarLine size={16} />
+          <span>Last updated: {new Date().toLocaleDateString()}</span>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-white rounded-lg p-6 border-2 border-[#a594f9]/20">
           <h3 className="text-sm font-medium text-[#22223b]">Average Rating</h3>

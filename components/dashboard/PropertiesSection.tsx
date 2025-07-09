@@ -160,6 +160,20 @@ const PropertiesSection = () => {
 
   return (
     <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Properties</h1>
+          <p className="text-gray-600 mt-1">
+            Manage your property portfolio and add new listings.
+          </p>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-500">
+          <RiAddLine size={16} />
+          <span>Last updated: {new Date().toLocaleDateString()}</span>
+        </div>
+      </div>
+
       {success && (
         <div className="bg-[#6ee7b7]/20 border border-[#6ee7b7] text-[#065f46] px-4 py-3 rounded-lg font-semibold flex items-center gap-2 animate-fadeIn">
           <span className="inline-block w-2 h-2 rounded-full bg-[#6ee7b7] mr-2"></span>

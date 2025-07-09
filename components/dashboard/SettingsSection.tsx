@@ -2,6 +2,7 @@ import {
   RiCheckboxCircleFill,
   RiEdit2Line,
   RiUpload2Line,
+  RiSettings3Line,
 } from "@remixicon/react";
 import { useRef, useState } from "react";
 
@@ -56,6 +57,20 @@ const SettingsSection = () => {
 
   return (
     <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
+          <p className="text-gray-600 mt-1">
+            Configure your account and manage preferences.
+          </p>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-500">
+          <RiSettings3Line size={16} />
+          <span>Last updated: {new Date().toLocaleDateString()}</span>
+        </div>
+      </div>
+
       {/* Modern SaaS Profile Section - Dashboard Consistent, Minimal, Full Width, KP Avatar */}
       <div className="bg-white rounded-lg border-2 border-[#a594f9]/20 p-8 shadow-sm w-full mx-auto mt-4 flex flex-col items-center">
         {/* KP Avatar (centered above, gradient, rounded-xl) */}

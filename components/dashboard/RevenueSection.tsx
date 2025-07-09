@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
+import { RiMoneyDollarCircleLine } from "@remixicon/react";
 
 const RevenueSection = () => {
   const monthlyData = [
@@ -32,6 +33,20 @@ const RevenueSection = () => {
 
   return (
     <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Revenue</h1>
+          <p className="text-gray-600 mt-1">
+            Track your earnings, expenses, and financial performance.
+          </p>
+        </div>
+        <div className="flex items-center space-x-2 text-sm text-gray-500">
+          <RiMoneyDollarCircleLine size={16} />
+          <span>Last updated: {new Date().toLocaleDateString()}</span>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-[#6ee7b7]/20 border-2 border-[#6ee7b7] rounded-lg p-6 text-white">
           <h3 className="text-sm font-medium opacity-90 text-[#22223b]">
