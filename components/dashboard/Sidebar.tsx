@@ -7,6 +7,7 @@ import {
   RiMenuLine,
   RiCloseLine,
   RiHome6Line,
+  RiDashboardLine,
 } from "@remixicon/react";
 import { useState } from "react";
 import Image from "next/image";
@@ -20,11 +21,12 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const menuItems = [
-    { id: "properties", label: "Properties", icon: RiHome6Line },
+    { id: "overview", label: "Overview", icon: RiDashboardLine },
     { id: "bookings", label: "Bookings", icon: RiCalendarLine },
     { id: "messaging", label: "Messaging", icon: RiMessage2Line },
     { id: "revenue", label: "Revenue", icon: RiMoneyDollarCircleLine },
     { id: "reviews", label: "Reviews", icon: RiStarLine },
+    { id: "properties", label: "Properties", icon: RiHome6Line },
     // Settings will be rendered separately at the bottom
   ];
 

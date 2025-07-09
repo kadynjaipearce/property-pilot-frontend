@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Sidebar from "../../../components/dashboard/Sidebar";
 import Header from "../../../components/dashboard/Header";
+import OverviewSection from "../../../components/dashboard/OverviewSection";
 import BookingsSection from "../../../components/dashboard/BookingsSection";
 import MessagingSection from "../../../components/dashboard/MessagingSection";
 import RevenueSection from "../../../components/dashboard/RevenueSection";
@@ -11,10 +12,12 @@ import SettingsSection from "../../../components/dashboard/SettingsSection";
 import PropertiesSection from "@/components/dashboard/PropertiesSection";
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState("bookings");
+  const [activeSection, setActiveSection] = useState("overview");
 
   const renderSection = () => {
     switch (activeSection) {
+      case "overview":
+        return <OverviewSection />;
       case "bookings":
         return <BookingsSection />;
       case "messaging":
@@ -28,7 +31,7 @@ const Index = () => {
       case "properties":
         return <PropertiesSection />;
       default:
-        return <BookingsSection />;
+        return <OverviewSection />;
     }
   };
 
