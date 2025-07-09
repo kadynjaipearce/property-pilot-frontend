@@ -132,8 +132,8 @@ const OverviewSection = () => {
                 {stats.totalProperties}
               </p>
             </div>
-            <div className="p-2 bg-blue-100 rounded-lg ml-4">
-              <RiHome6Line size={24} className="text-blue-600" />
+            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiHome6Line size={24} className="text-[#a594f9]" />
             </div>
           </div>
         </div>
@@ -148,8 +148,8 @@ const OverviewSection = () => {
                 {stats.activeBookings}
               </p>
             </div>
-            <div className="p-2 bg-green-100 rounded-lg ml-4">
-              <RiCalendarLine size={24} className="text-green-600" />
+            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiCalendarLine size={24} className="text-[#a594f9]" />
             </div>
           </div>
         </div>
@@ -165,8 +165,8 @@ const OverviewSection = () => {
                 +12.5% from last month
               </p>
             </div>
-            <div className="p-2 bg-yellow-100 rounded-lg ml-4">
-              <RiMoneyDollarCircleLine size={24} className="text-yellow-600" />
+            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiMoneyDollarCircleLine size={24} className="text-[#a594f9]" />
             </div>
           </div>
         </div>
@@ -182,8 +182,8 @@ const OverviewSection = () => {
                 +0.2 from last month
               </p>
             </div>
-            <div className="p-2 bg-purple-100 rounded-lg ml-4">
-              <RiStarLine size={24} className="text-purple-600" />
+            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiStarLine size={24} className="text-[#a594f9]" />
             </div>
           </div>
         </div>
@@ -196,8 +196,8 @@ const OverviewSection = () => {
                 {stats.unreadMessages}
               </p>
             </div>
-            <div className="p-2 bg-indigo-100 rounded-lg ml-4">
-              <RiMessage2Line size={24} className="text-indigo-600" />
+            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiMessage2Line size={24} className="text-[#a594f9]" />
             </div>
           </div>
         </div>
@@ -215,8 +215,8 @@ const OverviewSection = () => {
                 -3.2% from last month
               </p>
             </div>
-            <div className="p-2 bg-red-100 rounded-lg ml-4">
-              <RiTimeLine size={24} className="text-red-600" />
+            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiTimeLine size={24} className="text-[#a594f9]" />
             </div>
           </div>
         </div>
