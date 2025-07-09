@@ -47,15 +47,23 @@ const RevenueSection = () => {
         </div>
       </div>
 
+      <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <h4 className="font-semibold text-[#a594f9] mb-2">
+          🔥 Peak Season Alert
+        </h4>
+        <p className="text-[#22223b]">
+          December is looking hot! Consider raising your rates by 15-20% for New
+          Year's week.
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-[#6ee7b7]/20 border-2 border-[#6ee7b7] rounded-lg p-6 text-white">
-          <h3 className="text-sm font-medium opacity-90 text-[#22223b]">
-            This Month
-          </h3>
-          <p className="text-3xl font-bold text-[#6ee7b7]">
+        <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+          <h3 className="text-sm font-medium text-gray-600">This Month</h3>
+          <p className="text-3xl font-bold text-green-600">
             ${thisMonth.earnings.toLocaleString()}
           </p>
-          <p className="text-sm opacity-90 mt-1 text-[#6ee7b7]">
+          <p className="text-sm text-green-600 mt-1">
             +
             {Math.round(
               ((thisMonth.earnings -
@@ -67,24 +75,24 @@ const RevenueSection = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <h3 className="text-sm font-medium text-[#22223b]">
+        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+          <h3 className="text-sm font-medium text-gray-600">
             Avg. Nightly Rate
           </h3>
-          <p className="text-2xl font-bold text-[#22223b]">$145</p>
-          <p className="text-sm text-[#a594f9] mt-1">+5% vs last month</p>
+          <p className="text-2xl font-bold text-gray-900">$145</p>
+          <p className="text-sm text-gray-600 mt-1">+5% vs last month</p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <h3 className="text-sm font-medium text-[#22223b]">Occupancy Rate</h3>
-          <p className="text-2xl font-bold text-[#22223b]">78%</p>
-          <p className="text-sm text-[#a594f9] mt-1">Dec '24 - Jul '25</p>
+        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+          <h3 className="text-sm font-medium text-gray-600">Occupancy Rate</h3>
+          <p className="text-2xl font-bold text-gray-900">78%</p>
+          <p className="text-sm text-gray-600 mt-1">Dec '24 - Jul '25</p>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm border-2 border-[#a594f9]/20">
+      <div className="bg-white rounded-lg border border-[#a594f9]/20">
         <div className="p-6 border-b border-[#a594f9]/20">
-          <h3 className="text-lg font-semibold text-[#22223b]">
+          <h3 className="text-lg font-semibold text-gray-900">
             Monthly Earnings vs Expenses
           </h3>
         </div>
@@ -95,33 +103,33 @@ const RevenueSection = () => {
                 data={monthlyData}
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
               >
-                <CartesianGrid strokeDasharray="3 3" stroke="#a594f9" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis
                   dataKey="month"
-                  tick={{ fill: "#22223b", fontSize: 14 }}
+                  tick={{ fill: "#374151", fontSize: 14 }}
                   axisLine={false}
                   tickLine={false}
                 />
                 <YAxis
-                  tick={{ fill: "#22223b", fontSize: 14 }}
+                  tick={{ fill: "#374151", fontSize: 14 }}
                   axisLine={false}
                   tickLine={false}
                 />
                 <Tooltip
                   contentStyle={{
                     background: "#fff",
-                    border: "1px solid #a594f9",
+                    border: "1px solid #d1d5db",
                     borderRadius: 8,
-                    color: "#22223b",
+                    color: "#374151",
                   }}
-                  cursor={{ fill: "#a594f9", fillOpacity: 0.08 }}
+                  cursor={{ fill: "#3b82f6", fillOpacity: 0.08 }}
                   formatter={(value, name) => [
                     name === "Earnings" ? (
-                      <span style={{ color: "#22223b", fontWeight: 600 }}>
+                      <span style={{ color: "#374151", fontWeight: 600 }}>
                         ${value.toLocaleString()}
                       </span>
                     ) : (
-                      <span style={{ color: "#22223b" }}>
+                      <span style={{ color: "#374151" }}>
                         ${value.toLocaleString()}
                       </span>
                     ),
@@ -132,18 +140,18 @@ const RevenueSection = () => {
                   wrapperStyle={{ fontSize: 14 }}
                   formatter={(value) =>
                     value === "Earnings" ? (
-                      <span style={{ color: "#a594f9", fontWeight: 600 }}>
+                      <span style={{ color: "#3b82f6", fontWeight: 600 }}>
                         {value}
                       </span>
                     ) : (
-                      <span style={{ color: "#22223b" }}>{value}</span>
+                      <span style={{ color: "#374151" }}>{value}</span>
                     )
                   }
                 />
                 <Bar
                   dataKey="earnings"
                   name="Earnings"
-                  fill="#a594f9"
+                  fill="#3b82f6"
                   radius={[6, 6, 0, 0]}
                   barSize={32}
                   legendType="rect"
@@ -151,7 +159,7 @@ const RevenueSection = () => {
                 <Bar
                   dataKey="expenses"
                   name="Expenses"
-                  fill="#22223b"
+                  fill="#6b7280"
                   radius={[6, 6, 0, 0]}
                   barSize={32}
                 />
@@ -161,29 +169,29 @@ const RevenueSection = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm border-2 border-[#a594f9]/20">
+      <div className="bg-white rounded-lg border border-[#a594f9]/20">
         <div className="p-6 border-b border-[#a594f9]/20">
-          <h3 className="text-lg font-semibold text-[#22223b]">
+          <h3 className="text-lg font-semibold text-gray-900">
             Upcoming Revenue
           </h3>
-          <p className="text-[#a594f9] mt-1">Your confirmed bookings</p>
+          <p className="text-gray-600 mt-1">Your confirmed bookings</p>
         </div>
 
-        <div className="divide-y divide-[#a594f9]/10">
+        <div className="divide-y divide-gray-100">
           {upcomingBookings.map((booking, index) => (
             <div key={index} className="p-4 flex items-center justify-between">
-              <span className="text-[#22223b]">{booking.date}</span>
-              <span className="font-semibold text-[#a594f9]">
+              <span className="text-gray-900">{booking.date}</span>
+              <span className="font-semibold text-blue-600">
                 ${booking.amount.toLocaleString()}
               </span>
             </div>
           ))}
         </div>
 
-        <div className="p-4 bg-[#a594f9]/10 border-t border-[#a594f9]/20">
+        <div className="p-4 bg-gray-50 border-t border-gray-200">
           <div className="flex items-center justify-between">
-            <span className="font-medium text-[#22223b]">Total Expected</span>
-            <span className="font-bold text-[#6ee7b7]">
+            <span className="font-medium text-gray-900">Total Expected</span>
+            <span className="font-bold text-green-600">
               $
               {upcomingBookings
                 .reduce((sum, b) => sum + b.amount, 0)
@@ -191,16 +199,6 @@ const RevenueSection = () => {
             </span>
           </div>
         </div>
-      </div>
-
-      <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-        <h4 className="font-semibold text-[#22223b] mb-2">
-          🔥 Peak Season Alert
-        </h4>
-        <p className="text-[#22223b]">
-          December is looking hot! Consider raising your rates by 15-20% for New
-          Year's week.
-        </p>
       </div>
     </div>
   );

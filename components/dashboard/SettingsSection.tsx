@@ -71,96 +71,81 @@ const SettingsSection = () => {
         </div>
       </div>
 
-      {/* Modern SaaS Profile Section - Dashboard Consistent, Minimal, Full Width, KP Avatar */}
-      <div className="bg-white rounded-lg border-2 border-[#a594f9]/20 p-8 shadow-sm w-full mx-auto mt-4 flex flex-col items-center">
-        {/* KP Avatar (centered above, gradient, rounded-xl) */}
-        <div className="flex flex-col items-center gap-2 mb-6">
-          <div className="w-20 h-20 bg-gradient-to-br from-[#a594f9] to-purple-600 rounded-xl flex items-center justify-center text-3xl font-bold text-white select-none">
-            KP
-          </div>
-          <span className="text-xs text-[#a594f9]">Profile Photo</span>
+      {/* Profile Section */}
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg font-semibold text-[#22223b]">
+            Profile Information
+          </h3>
+          <button
+            type="button"
+            className="px-3 py-1.5 rounded-md border-2 border-[#a594f9] text-[#a594f9] bg-white text-sm font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer"
+          >
+            Edit Profile
+          </button>
         </div>
-        {/* Profile Info Form */}
-        <form className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="col-span-2">
-            <label className="block text-xs font-medium text-[#a594f9] mb-1">
-              Full Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              value={profile.fullName}
-              disabled
-              className="w-full px-4 py-2 rounded-md border border-[#a594f9]/30 bg-[#a594f9]/10 text-[#22223b] font-medium cursor-not-allowed"
-            />
+
+        <div className="flex items-start space-x-4">
+          {/* Avatar */}
+          <div className="flex-shrink-0">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#a594f9] to-purple-600 rounded-lg flex items-center justify-center text-2xl font-bold text-white select-none">
+              KP
+            </div>
           </div>
-          <div>
-            <label className="block text-xs font-medium text-[#a594f9] mb-1">
-              Email <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              value={profile.email}
-              disabled
-              className="w-full px-4 py-2 rounded-md border border-[#a594f9]/30 bg-[#a594f9]/10 text-[#22223b] font-medium cursor-not-allowed"
-            />
+
+          {/* Profile Info */}
+          <div className="flex-1 space-y-3">
+            <div>
+              <label className="block text-xs font-medium text-[#a594f9] mb-1">
+                Full Name
+              </label>
+              <p className="text-sm text-[#22223b] font-medium">
+                {profile.fullName}
+              </p>
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-[#a594f9] mb-1">
+                Email
+              </label>
+              <p className="text-sm text-[#22223b] font-medium">
+                {profile.email}
+              </p>
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-[#a594f9] mb-1">
+                Phone
+              </label>
+              <p className="text-sm text-[#22223b] font-medium">
+                {profile.phone}
+              </p>
+            </div>
           </div>
-          <div>
-            <label className="block text-xs font-medium text-[#a594f9] mb-1">
-              Phone
-            </label>
-            <input
-              type="text"
-              value={profile.phone}
-              disabled
-              className="w-full px-4 py-2 rounded-md border border-[#a594f9]/30 bg-[#a594f9]/10 text-[#22223b] font-medium cursor-not-allowed"
-            />
-          </div>
-          <div className="col-span-2 flex gap-2 justify-end mt-2">
-            <button
-              type="button"
-              className="px-4 py-2 rounded-md border-2 border-[#a594f9] text-[#a594f9] bg-white font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer"
-            >
-              Edit
-            </button>
-            <button
-              type="button"
-              className="px-4 py-2 rounded-md border-2 border-[#6ee7b7] text-[#6ee7b7] bg-white font-medium hover:bg-[#6ee7b7]/10 transition-colors cursor-pointer"
-            >
-              Save
-            </button>
-            <button
-              type="button"
-              className="px-4 py-2 rounded-md border-2 border-gray-300 text-gray-400 bg-white font-medium hover:bg-gray-100 transition-colors cursor-pointer"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
+        </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm border-2 border-[#a594f9]/20">
-        <div className="p-6 border-b border-[#a594f9]/20">
-          <h3 className="text-lg font-semibold text-[#22223b]">
+      <div className="bg-white rounded-lg border border-gray-200">
+        <div className="p-6 border-b border-gray-200">
+          <h3 className="text-lg font-semibold text-gray-900">
             Setup Progress
           </h3>
-          <p className="text-[#a594f9] mt-1">
+          <p className="text-gray-600 mt-1">
             Complete your setup to unlock all features
           </p>
         </div>
 
         <div className="p-6">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm font-medium text-[#22223b]">
+            <span className="text-sm font-medium text-gray-900">
               {completedItems} of {setupItems.length} completed
             </span>
-            <span className="text-sm text-[#a594f9]">
+            <span className="text-sm text-gray-600">
               {Math.round(progressPercentage)}%
             </span>
           </div>
 
-          <div className="w-full bg-[#a594f9]/10 rounded-full h-2 mb-6">
+          <div className="w-full bg-gray-200 rounded-full h-2 mb-6">
             <div
-              className="bg-[#a594f9] h-2 rounded-full transition-all duration-300"
+              className="bg-blue-500 h-2 rounded-full transition-all duration-300"
               style={{ width: `${progressPercentage}%` }}
             ></div>
           </div>
@@ -171,8 +156,8 @@ const SettingsSection = () => {
                 <div
                   className={`w-6 h-6 rounded-full flex items-center justify-center ${
                     item.completed
-                      ? "bg-[#6ee7b7]"
-                      : "bg-[#a594f9]/10 border-2 border-[#a594f9]/40"
+                      ? "bg-green-500"
+                      : "bg-gray-100 border-2 border-gray-300"
                   }`}
                 >
                   {item.completed && (
@@ -182,17 +167,15 @@ const SettingsSection = () => {
                 <div className="flex-1">
                   <h4
                     className={`font-medium ${
-                      item.completed ? "text-[#22223b]" : "text-[#a594f9]"
+                      item.completed ? "text-gray-900" : "text-gray-600"
                     }`}
                   >
                     {item.name}
                   </h4>
-                  <p className="text-sm text-[#22223b]/70">
-                    {item.description}
-                  </p>
+                  <p className="text-sm text-gray-600">{item.description}</p>
                 </div>
                 {!item.completed && (
-                  <button className="text-[#a594f9] text-sm font-medium border-2 border-[#a594f9] bg-[#a594f9]/10 rounded-md transition-colors cursor-pointer px-4 py-2 hover:bg-[#a594f9]/20">
+                  <button className="text-gray-600 text-sm font-medium border-2 border-gray-300 bg-gray-50 rounded-md transition-colors cursor-pointer px-4 py-2 hover:bg-gray-100">
                     Set up
                   </button>
                 )}
@@ -202,15 +185,15 @@ const SettingsSection = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm border-2 border-[#a594f9]/20">
-        <div className="p-6 border-b border-[#a594f9]/20">
-          <h3 className="text-lg font-semibold text-[#22223b]">
+      <div className="bg-white rounded-lg border border-gray-200">
+        <div className="p-6 border-b border-gray-200">
+          <h3 className="text-lg font-semibold text-gray-900">
             Email Forwarding
           </h3>
           <div className="flex items-center space-x-2 mt-1">
-            <div className="w-3 h-3 bg-[#6ee7b7] rounded-full"></div>
-            <span className="text-sm text-[#6ee7b7] font-medium">Active</span>
-            <span className="text-sm text-[#a594f9]">
+            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span className="text-sm text-green-600 font-medium">Active</span>
+            <span className="text-sm text-gray-500">
               • Last sync: 2 minutes ago
             </span>
           </div>
@@ -218,7 +201,7 @@ const SettingsSection = () => {
 
         <div className="p-6 space-y-4">
           <div>
-            <label className="block text-sm font-medium text-[#22223b] mb-2">
+            <label className="block text-sm font-medium text-gray-900 mb-2">
               Your Property Pilot Email
             </label>
             <div className="flex items-center space-x-2">
@@ -226,13 +209,13 @@ const SettingsSection = () => {
                 type="text"
                 value="kadyn.pearce@propertypilot.com"
                 readOnly
-                className="flex-1 px-3 py-2 border border-[#a594f9]/40 rounded-md bg-[#a594f9]/5 text-[#22223b]"
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-900"
               />
-              <button className="px-4 py-2 bg-[#a594f9]/20 border-2 border-[#a594f9] text-[#a594f9] rounded-md text-sm font-medium hover:bg-[#a594f9]/40 transition-colors cursor-pointer">
+              <button className="px-4 py-2 bg-gray-100 border-2 border-gray-300 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-200 transition-colors cursor-pointer">
                 Copy
               </button>
             </div>
-            <p className="text-sm text-[#a594f9] mt-2">
+            <p className="text-sm text-gray-600 mt-2">
               Forward your Airbnb booking emails to this address to enable
               automation
             </p>
@@ -242,7 +225,7 @@ const SettingsSection = () => {
             <h4 className="font-medium text-[#a594f9] mb-2">
               Setup Instructions
             </h4>
-            <ol className="text-sm text-[#22223b] space-y-1">
+            <ol className="text-sm text-gray-700 space-y-1">
               <li>1. Go to your email provider's forwarding settings</li>
               <li>
                 2. Add the Property Pilot email above as a forwarding address
@@ -255,7 +238,7 @@ const SettingsSection = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm border-2 border-[#a594f9]/20">
+      <div className="bg-white rounded-lg border border-gray-200">
         <div className="p-6 border-b border-[#a594f9]/20">
           <h3 className="text-lg font-semibold text-[#22223b]">
             Account Settings

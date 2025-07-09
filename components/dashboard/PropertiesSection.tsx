@@ -180,7 +180,7 @@ const PropertiesSection = () => {
           Property added successfully!
         </div>
       )}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+      <div className="bg-white rounded-lga border border-gray-200">
         <div className="p-6 border-b border-gray-200 flex items-center justify-between">
           <h3 className="text-lg font-semibold text-gray-800">
             Your Properties

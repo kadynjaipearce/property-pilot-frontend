@@ -37,13 +37,13 @@ const ReviewsSection = () => {
   const getSentimentColor = (sentiment: string) => {
     switch (sentiment) {
       case "positive":
-        return "text-[#6ee7b7] bg-[#6ee7b7]/20 border border-[#6ee7b7]/40";
+        return "text-[#6ee7b7] bg-[#6ee7b7]/20 border-2 border-[#6ee7b7]/40";
       case "neutral":
-        return "text-[#a594f9] bg-[#a594f9]/20 border border-[#a594f9]/40";
+        return "text-[#a594f9] bg-[#a594f9]/20 border-2 border-[#a594f9]/40";
       case "negative":
-        return "text-[#ffd6a5] bg-[#ffd6a5]/20 border border-[#ffd6a5]/40";
+        return "text-[#ffd6a5] bg-[#ffd6a5]/20 border-2 border-[#ffd6a5]/40";
       default:
-        return "text-[#22223b] bg-[#22223b]/10 border border-[#22223b]/10";
+        return "text-[#22223b] bg-[#22223b]/10 border-2  border-[#22223b]/10";
     }
   };
 
@@ -76,35 +76,42 @@ const ReviewsSection = () => {
         </div>
       </div>
 
+      <div className="bg-green-50 rounded-lg p-6 border-2 border-green-200">
+        <h4 className="font-semibold text-green-800 mb-2">Great job! 🌟</h4>
+        <p className="text-green-700">
+          Your rating is above average. Keep up the excellent hospitality!
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <h3 className="text-sm font-medium text-[#22223b]">Average Rating</h3>
+        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+          <h3 className="text-sm font-medium text-gray-600">Average Rating</h3>
           <div className="flex items-center mt-2">
-            <span className="text-2xl font-bold text-[#22223b]">4.7</span>
+            <span className="text-2xl font-bold text-gray-900">4.7</span>
             <div className="ml-2 flex">{renderStars(5)}</div>
           </div>
-          <p className="text-sm text-[#a594f9] mt-1">Based on 24 reviews</p>
+          <p className="text-sm text-gray-600 mt-1">Based on 24 reviews</p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <h3 className="text-sm font-medium text-[#22223b]">Response Rate</h3>
-          <p className="text-2xl font-bold text-[#22223b]">67%</p>
-          <p className="text-sm text-[#a594f9] mt-1">2 pending replies</p>
+        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+          <h3 className="text-sm font-medium text-gray-600">Response Rate</h3>
+          <p className="text-2xl font-bold text-gray-900">67%</p>
+          <p className="text-sm text-gray-600 mt-1">2 pending replies</p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <h3 className="text-sm font-medium text-[#22223b]">This Month</h3>
-          <p className="text-2xl font-bold text-[#22223b]">8</p>
-          <p className="text-sm text-[#a594f9] mt-1">New reviews</p>
+        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+          <h3 className="text-sm font-medium text-gray-600">This Month</h3>
+          <p className="text-2xl font-bold text-gray-900">8</p>
+          <p className="text-sm text-gray-600 mt-1">New reviews</p>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm border-2 border-[#a594f9]/20">
-        <div className="p-6 border-b border-[#a594f9]/20">
-          <h3 className="text-lg font-semibold text-[#22223b]">
+      <div className="bg-white rounded-lg border border-gray-200">
+        <div className="p-6 border-b border-gray-200">
+          <h3 className="text-lg font-semibold text-gray-900">
             Recent Reviews
           </h3>
-          <p className="text-[#a594f9] mt-1">
+          <p className="text-gray-600 mt-1">
             Stay connected with your guests' feedback
           </p>
         </div>
@@ -139,14 +146,18 @@ const ReviewsSection = () => {
                 <div className="flex items-center gap-4 min-w-fit">
                   <div className="flex items-center space-x-2">
                     <span
-                      className={`px-2 py-1 rounded-full text-xs font-medium ${getSentimentColor(
-                        review.sentiment
-                      )}`}
+                      className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        review.sentiment === "positive"
+                          ? "text-green-700 bg-green-100 border border-green-200"
+                          : review.sentiment === "neutral"
+                          ? "text-blue-700 bg-blue-100 border border-blue-200"
+                          : "text-orange-700 bg-orange-100 border border-orange-200"
+                      }`}
                     >
                       {review.sentiment}
                     </span>
                     {review.replied && (
-                      <span className="px-2 py-1 rounded-full text-xs font-medium text-[#6ee7b7] bg-[#6ee7b7]/20 border border-[#6ee7b7]/40">
+                      <span className="px-2 py-1 rounded-full text-xs font-medium text-green-700 bg-green-100 border border-green-200">
                         Replied
                       </span>
                     )}
@@ -158,10 +169,10 @@ const ReviewsSection = () => {
               </p>
               {!review.replied && (
                 <div className="flex justify-end mt-4 space-x-2">
-                  <button className="px-4 py-2 bg-[#a594f9]/20 border-2 border-[#a594f9] text-[#a594f9] rounded-md text-sm font-medium hover:bg-[#a594f9]/40 transition-colors cursor-pointer flex items-center gap-2">
+                  <button className="px-4 py-2 bg-blue-50 border-2 border-blue-500 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-100 transition-colors cursor-pointer flex items-center gap-2">
                     <RiReplyLine size={18} /> Reply
                   </button>
-                  <button className="px-4 py-2 border-2 border-[#a594f9] text-[#a594f9] rounded-md text-sm font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer flex items-center gap-2">
+                  <button className="px-4 py-2 border-2 border-gray-300 text-gray-600 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors cursor-pointer flex items-center gap-2">
                     <RiRobot2Line size={18} /> Auto-Reply
                   </button>
                 </div>
@@ -169,13 +180,6 @@ const ReviewsSection = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-        <h4 className="font-semibold text-[#22223b] mb-2">Great job! 🌟</h4>
-        <p className="text-[#22223b]">
-          Your rating is above average. Keep up the excellent hospitality!
-        </p>
       </div>
     </div>
   );

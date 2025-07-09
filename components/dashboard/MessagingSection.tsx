@@ -57,7 +57,35 @@ const MessagingSection = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+      <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <h4 className="font-semibold text-[#a594f9] mb-2">Pro Tip 💡</h4>
+        <p className="text-[#22223b]">
+          Personalize your messages by including guest names and property
+          details. Guests love the personal touch!
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+          <h3 className="text-sm font-medium text-gray-600">Response Time</h3>
+          <p className="text-2xl font-bold text-gray-900">2.3h</p>
+          <p className="text-sm text-gray-600 mt-1">Average response time</p>
+        </div>
+
+        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+          <h3 className="text-sm font-medium text-gray-600">Auto-Replies</h3>
+          <p className="text-2xl font-bold text-gray-900">3</p>
+          <p className="text-sm text-gray-600 mt-1">Active automations</p>
+        </div>
+
+        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+          <h3 className="text-sm font-medium text-gray-600">This Week</h3>
+          <p className="text-2xl font-bold text-gray-900">12</p>
+          <p className="text-sm text-gray-600 mt-1">Messages sent</p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg border border-gray-200">
         <div className="p-6 border-b border-gray-200">
           <h3 className="text-lg font-semibold text-gray-800">
             Message Automations
@@ -115,12 +143,71 @@ const MessagingSection = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-[#a594f9]/10 to-purple-100 rounded-lg p-6 border border-[#a594f9]/20">
-        <h4 className="font-semibold text-gray-800 mb-2">Pro Tip 💡</h4>
-        <p className="text-gray-700">
-          Personalize your messages by including guest names and property
-          details. Guests love the personal touch!
-        </p>
+      <div className="bg-white rounded-lg border border-gray-200">
+        <div className="p-6 border-b border-gray-200">
+          <h3 className="text-lg font-semibold text-gray-900">
+            Quick Message Templates
+          </h3>
+          <p className="text-gray-600 mt-1">
+            Pre-written messages for common scenarios
+          </p>
+        </div>
+
+        <div className="p-6 space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors cursor-pointer">
+              <h4 className="font-medium text-gray-900 mb-2">
+                Welcome Message
+              </h4>
+              <p className="text-sm text-gray-600 mb-3">
+                "Hi {"{guest_name}"}! Welcome to {"{property_name}"}. We're
+                excited to host you..."
+              </p>
+              <button className="text-blue-600 text-sm font-medium hover:text-blue-700">
+                Use Template →
+              </button>
+            </div>
+
+            <div className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors cursor-pointer">
+              <h4 className="font-medium text-gray-900 mb-2">
+                Check-in Instructions
+              </h4>
+              <p className="text-sm text-gray-600 mb-3">
+                "Your check-in details: Key code is {"{code}"}. Parking
+                available at..."
+              </p>
+              <button className="text-blue-600 text-sm font-medium hover:text-blue-700">
+                Use Template →
+              </button>
+            </div>
+
+            <div className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors cursor-pointer">
+              <h4 className="font-medium text-gray-900 mb-2">
+                House Rules Reminder
+              </h4>
+              <p className="text-sm text-gray-600 mb-3">
+                "Just a friendly reminder of our house rules: No smoking, quiet
+                hours..."
+              </p>
+              <button className="text-blue-600 text-sm font-medium hover:text-blue-700">
+                Use Template →
+              </button>
+            </div>
+
+            <div className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors cursor-pointer">
+              <h4 className="font-medium text-gray-900 mb-2">
+                Thank You & Review
+              </h4>
+              <p className="text-sm text-gray-600 mb-3">
+                "Thank you for staying with us! We hope you enjoyed your
+                time..."
+              </p>
+              <button className="text-blue-600 text-sm font-medium hover:text-blue-700">
+                Use Template →
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
