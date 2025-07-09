@@ -195,6 +195,9 @@ const OverviewSection = () => {
               <p className="text-2xl font-bold text-gray-900">
                 {stats.unreadMessages}
               </p>
+              <p className="text-sm text-orange-600 font-medium">
+                +2 from yesterday
+              </p>
             </div>
             <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
               <RiMessage2Line size={24} className="text-[#a594f9]" />
