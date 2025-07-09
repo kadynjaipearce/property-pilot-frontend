@@ -46,7 +46,7 @@ const Index = () => {
         <Header />
 
         <main className="flex-1 p-6">
-          <div className="mx-auto max-w-full">{renderSection()}</div>
+          <div className="mx-auto max-w-full px-10 mt-5">{renderSection()}</div>
         </main>
       </div>
     </div>
