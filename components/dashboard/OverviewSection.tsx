@@ -123,7 +123,7 @@ const OverviewSection = () => {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
         <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">
                 Properties
@@ -139,7 +139,7 @@ const OverviewSection = () => {
         </div>
 
         <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">
                 Active Bookings
@@ -155,7 +155,7 @@ const OverviewSection = () => {
         </div>
 
         <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">Revenue</p>
               <p className="text-2xl font-bold text-gray-900">
@@ -172,7 +172,7 @@ const OverviewSection = () => {
         </div>
 
         <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">Rating</p>
               <p className="text-2xl font-bold text-gray-900">
@@ -189,7 +189,7 @@ const OverviewSection = () => {
         </div>
 
         <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">Messages</p>
               <p className="text-2xl font-bold text-gray-900">
@@ -203,7 +203,7 @@ const OverviewSection = () => {
         </div>
 
         <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">
                 Occupancy
