@@ -161,6 +161,9 @@ const OverviewSection = () => {
               <p className="text-2xl font-bold text-gray-900">
                 ${stats.totalRevenue.toLocaleString()}
               </p>
+              <p className="text-sm text-green-600 font-medium">
+                +12.5% from last month
+              </p>
             </div>
             <div className="p-2 bg-yellow-100 rounded-lg ml-4">
               <RiMoneyDollarCircleLine size={24} className="text-yellow-600" />
@@ -174,6 +177,9 @@ const OverviewSection = () => {
               <p className="text-sm font-medium text-gray-600 mb-1">Rating</p>
               <p className="text-2xl font-bold text-gray-900">
                 {stats.averageRating}
+              </p>
+              <p className="text-sm text-green-600 font-medium">
+                +0.2 from last month
               </p>
             </div>
             <div className="p-2 bg-purple-100 rounded-lg ml-4">
@@ -204,6 +210,9 @@ const OverviewSection = () => {
               </p>
               <p className="text-2xl font-bold text-gray-900">
                 {stats.occupancyRate}%
+              </p>
+              <p className="text-sm text-red-600 font-medium">
+                -3.2% from last month
               </p>
             </div>
             <div className="p-2 bg-red-100 rounded-lg ml-4">
