@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import Image from "next/image";
+import DashboardPreview from "@/components/ui/dashboard-preview";
 
 export default function HeroSection() {
   return (
@@ -14,7 +14,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <BackgroundBeams className="w-full h-full" />
       </div>
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-12">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 flex flex-col-reverse md:flex-row items-center md:justify-between justify-center gap-12 md:gap-12">
         {/* Left: Text & CTA */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -55,22 +55,21 @@ export default function HeroSection() {
             </div>
           </div>
         </motion.div>
-        {/* Right: Placeholder Image */}
+        {/* Right: Larger Image, No Border */}
         <div className="w-full md:w-1/2 flex items-center justify-center mb-8 md:mb-0 relative">
           {/* Gradient blur underlay (hide on mobile) */}
-          <div className="hidden md:block absolute bottom-4 left-1/2 -translate-x-1/2 w-[80%] h-16 md:h-24 bg-gradient-to-r from-[#ffd6a5]/60 via-[#b8c0ff]/40 to-[#ffd6a5]/60 blur-2xl rounded-full z-0" />
-          <div className="w-full max-w-2xl flex items-center justify-center relative z-10">
-            <div className="relative w-full overflow-hidden">
-              <Image
-                src="/dashboard.png"
-                alt="Dashboard showing Airbnb booking automation"
-                width={760}
-                height={380}
-                className="object-cover rounded-2xl md:w-[760px] md:h-[380px] w-[120vw] h-[44vw] max-w-none mr-0 md:mr-0 -mr-12 md:ml-0"
-                priority
-              />
+          <div className="hidden md:block absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] h-20 md:h-32 bg-gradient-to-r from-[#ffd6a5]/60 via-[#b8c0ff]/40 to-[#ffd6a5]/60 blur-2xl z-0" />
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full max-w-3xl flex items-center justify-center relative z-10"
+          >
+            <div className="relative w-full">
+              <DashboardPreview />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
