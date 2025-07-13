@@ -74,7 +74,7 @@ const SettingsSection = () => {
       {/* Profile Section */}
       <div className="bg-white rounded-lg border border-gray-200 p-6">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-[#22223b]">
+          <h3 className="text-lg font-semibold text-secondary">
             Profile Information
           </h3>
           <button
@@ -99,7 +99,7 @@ const SettingsSection = () => {
               <label className="block text-xs font-medium text-[#a594f9] mb-1">
                 Full Name
               </label>
-              <p className="text-sm text-[#22223b] font-medium">
+              <p className="text-sm text-secondary font-medium">
                 {profile.fullName}
               </p>
             </div>
@@ -107,7 +107,7 @@ const SettingsSection = () => {
               <label className="block text-xs font-medium text-[#a594f9] mb-1">
                 Email
               </label>
-              <p className="text-sm text-[#22223b] font-medium">
+              <p className="text-sm text-secondary font-medium">
                 {profile.email}
               </p>
             </div>
@@ -115,7 +115,7 @@ const SettingsSection = () => {
               <label className="block text-xs font-medium text-[#a594f9] mb-1">
                 Phone
               </label>
-              <p className="text-sm text-[#22223b] font-medium">
+              <p className="text-sm text-secondary font-medium">
                 {profile.phone}
               </p>
             </div>
@@ -240,7 +240,7 @@ const SettingsSection = () => {
 
       <div className="bg-white rounded-lg border border-gray-200">
         <div className="p-6 border-b border-[#a594f9]/20">
-          <h3 className="text-lg font-semibold text-[#22223b]">
+          <h3 className="text-lg font-semibold text-secondary">
             Account Settings
           </h3>
         </div>
@@ -248,7 +248,7 @@ const SettingsSection = () => {
         <div className="p-6 space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h4 className="font-medium text-[#22223b]">
+              <h4 className="font-medium text-secondary">
                 Email Notifications
               </h4>
               <p className="text-sm text-[#a594f9]">

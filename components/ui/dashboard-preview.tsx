@@ -8,7 +8,6 @@ import {
   RiHome6Line,
   RiDashboardLine,
 } from "@remixicon/react";
-import { useState } from "react";
 
 const DashboardPreview = () => {
   const menuItems = [
@@ -31,12 +30,12 @@ const DashboardPreview = () => {
     <div className="w-full max-w-7xl mx-auto p-2 sm:p-4 lg:p-6">
       {/* Container with 16:9 aspect ratio */}
       <div className="w-full" style={{ aspectRatio: "16/9" }}>
-        <div className="h-full bg-gray-50 rounded-lg overflow-hidden shadow-lg border border-gray-200 flex text-[10px] sm:text-xs md:text-sm">
+        <div className="h-full bg-gray-50 rounded-[10px] overflow-hidden shadow-lg border border-gray-200 flex text-[10px] sm:text-xs md:text-sm">
           {/* Sidebar - Collapsed */}
           <div className="w-12 sm:w-14 md:w-16 bg-white border-r border-gray-200 flex flex-col">
             {/* Sidebar Header */}
             <div className="h-[12%] border-b border-gray-200 flex items-center justify-center px-1 sm:px-2">
-              <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-[#a594f9] rounded-md"></div>
+              <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-primary rounded-md"></div>
             </div>
 
             {/* Sidebar Navigation */}
@@ -51,7 +50,7 @@ const DashboardPreview = () => {
                       <div
                         className={`w-full flex items-center justify-center rounded-sm transition-colors px-1 sm:px-2 py-1 sm:py-1.5 cursor-pointer hover:bg-gray-100 ${
                           isActive
-                            ? "bg-[#a594f9]/20 text-[#a594f9]"
+                            ? "bg-primary/20 text-primary"
                             : "text-gray-600"
                         }`}
                       >
@@ -89,10 +88,10 @@ const DashboardPreview = () => {
                   key={i}
                   className="flex-1 bg-white rounded-md sm:rounded-lg p-1 sm:p-2 md:p-3 flex items-center gap-1 sm:gap-2 border border-gray-200 shadow-sm min-w-0"
                 >
-                  <div className="p-1 sm:p-1.5 md:p-2 bg-[#a594f9]/10 rounded-md flex items-center justify-center flex-shrink-0">
+                  <div className="p-1 sm:p-1.5 md:p-2 bg-primary/10 rounded-md flex items-center justify-center flex-shrink-0">
                     <Icon
                       size={8}
-                      className="sm:size-3 md:size-4 text-[#a594f9]"
+                      className="sm:size-3 md:size-4 text-primary"
                     />
                   </div>
                   <div className="flex flex-col flex-1 gap-0.5 sm:gap-1 min-w-0">
@@ -112,10 +111,10 @@ const DashboardPreview = () => {
                     key={i}
                     className="flex items-center gap-2 sm:gap-3 bg-white rounded-md sm:rounded-lg p-1 sm:p-2 md:p-3 border border-gray-200 shadow-sm"
                   >
-                    <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-md bg-[#a594f9]/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-md bg-primary/20 flex items-center justify-center flex-shrink-0">
                       <RiHome6Line
                         size={6}
-                        className="sm:size-2 md:size-3 text-[#a594f9]"
+                        className="sm:size-2 md:size-3 text-primary"
                       />
                     </div>
                     <div className="flex-1 flex flex-col gap-0.5 sm:gap-1 min-w-0">
@@ -123,7 +122,7 @@ const DashboardPreview = () => {
                       <div className="w-8 sm:w-10 md:w-12 h-1 sm:h-2 rounded bg-gray-300" />
                     </div>
                     <div className="w-6 sm:w-8 md:w-10 h-2 sm:h-3 rounded bg-gray-200 flex-shrink-0" />
-                    <div className="w-5 sm:w-6 md:w-8 h-2 sm:h-3 rounded bg-[#a594f9]/20 flex-shrink-0" />
+                    <div className="w-5 sm:w-6 md:w-8 h-2 sm:h-3 rounded bg-primary/20 flex-shrink-0" />
                   </div>
                 ))}
               </div>

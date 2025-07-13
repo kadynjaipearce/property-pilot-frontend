@@ -32,7 +32,7 @@ export default function FinalCTASection() {
             buttonText="Reserve Spot"
             showCount={false}
           />
-          <div className="flex items-center justify-center mt-6 text-sm text-[var(--color-accent-lavender)]">
+          <div className="flex items-center justify-center mt-6 text-sm text-primary">
             <RiUserLine size={16} className="mr-2" />
             <span>Join Australian Airbnb hosts already on the waitlist</span>
           </div>

@@ -52,7 +52,7 @@
   --color-accent-lavender: #a594f9;
   --color-accent-mint: #6ee7b7;
   --color-accent-peach: #ffd6a5;
-  --color-text-main: #22223b;
+  --color-text-main: var(--secondary);
   --color-text-muted: #6d6a7c;
   --color-card: #ffffff;
   --color-border: #ececf1;
@@ -64,7 +64,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.7228 0.1444 290.03);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -97,9 +97,9 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --primary: #a594f9;
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.2649 0.0463 282.78);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
@@ -116,7 +116,7 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: #a594f9;
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -135,7 +135,7 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
     background: var(--color-bg);
-    color: var(--color-text-main);
+    color: var(--color-secondary);
     font-size: 18px;
     line-height: 1.7;
     letter-spacing: -0.01em;
@@ -198,7 +198,7 @@ button:hover,
 }
 
 .button-accent {
-  background: var(--color-accent-lavender);
+  background: var(--primary);
   color: var(--color-text-main);
 }
 
@@ -258,7 +258,7 @@ input:hover,
 
 input:focus,
 .input:focus {
-  border-color: var(--color-accent-lavender);
+  border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(165, 148, 249, 0.1);
   transform: scale(1.01);
 }

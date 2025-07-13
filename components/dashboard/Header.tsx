@@ -55,24 +55,24 @@ const Header = () => {
         <div className="flex items-center space-x-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="relative flex items-center gap-2 p-2 hover:bg-[#a594f9]/10 rounded-md transition-colors cursor-pointer focus:outline-none">
+              <button className="relative flex items-center gap-2 p-2 hover:bg-primary/10 rounded-md transition-colors cursor-pointer focus:outline-none">
                 <RiNotification3Line
                   size={22}
-                  className="text-gray-600 hover:text-[#a594f9] transition-colors"
+                  className="text-gray-600 hover:text-primary transition-colors"
                 />
-                <span className="text-xs font-medium text-gray-600 hover:text-[#a594f9] transition-colors">
+                <span className="text-xs font-medium text-gray-600 hover:text-primary transition-colors">
                   {unreadCount > 0
                     ? `${unreadCount} New Notifications`
                     : "No New Notifications"}
                 </span>
                 {unreadCount > 0 && (
-                  <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#a594f9] rounded-full border-2 border-white"></span>
+                  <span className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full border-2 border-white"></span>
                 )}
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="w-80 bg-white border-2 border-[#a594f9]"
+              className="w-80 bg-white border-2 border-primary"
             >
               <div className="p-3 border-b border-gray-100">
                 <h3 className="font-semibold text-gray-800">Notifications</h3>
@@ -82,12 +82,12 @@ const Header = () => {
                 {notifications.map((notification) => (
                   <DropdownMenuItem
                     key={notification.id}
-                    className="p-3 cursor-pointer hover:bg-[#a594f9]/10 hover:text-[#a594f9] transition-colors"
+                    className="p-3 cursor-pointer hover:bg-primary/10 hover:text-primary transition-colors"
                   >
                     <div className="flex items-start space-x-3 w-full">
                       <div
                         className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                          notification.unread ? "bg-[#a594f9]" : "bg-gray-300"
+                          notification.unread ? "bg-primary" : "bg-gray-300"
                         }`}
                       ></div>
                       <div className="flex-1 min-w-0">
@@ -112,14 +112,14 @@ const Header = () => {
                 ))}
               </div>
               <div className="p-3 border-t border-gray-100">
-                <button className="w-full text-sm text-[#a594f9] hover:bg-[#a594f9]/10 hover:text-[#a594f9] font-medium rounded-md transition-colors">
+                <button className="w-full text-sm text-primary hover:bg-primary/10 hover:text-primary font-medium rounded-md transition-colors">
                   View all notifications
                 </button>
               </div>
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <div className="w-10 h-10 bg-gradient-to-br from-[#a594f9] to-purple-600 rounded-xl flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-xl flex items-center justify-center">
             <span className="text-white font-semibold text-sm">KP</span>
           </div>
         </div>

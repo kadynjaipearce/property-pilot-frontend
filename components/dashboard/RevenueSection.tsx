@@ -47,11 +47,11 @@ const RevenueSection = () => {
         </div>
       </div>
 
-      <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-        <h4 className="font-semibold text-[#a594f9] mb-2">
+      <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
+        <h4 className="font-semibold text-primary mb-2">
           🔥 Peak Season Alert
         </h4>
-        <p className="text-[#22223b]">
+        <p className="text-secondary">
           December is looking hot! Consider raising your rates by 15-20% for New
           Year's week.
         </p>
@@ -75,7 +75,7 @@ const RevenueSection = () => {
           </p>
         </div>
 
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <h3 className="text-sm font-medium text-gray-600">
             Avg. Nightly Rate
           </h3>
@@ -83,15 +83,15 @@ const RevenueSection = () => {
           <p className="text-sm text-gray-600 mt-1">+5% vs last month</p>
         </div>
 
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <h3 className="text-sm font-medium text-gray-600">Occupancy Rate</h3>
           <p className="text-2xl font-bold text-gray-900">78%</p>
           <p className="text-sm text-gray-600 mt-1">Dec '24 - Jul '25</p>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg border border-[#a594f9]/20">
-        <div className="p-6 border-b border-[#a594f9]/20">
+      <div className="bg-white rounded-lg border border-primary/20">
+        <div className="p-6 border-b border-primary/20">
           <h3 className="text-lg font-semibold text-gray-900">
             Monthly Earnings vs Expenses
           </h3>
@@ -169,8 +169,8 @@ const RevenueSection = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg border border-[#a594f9]/20">
-        <div className="p-6 border-b border-[#a594f9]/20">
+      <div className="bg-white rounded-lg border border-primary/20">
+        <div className="p-6 border-b border-primary/20">
           <h3 className="text-lg font-semibold text-gray-900">
             Upcoming Revenue
           </h3>

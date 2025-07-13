@@ -85,8 +85,8 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
                     isCollapsed ? "px-2 py-2 justify-center" : "px-3 py-2"
                   } ${
                     isActive
-                      ? "bg-[#a594f9]/20 border-2 border-[#a594f9] text-[#a594f9]"
-                      : "text-gray-600 hover:bg-[#a594f9]/10 border-2 border-transparent"
+                      ? "bg-primary/20 border-2 border-primary text-primary"
+                      : "text-gray-600 hover:bg-primary/10 border-2 border-transparent"
                   }`}
                   style={{ minHeight: 40 }}
                 >
@@ -105,8 +105,8 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
               isCollapsed ? "px-2 py-2 justify-center" : "px-3 py-2"
             } ${
               activeSection === "settings"
-                ? "bg-[#a594f9]/20 border-2 border-[#a594f9] text-[#a594f9]"
-                : "text-gray-600 hover:bg-[#a594f9]/10 border-2 border-transparent"
+                ? "bg-primary/20 border-2 border-primary text-primary"
+                : "text-gray-600 hover:bg-primary/10 border-2 border-transparent"
             }`}
             style={{ minHeight: 40 }}
           >

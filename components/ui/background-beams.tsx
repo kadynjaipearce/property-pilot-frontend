@@ -60,7 +60,7 @@ export const BackgroundBeams = React.memo(
     return (
       <div
         className={cn(
-          "absolute inset-0 flex h-full w-full items-center justify-center [mask-repeat:no-repeat] [mask-size:40px] bg-gradient-to-br from-[var(--color-accent-lavender)]/20 via-[var(--color-accent-mint)]/15 to-[var(--color-accent-peach)]/20",
+          "absolute inset-0 flex h-full w-full items-center justify-center [mask-repeat:no-repeat] [mask-size:40px] bg-gradient-to-br from-primary/20 via-[var(--color-accent-mint)]/15 to-[var(--color-accent-peach)]/20",
           className
         )}
       >
@@ -112,23 +112,17 @@ export const BackgroundBeams = React.memo(
                   delay: Math.random() * 10,
                 }}
               >
-                <stop
-                  stopColor="var(--color-accent-lavender)"
-                  stopOpacity="0"
-                ></stop>
-                <stop stopColor="var(--color-accent-lavender)"></stop>
+                <stop stopColor="var(--primary)" stopOpacity="0"></stop>
+                <stop stopColor="var(--primary)"></stop>
                 <stop
                   offset="32.5%"
                   stopColor="var(--color-accent-mint)"
                 ></stop>
                 <stop offset="65%" stopColor="var(--color-accent-peach)"></stop>
-                <stop
-                  offset="85%"
-                  stopColor="var(--color-accent-lavender)"
-                ></stop>
+                <stop offset="85%" stopColor="var(--primary)"></stop>
                 <stop
                   offset="100%"
-                  stopColor="var(--color-accent-lavender)"
+                  stopColor="var(--primary)"
                   stopOpacity="0"
                 ></stop>
               </motion.linearGradient>
@@ -142,10 +136,7 @@ export const BackgroundBeams = React.memo(
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(352 34) rotate(90) scale(555 1560.62)"
             >
-              <stop
-                offset="0.0666667"
-                stopColor="var(--color-accent-lavender)"
-              ></stop>
+              <stop offset="0.0666667" stopColor="var(--primary)"></stop>
               <stop
                 offset="0.243243"
                 stopColor="var(--color-accent-mint)"

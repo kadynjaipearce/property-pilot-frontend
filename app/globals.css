@@ -52,7 +52,7 @@
   --color-accent-lavender: #a594f9;
   --color-accent-mint: #6ee7b7;
   --color-accent-peach: #ffd6a5;
-  --color-text-main: #22223b;
+  --color-text-main: var(--secondary);
   --color-text-muted: #6d6a7c;
   --color-card: #ffffff;
   --color-border: #ececf1;
@@ -64,8 +64,8 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.7228 0.1444 290.03);
+  --primary-foreground: oklch(0.7228 0.1444 290.03);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -97,7 +97,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: oklch(0.7228 0.1444 290.03);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -116,7 +116,7 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.7228 0.1444 290.03);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -135,7 +135,7 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
     background: var(--color-bg);
-    color: var(--color-text-main);
+    color: var(--secondary);
     font-size: 18px;
     line-height: 1.7;
     letter-spacing: -0.01em;
@@ -150,7 +150,7 @@ h5,
 h6 {
   font-family: var(--font-sans);
   font-weight: 700;
-  color: var(--color-text-main);
+  color: var(--secondary);
   letter-spacing: -0.02em;
 }
 
@@ -182,7 +182,7 @@ button,
   font-weight: 600;
   font-size: 1rem;
   padding: 0.75rem 2rem;
-  background: var(--color-text-main);
+  background: var(--secondary);
   color: #fff;
   border: none;
   box-shadow: none;
@@ -198,8 +198,8 @@ button:hover,
 }
 
 .button-accent {
-  background: var(--color-accent-lavender);
-  color: var(--color-text-main);
+  background: var(--primary);
+  color: var(--secondary);
 }
 
 .button-accent:hover {
@@ -209,7 +209,7 @@ button:hover,
 
 .button-mint {
   background: var(--color-accent-mint);
-  color: var(--color-text-main);
+  color: var(--secondary);
 }
 
 .button-mint:hover {
@@ -219,7 +219,7 @@ button:hover,
 
 .button-peach {
   background: var(--color-accent-peach);
-  color: var(--color-text-main);
+  color: var(--secondary);
 }
 
 .button-peach:hover {
@@ -229,7 +229,7 @@ button:hover,
 
 .button-outline {
   background: #fff;
-  color: var(--color-text-main);
+  color: var(--secondary);
   border: 1.5px solid var(--color-border);
 }
 
@@ -245,7 +245,7 @@ input,
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   background: #fff;
-  color: var(--color-text-main);
+  color: var(--secondary);
   outline: none;
   transition: all 0.3s ease;
 }
@@ -258,7 +258,7 @@ input:hover,
 
 input:focus,
 .input:focus {
-  border-color: var(--color-accent-lavender);
+  border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(165, 148, 249, 0.1);
   transform: scale(1.01);
 }

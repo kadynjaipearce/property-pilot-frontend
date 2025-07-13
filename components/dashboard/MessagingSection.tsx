@@ -57,31 +57,31 @@ const MessagingSection = () => {
         </div>
       </div>
 
-      <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-        <h4 className="font-semibold text-[#a594f9] mb-2">Pro Tip 💡</h4>
-        <p className="text-[#22223b]">
-          Personalize your messages by including guest names and property
-          details. Guests love the personal touch!
+      <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
+        <h4 className="font-semibold text-primary mb-2">💬 Message Center</h4>
+        <p className="text-secondary">
+          Stay connected with your guests and manage all communications in one
+          place.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <h3 className="text-sm font-medium text-gray-600">Response Time</h3>
-          <p className="text-2xl font-bold text-gray-900">2.3h</p>
-          <p className="text-sm text-gray-600 mt-1">Average response time</p>
-        </div>
-
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <h3 className="text-sm font-medium text-gray-600">Auto-Replies</h3>
-          <p className="text-2xl font-bold text-gray-900">3</p>
-          <p className="text-sm text-gray-600 mt-1">Active automations</p>
-        </div>
-
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <h3 className="text-sm font-medium text-gray-600">This Week</h3>
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
+          <h3 className="text-sm font-medium text-gray-600">Unread Messages</h3>
           <p className="text-2xl font-bold text-gray-900">12</p>
-          <p className="text-sm text-gray-600 mt-1">Messages sent</p>
+          <p className="text-sm text-gray-600 mt-1">+3 from yesterday</p>
+        </div>
+
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
+          <h3 className="text-sm font-medium text-gray-600">Response Rate</h3>
+          <p className="text-2xl font-bold text-gray-900">98%</p>
+          <p className="text-sm text-gray-600 mt-1">Avg. 2.3 hours</p>
+        </div>
+
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
+          <h3 className="text-sm font-medium text-gray-600">Active Chats</h3>
+          <p className="text-2xl font-bold text-gray-900">8</p>
+          <p className="text-sm text-gray-600 mt-1">3 urgent</p>
         </div>
       </div>
 
@@ -119,7 +119,7 @@ const MessagingSection = () => {
 
                 <div className="flex items-center space-x-4">
                   {automation.scheduled > 0 && (
-                    <span className="text-sm text-[#a594f9] bg-[#a594f9]/10 px-2 py-1 rounded">
+                    <span className="text-sm text-primary bg-primary/10 px-2 py-1 rounded">
                       {automation.scheduled} scheduled
                     </span>
                   )}
@@ -127,7 +127,9 @@ const MessagingSection = () => {
                   <button
                     onClick={() => handleToggle(automation.id)}
                     className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer ${
-                      automation.enabled ? "bg-[#a594f9]" : "bg-gray-200"
+                      automation.enabled
+                        ? "bg-[var(--color-accent-lavender)]"
+                        : "bg-gray-200"
                     }`}
                   >
                     <span

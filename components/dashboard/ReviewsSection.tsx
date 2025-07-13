@@ -39,11 +39,11 @@ const ReviewsSection = () => {
       case "positive":
         return "text-[#6ee7b7] bg-[#6ee7b7]/20 border-2 border-[#6ee7b7]/40";
       case "neutral":
-        return "text-[#a594f9] bg-[#a594f9]/20 border-2 border-[#a594f9]/40";
+        return "text-secondary bg-secondary/10 border-2 border-secondary/10";
       case "negative":
         return "text-[#ffd6a5] bg-[#ffd6a5]/20 border-2 border-[#ffd6a5]/40";
       default:
-        return "text-[#22223b] bg-[#22223b]/10 border-2  border-[#22223b]/10";
+        return "text-secondary bg-secondary/10 border-2  border-secondary/10";
     }
   };
 
@@ -76,33 +76,25 @@ const ReviewsSection = () => {
         </div>
       </div>
 
-      <div className="bg-green-50 rounded-lg p-6 border-2 border-green-200">
-        <h4 className="font-semibold text-green-800 mb-2">Great job! 🌟</h4>
-        <p className="text-green-700">
-          Your rating is above average. Keep up the excellent hospitality!
+      <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
+        <h4 className="font-semibold text-primary mb-2">⭐ Review Insights</h4>
+        <p className="text-secondary">
+          Monitor your guest feedback and maintain high ratings across all
+          platforms.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <h3 className="text-sm font-medium text-gray-600">Average Rating</h3>
-          <div className="flex items-center mt-2">
-            <span className="text-2xl font-bold text-gray-900">4.7</span>
-            <div className="ml-2 flex">{renderStars(5)}</div>
-          </div>
-          <p className="text-sm text-gray-600 mt-1">Based on 24 reviews</p>
+          <p className="text-2xl font-bold text-gray-900">4.8</p>
+          <p className="text-sm text-gray-600 mt-1">+0.2 from last month</p>
         </div>
 
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <h3 className="text-sm font-medium text-gray-600">Response Rate</h3>
-          <p className="text-2xl font-bold text-gray-900">67%</p>
-          <p className="text-sm text-gray-600 mt-1">2 pending replies</p>
-        </div>
-
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-          <h3 className="text-sm font-medium text-gray-600">This Month</h3>
-          <p className="text-2xl font-bold text-gray-900">8</p>
-          <p className="text-sm text-gray-600 mt-1">New reviews</p>
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
+          <h3 className="text-sm font-medium text-gray-600">Total Reviews</h3>
+          <p className="text-2xl font-bold text-gray-900">247</p>
+          <p className="text-sm text-gray-600 mt-1">+12 this month</p>
         </div>
       </div>
 
@@ -164,7 +156,7 @@ const ReviewsSection = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-[#22223b] text-left w-full max-w-md mb-0">
+              <p className="text-secondary text-left w-full max-w-md mb-0">
                 {review.comment}
               </p>
               {!review.replied && (

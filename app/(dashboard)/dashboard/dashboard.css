@@ -4,6 +4,18 @@
 /* Dashboard-specific styles */
 /* This file is separate from globals.css for dashboard-specific styling */
 
+/* CSS Variables for dashboard colors */
+:root {
+  --primary: #a594f9;
+  --primary-foreground: #ffffff;
+  --primary-hover: #8b7cf6;
+  --primary-light: #c4b5fd;
+  --primary-lighter: #ddd6fe;
+  --primary-lightest: #f3f4f6;
+  --secondary: #22223b;
+  --secondary-foreground: #ffffff;
+}
+
 /* Basic dashboard styles */
 body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;

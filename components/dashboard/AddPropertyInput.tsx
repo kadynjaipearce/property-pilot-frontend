@@ -77,7 +77,7 @@ const AddPropertyInput = ({ onAdd }: AddPropertyInputProps) => {
         <div className="flex-1 w-full">
           <label
             htmlFor="airbnb-url"
-            className="block text-base font-semibold text-[#22223b] mb-2"
+            className="block text-base font-semibold text-secondary mb-2"
           >
             Airbnb Property URL
           </label>
@@ -87,7 +87,7 @@ const AddPropertyInput = ({ onAdd }: AddPropertyInputProps) => {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="Paste Airbnb property URL (e.g. https://www.airbnb.com.au/rooms/1304134093228708914)"
-            className="w-full px-4 py-3 border-2 border-[#a594f9] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a594f9]/40 text-[#22223b] bg-white text-base shadow-sm"
+            className="w-full px-4 py-3 border-2 border-[#a594f9] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/40 text-secondary bg-white text-base shadow-sm"
             required
             disabled={loading}
             autoFocus
@@ -128,13 +128,13 @@ const AddPropertyInput = ({ onAdd }: AddPropertyInputProps) => {
             </div>
           )}
           <div className="flex-1 w-full">
-            <div className="font-bold text-[#22223b] text-xl mb-1">
+            <div className="font-bold text-secondary text-xl mb-1">
               {property.name}
             </div>
             <div className="text-sm text-[#a594f9] mb-1">
               ID: {property.property_id}
             </div>
-            <div className="text-base text-[#22223b] mb-1">
+            <div className="text-base text-secondary mb-1">
               {property.guests && property.guests > 0 && (
                 <span>{property.guests} guests</span>
               )}
@@ -154,7 +154,7 @@ const AddPropertyInput = ({ onAdd }: AddPropertyInputProps) => {
               )}
             </div>
             {property.reviews && (
-              <div className="text-sm text-[#22223b] mb-1">
+              <div className="text-sm text-secondary mb-1">
                 {property.reviews}
               </div>
             )}

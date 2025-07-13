@@ -48,10 +48,10 @@ export default function WaitlistBenefitsSection() {
           >
             <RiCheckLine
               size={24}
-              color="var(--color-accent-lavender)"
+              color="var(--primary)"
               className="mr-4 flex-shrink-0"
             />
-            <span className="text-[var(--color-text-main)] font-medium">
+            <span className="text-secondary font-medium">
               {waitlistBenefits[0]}
             </span>
           </motion.div>
@@ -64,10 +64,10 @@ export default function WaitlistBenefitsSection() {
           >
             <RiCheckLine
               size={24}
-              color="var(--color-accent-lavender)"
+              color="var(--primary)"
               className="mr-4 flex-shrink-0"
             />
-            <span className="text-[var(--color-text-main)] font-medium">
+            <span className="text-secondary font-medium">
               {waitlistBenefits[2]}
             </span>
           </motion.div>
@@ -82,10 +82,10 @@ export default function WaitlistBenefitsSection() {
         >
           <RiCheckLine
             size={24}
-            color="var(--color-accent-lavender)"
+            color="var(--primary)"
             className="mr-4 flex-shrink-0"
           />
-          <span className="text-[var(--color-text-main)] font-medium">
+          <span className="text-secondary font-medium">
             {waitlistBenefits[1]}
           </span>
         </motion.div>

@@ -122,7 +122,7 @@ const OverviewSection = () => {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">
@@ -132,13 +132,13 @@ const OverviewSection = () => {
                 {stats.totalProperties}
               </p>
             </div>
-            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
-              <RiHome6Line size={24} className="text-[#a594f9]" />
+            <div className="p-2 bg-primary/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiHome6Line size={24} className="text-primary" />
             </div>
           </div>
         </div>
 
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">
@@ -148,13 +148,13 @@ const OverviewSection = () => {
                 {stats.activeBookings}
               </p>
             </div>
-            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
-              <RiCalendarLine size={24} className="text-[#a594f9]" />
+            <div className="p-2 bg-primary/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiCalendarLine size={24} className="text-primary" />
             </div>
           </div>
         </div>
 
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">Revenue</p>
@@ -165,13 +165,13 @@ const OverviewSection = () => {
                 +12.5% from last month
               </p>
             </div>
-            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
-              <RiMoneyDollarCircleLine size={24} className="text-[#a594f9]" />
+            <div className="p-2 bg-primary/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiMoneyDollarCircleLine size={24} className="text-primary" />
             </div>
           </div>
         </div>
 
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">Rating</p>
@@ -182,13 +182,13 @@ const OverviewSection = () => {
                 +0.2 from last month
               </p>
             </div>
-            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
-              <RiStarLine size={24} className="text-[#a594f9]" />
+            <div className="p-2 bg-primary/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiStarLine size={24} className="text-primary" />
             </div>
           </div>
         </div>
 
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">Messages</p>
@@ -199,13 +199,13 @@ const OverviewSection = () => {
                 +2 from yesterday
               </p>
             </div>
-            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
-              <RiMessage2Line size={24} className="text-[#a594f9]" />
+            <div className="p-2 bg-primary/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiMessage2Line size={24} className="text-primary" />
             </div>
           </div>
         </div>
 
-        <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
+        <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-sm font-medium text-gray-600 mb-1">
@@ -218,8 +218,8 @@ const OverviewSection = () => {
                 -3.2% from last month
               </p>
             </div>
-            <div className="p-2 bg-[#a594f9]/20 rounded-lg ml-4 flex items-center justify-center">
-              <RiTimeLine size={24} className="text-[#a594f9]" />
+            <div className="p-2 bg-primary/20 rounded-lg ml-4 flex items-center justify-center">
+              <RiTimeLine size={24} className="text-primary" />
             </div>
           </div>
         </div>
@@ -234,7 +234,7 @@ const OverviewSection = () => {
           {quickActions.map((action, index) => (
             <div
               key={index}
-              className="p-4 border border-gray-200 rounded-lg hover:border-[#a594f9] hover:bg-[#a594f9]/5 transition-colors cursor-pointer group"
+              className="p-4 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors cursor-pointer group"
             >
               <div className="flex items-center space-x-3">
                 <div
@@ -243,14 +243,14 @@ const OverviewSection = () => {
                   <action.icon size={20} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-medium text-gray-900 group-hover:text-[#a594f9] transition-colors">
+                  <h3 className="font-medium text-gray-900 group-hover:text-primary transition-colors">
                     {action.title}
                   </h3>
                   <p className="text-sm text-gray-600">{action.description}</p>
                 </div>
                 <RiArrowRightLine
                   size={16}
-                  className="text-gray-400 group-hover:text-[#a594f9] transition-colors flex-shrink-0"
+                  className="text-gray-400 group-hover:text-primary transition-colors flex-shrink-0"
                 />
               </div>
             </div>
@@ -266,7 +266,7 @@ const OverviewSection = () => {
             <h2 className="text-xl font-semibold text-gray-900">
               Recent Bookings
             </h2>
-            <button className="text-[#a594f9] hover:text-[#8b7cf6] text-sm font-medium">
+            <button className="text-primary hover:text-primary/80 text-sm font-medium">
               View All
             </button>
           </div>
@@ -313,7 +313,7 @@ const OverviewSection = () => {
             <h2 className="text-xl font-semibold text-gray-900">
               Recent Reviews
             </h2>
-            <button className="text-[#a594f9] hover:text-[#8b7cf6] text-sm font-medium">
+            <button className="text-primary hover:text-primary/80 text-sm font-medium">
               View All
             </button>
           </div>

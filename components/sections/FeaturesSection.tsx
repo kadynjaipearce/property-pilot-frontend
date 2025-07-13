@@ -66,15 +66,15 @@ export default function FeaturesSection() {
               <Card className="flex flex-col h-full min-h-[420px]">
                 <div className="flex flex-col flex-1 items-center text-center justify-between">
                   <div>
-                    <div className="w-16 h-16 rounded-2xl bg-[var(--color-accent-lavender)] flex items-center justify-center mb-6 mx-auto">
-                      <feature.icon size={32} color="var(--color-text-main)" />
+                    <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6 mx-auto">
+                      <feature.icon size={32} color="var(--secondary)" />
                     </div>
                     <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
                     <p className="text-[var(--color-text-muted)] mb-4 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
-                  <p className="text-[var(--color-accent-lavender)] font-semibold mt-auto">
+                  <p className="text-primary font-semibold mt-auto">
                     {feature.benefit}
                   </p>
                 </div>

@@ -34,7 +34,7 @@ export default function DemoSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="inline-block mb-6 px-4 py-2 rounded-full bg-[var(--color-accent-peach)] text-[var(--color-text-main)] font-semibold text-sm"
+          className="inline-block mb-6 px-4 py-2 rounded-full bg-[var(--color-accent-peach)] text-secondary font-semibold text-sm"
         >
           Exclusive Preview
         </motion.span>
@@ -85,7 +85,7 @@ export default function DemoSection() {
               >
                 <RiPlayFill size={32} />
               </Button>
-              <div className="absolute bottom-6 left-6 text-[var(--color-text-main)] opacity-70 text-sm z-10">
+              <div className="absolute bottom-6 left-6 text-secondary opacity-70 text-sm z-10">
                 Exclusive preview for waitlist members
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function DemoSection() {
                 draggable={false}
               />
               <div className="z-10">
-                <p className="text-lg font-semibold text-[var(--color-text-main)] mb-4">
+                <p className="text-lg font-semibold text-secondary mb-4">
                   Enter your email to watch the demo
                 </p>
                 <WaitlistForm
@@ -129,7 +129,7 @@ export default function DemoSection() {
               >
                 {/* Close Button (always visible, square) */}
                 <Button
-                  className="absolute top-4 right-4 button-accent rounded-lg flex items-center justify-center text-2xl text-[var(--color-text-main)] shadow hover:bg-[var(--color-bg-peach)] transition cursor-pointer border border-[var(--color-border)] z-10"
+                  className="absolute top-4 right-4 button-accent rounded-lg flex items-center justify-center text-2xl text-secondary shadow hover:bg-[var(--color-bg-peach)] transition cursor-pointer border border-[var(--color-border)] z-10"
                   onClick={() => setVideoOpen(false)}
                   aria-label="Close video"
                 >

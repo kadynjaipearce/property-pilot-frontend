@@ -20,7 +20,7 @@ export default function Footer() {
                 height={24}
                 style={{ objectFit: "contain" }}
               />
-              <span className="text-lg font-bold text-[var(--color-text-main)]">
+              <span className="text-lg font-bold text-secondary">
                 Property Pilot
               </span>
             </div>

@@ -5,17 +5,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-base font-semibold transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-lavender)] focus-visible:ring-offset-2",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-base font-semibold transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
   {
     variants: {
       variant: {
-        default: "bg-[var(--color-text-main)] text-white",
-        accent:
-          "bg-[var(--color-accent-lavender)] text-[var(--color-text-main)]",
-        mint: "bg-[var(--color-accent-mint)] text-[var(--color-text-main)]",
-        peach: "bg-[var(--color-accent-peach)] text-[var(--color-text-main)]",
-        outline:
-          "bg-white text-[var(--color-text-main)] border border-[var(--color-border)]",
+        default: "bg-secondary text-white",
+        accent: "bg-primary text-secondary",
+        mint: "bg-[var(--color-accent-mint)] text-secondary",
+        peach: "bg-[var(--color-accent-peach)] text-secondary",
+        outline: "bg-white text-secondary border border-[var(--color-border)]",
       },
       size: {
         default: "h-11 px-7 py-2",

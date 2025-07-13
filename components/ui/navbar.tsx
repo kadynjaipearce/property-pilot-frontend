@@ -43,7 +43,7 @@ export default function NavbarComponent() {
                   width={32}
                   height={32}
                 />
-                <span className="text-xl font-bold text-[var(--color-text-main)] tracking-tight">
+                <span className="text-xl font-bold text-secondary tracking-tight">
                   Property Pilot
                 </span>
               </span>
@@ -57,7 +57,7 @@ export default function NavbarComponent() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className="text-[var(--color-text-muted)] hover:text-[var(--color-text-main)] font-medium transition-colors px-2 py-1 rounded-full cursor-pointer"
+                className="text-[var(--color-text-muted)] hover:text-secondary font-medium transition-colors px-2 py-1 rounded-full cursor-pointer"
               >
                 {link.name}
               </Link>

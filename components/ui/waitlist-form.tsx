@@ -44,14 +44,14 @@ export function WaitlistForm({
 
   const getVariantStyles = () => {
     const baseButton =
-      "font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent-lavender)] cursor-pointer disabled:cursor-not-allowed flex items-center justify-center text-white leading-tight py-0.5";
+      "font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer disabled:cursor-not-allowed flex items-center justify-center text-white leading-tight py-0.5";
     switch (variant) {
       case "hero":
       case "final":
         return {
           form: "flex flex-col sm:flex-row gap-3 w-full",
           input:
-            "flex-1 w-full sm:w-auto h-12 text-base bg-white border border-[var(--color-border)] text-[var(--color-text-main)] placeholder:text-[var(--color-text-muted)] focus:ring-2 focus:ring-[var(--color-accent-lavender)] focus:border-[var(--color-accent-lavender)] transition-all px-5",
+            "flex-1 w-full sm:w-auto h-12 text-base bg-white border border-[var(--color-border)] text-secondary placeholder:text-[var(--color-text-muted)] focus:ring-2 focus:ring-primary focus:border-primary transition-all px-5",
           button: `${baseButton} w-full sm:w-48 h-12 mt-2 sm:mt-0`,
           count: "text-sm text-[var(--color-text-muted)] mt-3",
         };
@@ -59,7 +59,7 @@ export function WaitlistForm({
         return {
           form: "flex flex-col sm:flex-row gap-3 w-full max-w-md",
           input:
-            "flex-1 w-full sm:w-auto min-w-0 bg-white border-[var(--color-border)] text-[var(--color-text-main)] placeholder:text-[var(--color-text-muted)] h-12 shadow-sm",
+            "flex-1 w-full sm:w-auto min-w-0 bg-white border-[var(--color-border)] text-secondary placeholder:text-[var(--color-text-muted)] h-12 shadow-sm",
           button: `${baseButton} w-full sm:w-auto h-12 px-6 mt-2 sm:mt-0`,
           count: "text-xs text-[var(--color-text-muted)]",
         };

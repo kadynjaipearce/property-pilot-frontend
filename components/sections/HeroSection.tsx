@@ -26,9 +26,7 @@ export default function HeroSection() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
             Affordable Airbnb
             <br />
-            <span className="block text-[var(--color-accent-lavender)]">
-              Management Made Simple
-            </span>
+            <span className="block text-primary">Management Made Simple</span>
           </h1>
           <p className="text-lg md:text-xl mb-6 text-[var(--color-text-muted)] max-w-xl">
             Get the essential features you need to manage your Airbnb. Simple,
@@ -43,12 +41,12 @@ export default function HeroSection() {
               buttonText="Join Waitlist"
               showCount={false}
             />
-            <div className="mt-2 text-xs text-[var(--color-accent-lavender)] text-center md:text-left">
+            <div className="mt-2 text-xs text-primary text-center md:text-left">
               Early users get beta access + launch pricing
             </div>
             <div className="mt-6 text-sm text-[var(--color-text-muted)] text-center md:text-left">
               Expected pricing:{" "}
-              <span className="font-semibold text-[var(--color-text-main)]">
+              <span className="font-semibold text-secondary">
                 $9–$19/month per property
               </span>
               . No contracts. Cancel anytime.

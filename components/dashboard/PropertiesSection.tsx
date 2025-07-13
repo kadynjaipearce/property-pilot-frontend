@@ -187,7 +187,7 @@ const PropertiesSection = () => {
           </h3>
           <div className="relative flex justify-end">
             <button
-              className={`flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#a594f9] text-[#a594f9] bg-white font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-md border-2 border-primary text-primary bg-white font-medium hover:bg-primary/10 transition-colors cursor-pointer`}
               onClick={() => setShowAdd((v) => !v)}
               type="button"
             >
@@ -195,12 +195,12 @@ const PropertiesSection = () => {
             </button>
             {showAdd && (
               <div
-                className="absolute right-0 mt-14 w-[340px] bg-[#f8f8ff] border border-[#a594f9]/40 rounded-xl shadow-xl z-10 p-5 flex flex-col gap-2 animate-fadeIn"
+                className="absolute right-0 mt-14 w-[340px] bg-[#f8f8ff] border border-primary/40 rounded-xl shadow-xl z-10 p-5 flex flex-col gap-2 animate-fadeIn"
                 style={{ minWidth: 280 }}
               >
                 <label
                   htmlFor="airbnb-url"
-                  className="block text-xs font-semibold text-[#22223b] mb-1"
+                  className="block text-xs font-semibold text-secondary mb-1"
                 >
                   Airbnb Property URL
                 </label>
@@ -211,12 +211,12 @@ const PropertiesSection = () => {
                   value={inputValue}
                   onChange={handleInputChange}
                   placeholder="e.g. https://airbnb.com/rooms/12345678"
-                  className="w-full px-3 py-2 border border-[#a594f9]/40 rounded-md focus:outline-none focus:ring-2 focus:ring-[#a594f9]/30 text-[#22223b] bg-white text-sm shadow-sm"
+                  className="w-full px-3 py-2 border border-primary/40 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 text-secondary bg-white text-sm shadow-sm"
                   disabled={loading}
                   autoFocus
                 />
                 {loading && (
-                  <div className="text-xs text-[#a594f9] mt-1">
+                  <div className="text-xs text-primary mt-1">
                     Extracting property...
                   </div>
                 )}
@@ -242,37 +242,34 @@ const PropertiesSection = () => {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center text-2xl text-[#a594f9]">
+                    <div className="w-full h-full flex items-center justify-center text-2xl text-primary">
                       🏠
                     </div>
                   )}
                 </div>
                 <div className="flex-1 min-w-0 flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-1">
-                    <h3 className="text-base font-bold text-[#22223b] truncate flex-1">
+                    <h3 className="text-base font-bold text-secondary truncate flex-1">
                       {property.name}
                     </h3>
                     {typeof property.rating === "number" &&
                       property.rating > 0 && (
-                        <span className="flex items-center gap-2 bg-[#a594f9]/10 px-4 py-2 rounded-lg min-w-[90px] justify-center text-lg">
-                          <RiStarFill
-                            size={24}
-                            className="text-[#a594f9] p-1"
-                          />
-                          <span className="text-[#a594f9] font-bold text-lg leading-none">
+                        <span className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-lg min-w-[90px] justify-center text-lg">
+                          <RiStarFill size={24} className="text-primary p-1" />
+                          <span className="text-primary font-bold text-lg leading-none">
                             {property.rating.toFixed(1)}
                           </span>
                           {typeof property.review_count === "number" &&
                             property.review_count > 0 && (
-                              <span className="text-[#a594f9] text-base font-medium ml-1">
+                              <span className="text-primary text-base font-medium ml-1">
                                 ({property.review_count})
                               </span>
                             )}
                         </span>
                       )}
                   </div>
-                  <div className="flex flex-wrap items-center gap-2 text-xs text-[#22223b] mb-1">
-                    <span className="text-[#a594f9] font-medium">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-secondary mb-1">
+                    <span className="text-primary font-medium">
                       {property.type}
                     </span>
                     {property.address && <span>· {property.address}</span>}
@@ -285,7 +282,7 @@ const PropertiesSection = () => {
                   </div>
                 </div>
                 <div className="flex flex-col justify-center items-end">
-                  <button className="px-4 py-2 rounded-md border-2 border-[#a594f9] text-[#a594f9] bg-white font-medium hover:bg-[#a594f9]/10 transition-colors cursor-pointer flex items-center gap-2">
+                  <button className="px-4 py-2 rounded-md border-2 border-primary text-primary bg-white font-medium hover:bg-primary/10 transition-colors cursor-pointer flex items-center gap-2">
                     <RiEdit2Line size={20} /> Edit
                   </button>
                 </div>

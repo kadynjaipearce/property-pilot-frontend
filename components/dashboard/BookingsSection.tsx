@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   RiListUnordered,
   RiCalendarLine,
@@ -145,6 +146,12 @@ const BookingsSection = () => {
     },
   ];
 
+  const [lastUpdated, setLastUpdated] = useState("");
+
+  useEffect(() => {
+    setLastUpdated(new Date().toLocaleDateString());
+  }, []);
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -157,16 +164,17 @@ const BookingsSection = () => {
         </div>
         <div className="flex items-center space-x-2 text-sm text-gray-500">
           <RiCalendarLine size={16} />
-          <span>Last updated: {new Date().toLocaleDateString()}</span>
+          <span>Last updated: {lastUpdated}</span>
         </div>
       </div>
 
-      <div className="bg-[#a594f9]/10 rounded-lg p-6 border-2 border-[#a594f9]/20">
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">
-          Nice! You've got 2 check-ins today 🎉
-        </h2>
-        <p className="text-gray-600">
-          Everything's looking smooth for your upcoming guests.
+      <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
+        <h4 className="font-semibold text-primary mb-2">
+          📅 Booking Management
+        </h4>
+        <p className="text-secondary">
+          Manage your reservations, check-ins, and guest communications
+          efficiently.
         </p>
       </div>
 
@@ -178,21 +186,21 @@ const BookingsSection = () => {
             </h3>
             <div className="flex items-center space-x-3">
               <div className="flex space-x-2">
-                <button className="px-3 py-1 bg-[#a594f9]/20 border-2 border-[#a594f9] text-[#a594f9] rounded-md text-sm font-medium hover:bg-[#a594f9]/40 focus:ring-2 focus:ring-[#a594f9] focus:outline-none transition-colors cursor-pointer flex items-center space-x-1">
+                <button className="px-3 py-1 bg-primary/20 border-2 border-primary text-primary rounded-md text-sm font-medium hover:bg-primary/40 focus:ring-2 focus:ring-primary focus:outline-none transition-colors cursor-pointer flex items-center space-x-1">
                   <RiListUnordered size={16} />
                   <span>List</span>
                 </button>
-                <button className="px-3 py-1 border-2 border-[#a594f9] text-[#a594f9] hover:bg-[#a594f9]/10 rounded-md text-sm font-medium focus:ring-2 focus:ring-[#a594f9] focus:outline-none transition-colors cursor-pointer flex items-center space-x-1">
+                <button className="px-3 py-1 border-2 border-primary text-primary hover:bg-primary/10 rounded-md text-sm font-medium focus:ring-2 focus:ring-primary focus:outline-none transition-colors cursor-pointer flex items-center space-x-1">
                   <RiCalendarLine size={16} />
                   <span>Calendar</span>
                 </button>
               </div>
               <div className="flex space-x-2">
-                <button className="px-3 py-1 border-2 border-[#a594f9] text-[#a594f9] hover:bg-[#a594f9]/10 rounded-md text-sm font-medium focus:ring-2 focus:ring-[#a594f9] focus:outline-none transition-colors cursor-pointer flex items-center space-x-1">
+                <button className="px-3 py-1 border-2 border-primary text-primary hover:bg-primary/10 rounded-md text-sm font-medium focus:ring-2 focus:ring-primary focus:outline-none transition-colors cursor-pointer flex items-center space-x-1">
                   <RiSearchLine size={16} />
                   <span>Search</span>
                 </button>
-                <button className="px-3 py-1 border-2 border-[#a594f9] text-[#a594f9] hover:bg-[#a594f9]/10 rounded-md text-sm font-medium focus:ring-2 focus:ring-[#a594f9] focus:outline-none transition-colors cursor-pointer flex items-center space-x-1">
+                <button className="px-3 py-1 border-2 border-primary text-primary hover:bg-primary/10 rounded-md text-sm font-medium focus:ring-2 focus:ring-primary focus:outline-none transition-colors cursor-pointer flex items-center space-x-1">
                   <RiFilter3Line size={16} />
                   <span>Filter</span>
                 </button>
