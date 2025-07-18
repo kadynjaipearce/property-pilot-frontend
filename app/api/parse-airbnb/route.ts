@@ -87,6 +87,7 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
+    const { url: _url } = parse.data;
     // Fetch HTML
     let html = "";
     try {
