@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import * as cheerio from "cheerio";
+import Script from "next/script";
 
 export const runtime = "nodejs";
 

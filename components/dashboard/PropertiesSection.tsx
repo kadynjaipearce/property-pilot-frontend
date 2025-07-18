@@ -97,7 +97,22 @@ const initialProperties = [
 ];
 
 const PropertiesSection = () => {
-  const [properties, setProperties] = useState<any[]>(initialProperties);
+  type Property = {
+    id: number;
+    name: string;
+    image: string;
+    address: string;
+    type: string;
+    bedrooms: number;
+    bathrooms: number;
+    guest: { name: string; checkOut: string } | null;
+    rating?: number;
+    review_count?: number;
+    property_id?: string;
+    platform?: string;
+    extracted_at?: string;
+  };
+  const [properties, setProperties] = useState<Property[]>(initialProperties);
   const [showAdd, setShowAdd] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputValue, setInputValue] = useState("");
@@ -105,7 +120,7 @@ const PropertiesSection = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  const handleAddProperty = (property: any) => {
+  const handleAddProperty = (property: Property) => {
     setProperties([
       {
         id: Date.now(),
@@ -113,10 +128,9 @@ const PropertiesSection = () => {
         image: property.image,
         address: "",
         type: "Airbnb Listing",
-        bedrooms: property.beds,
-        bathrooms: property.baths,
+        bedrooms: property.bedrooms,
+        bathrooms: property.bathrooms,
         guest: null,
-        airbnbId: property.property_id,
         rating: property.rating,
         review_count: property.review_count,
         platform: property.platform,
@@ -229,7 +243,7 @@ const PropertiesSection = () => {
           </div>
         </div>
         <div className="divide-y divide-gray-100">
-          {properties.map((property: any) => (
+          {properties.map((property: Property) => (
             <div
               key={property.id}
               className="p-6 hover:bg-gray-50 transition-colors"
