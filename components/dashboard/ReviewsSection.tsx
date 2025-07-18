@@ -116,7 +116,7 @@ const ReviewsSection = () => {
                     <div className="flex items-center space-x-2">
                       <div className="flex">{renderStars(review.rating)}</div>
                       <span className="text-sm text-gray-500">
-                        • {review.date}
+                        • {review.date.replace(/'/g, "&apos;")}
                       </span>
                     </div>
                   </div>
