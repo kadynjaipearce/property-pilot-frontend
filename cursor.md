@@ -22,7 +22,7 @@ Cursor AI will:
    git add .
    ```
 
-2. **Analyze the staged changes** and determine the commit type:
+2. **Analyze the staged changes** and determine the commit type only from current chat dont use [it diff --cached --name-only]:
 
    - **fix** → 🐛 Bug fixes
    - **feat** → ✨ New features
@@ -42,7 +42,7 @@ Cursor AI will:
    ```
 
    - **All commit messages must end with a period (`.`).**
-   - Keep messages **short**, **clear**, and **relevant**.
+   - Keep messages **short**, **clear**, **concise** and **relevant**.
    - Only include additional body/footers if absolutely necessary (e.g., breaking changes).
 
    ### 💡 Examples:
