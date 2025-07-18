@@ -91,7 +91,7 @@ const ReviewsSection = () => {
             Recent Reviews
           </h3>
           <p className="text-gray-600 mt-1">
-            Stay connected with your guests' feedback
+            Stay connected with your guests&apos; feedback
           </p>
         </div>
 
