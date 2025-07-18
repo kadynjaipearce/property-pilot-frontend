@@ -20,8 +20,8 @@ export default function NotFound() {
             Page Not Found
           </p>
           <p className="text-base text-[var(--color-text-muted)] mb-6 text-center max-w-xs">
-            Oops! The page you're looking for doesn't exist or has moved. Let's
-            get you back on track.
+            Oops! The page you&apos;re looking for doesn&apos;t exist or has
+            moved. Let&apos;s get you back on track.
           </p>
           <Link href="/" className="btn">
             Go Home

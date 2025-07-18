@@ -51,8 +51,12 @@ const AddPropertyInput = ({ onAdd }: AddPropertyInputProps) => {
       if (!res.ok)
         throw new Error(data.error || "Failed to extract property data.");
       setProperty(data);
-    } catch (err: any) {
-      setError(err.message || "Failed to extract property data.");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message || "Failed to extract property data.");
+      } else {
+        setError("Failed to extract property data.");
+      }
     } finally {
       setLoading(false);
     }
@@ -153,11 +157,6 @@ const AddPropertyInput = ({ onAdd }: AddPropertyInputProps) => {
                 <span>{property.baths} baths</span>
               )}
             </div>
-            {property.reviews && (
-              <div className="text-sm text-secondary mb-1">
-                {property.reviews}
-              </div>
-            )}
             <div className="text-xs text-[#a594f9]">
               Extracted: {new Date(property.extracted_at).toLocaleString()}
             </div>

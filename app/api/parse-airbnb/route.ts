@@ -42,11 +42,6 @@ async function fetchHtml(url: string): Promise<string> {
   return await res.text();
 }
 
-function extractNumbers(text: string, label: string): number {
-  const match = text.match(new RegExp(`(\\d+(?:\\.\\d+)?)\\s*${label}`));
-  return match ? parseFloat(match[1]) : 0;
-}
-
 async function extractWithOpenAI(
   content: string,
   url: string
@@ -99,9 +94,9 @@ export async function POST(req: NextRequest) {
     let html = "";
     try {
       html = await fetchHtml(url);
-    } catch (err: any) {
+    } catch (err: unknown) {
       return NextResponse.json(
-        { error: "Failed to fetch property page: " + (err.message || err) },
+        { error: "Failed to fetch property page: " + (err as Error).message },
         { status: 500 }
       );
     }
@@ -118,16 +113,16 @@ export async function POST(req: NextRequest) {
     let propertyData: PropertyData;
     try {
       propertyData = await extractWithOpenAI(trimmedContent, url);
-    } catch (err: any) {
+    } catch (err: unknown) {
       return NextResponse.json(
-        { error: "OpenAI extraction failed: " + (err.message || err) },
+        { error: "OpenAI extraction failed: " + (err as Error).message },
         { status: 500 }
       );
     }
     return NextResponse.json(propertyData);
-  } catch (err: any) {
+  } catch (err: unknown) {
     return NextResponse.json(
-      { error: err.message || "Internal server error" },
+      { error: (err as Error).message || "Internal server error" },
       { status: 500 }
     );
   }

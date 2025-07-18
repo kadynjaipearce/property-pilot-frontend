@@ -5,6 +5,7 @@ import {
   RiFilter3Line,
   RiSearchLine,
 } from "@remixicon/react";
+import Image from "next/image";
 
 const BookingsSection = () => {
   const bookings = [
@@ -217,9 +218,11 @@ const BookingsSection = () => {
             >
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
-                  <img
+                  <Image
                     src={booking.property.image}
                     alt={booking.property.name}
+                    width={80}
+                    height={64}
                     className="w-20 h-16 object-cover rounded-lg"
                   />
                 </div>
