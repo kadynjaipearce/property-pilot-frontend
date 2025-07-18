@@ -162,8 +162,8 @@ const MessagingSection = () => {
                 Welcome Message
               </h4>
               <p className="text-sm text-gray-600 mb-3">
-                "Hi {"{guest_name}"}! Welcome to {"{property_name}"}. We're
-                excited to host you..."
+                &quot;Hi {"{guest_name}"}! Welcome to {"{property_name}"}
+                .&nbsp;We&apos;re excited to host you...&quot;
               </p>
               <button className="text-blue-600 text-sm font-medium hover:text-blue-700">
                 Use Template →
@@ -175,8 +175,8 @@ const MessagingSection = () => {
                 Check-in Instructions
               </h4>
               <p className="text-sm text-gray-600 mb-3">
-                "Your check-in details: Key code is {"{code}"}. Parking
-                available at..."
+                &quot;Your check-in details: Key code is {"{code}"}. Parking
+                available at...&quot;
               </p>
               <button className="text-blue-600 text-sm font-medium hover:text-blue-700">
                 Use Template →
@@ -188,8 +188,8 @@ const MessagingSection = () => {
                 House Rules Reminder
               </h4>
               <p className="text-sm text-gray-600 mb-3">
-                "Just a friendly reminder of our house rules: No smoking, quiet
-                hours..."
+                &quot;Just a friendly reminder of our house rules: No smoking,
+                quiet hours...&quot;
               </p>
               <button className="text-blue-600 text-sm font-medium hover:text-blue-700">
                 Use Template →
@@ -201,8 +201,8 @@ const MessagingSection = () => {
                 Thank You & Review
               </h4>
               <p className="text-sm text-gray-600 mb-3">
-                "Thank you for staying with us! We hope you enjoyed your
-                time..."
+                &quot;Thank you for staying with us! We hope you enjoyed your
+                time...&quot;
               </p>
               <button className="text-blue-600 text-sm font-medium hover:text-blue-700">
                 Use Template →
