@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
-import AddPropertyInput, { PropertyData } from "./AddPropertyInput";
+// import { PropertyData } from "./AddPropertyInput";
 import { RiAddLine, RiStarFill, RiEdit2Line } from "@remixicon/react";
+import Image from "next/image";
 
 const initialProperties = [
   {
@@ -104,7 +105,7 @@ const PropertiesSection = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  const handleAddProperty = (property: PropertyData) => {
+  const handleAddProperty = (property: any) => {
     setProperties([
       {
         id: Date.now(),
@@ -228,7 +229,7 @@ const PropertiesSection = () => {
           </div>
         </div>
         <div className="divide-y divide-gray-100">
-          {properties.map((property) => (
+          {properties.map((property: any) => (
             <div
               key={property.id}
               className="p-6 hover:bg-gray-50 transition-colors"
@@ -236,9 +237,11 @@ const PropertiesSection = () => {
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-24 h-20 rounded-lg overflow-hidden bg-[#f4f4fa] flex items-center justify-center">
                   {property.image ? (
-                    <img
+                    <Image
                       src={property.image}
                       alt={property.name}
+                      width={96}
+                      height={80}
                       className="w-full h-full object-cover"
                     />
                   ) : (

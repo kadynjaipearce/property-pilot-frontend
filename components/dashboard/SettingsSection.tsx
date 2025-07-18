@@ -210,7 +210,7 @@ const SettingsSection = () => {
               Setup Instructions
             </h4>
             <ol className="text-sm text-gray-700 space-y-1">
-              <li>1. Go to your email provider's forwarding settings</li>
+              <li>1. Go to your email provider&apos;s forwarding settings</li>
               <li>
                 2. Add the Property Pilot email above as a forwarding address
               </li>

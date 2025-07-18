@@ -4,10 +4,8 @@ import {
   RiMessage2Line,
   RiMoneyDollarCircleLine,
   RiStarLine,
-  RiSettings3Line,
   RiArrowRightLine,
   RiTimeLine,
-  RiUserLine,
   RiMapPinLine,
 } from "@remixicon/react";
 
@@ -111,7 +109,8 @@ const OverviewSection = () => {
             Dashboard Overview
           </h1>
           <p className="text-gray-600 mt-1">
-            Welcome back! Here's what's happening with your properties.
+            Welcome back! Here&apos;s what&apos;s happening with your
+            properties.
           </p>
         </div>
         <div className="flex items-center space-x-2 text-sm text-gray-500">

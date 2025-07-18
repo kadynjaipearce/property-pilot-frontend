@@ -34,19 +34,6 @@ const ReviewsSection = () => {
     },
   ];
 
-  const getSentimentColor = (sentiment: string) => {
-    switch (sentiment) {
-      case "positive":
-        return "text-[#6ee7b7] bg-[#6ee7b7]/20 border-2 border-[#6ee7b7]/40";
-      case "neutral":
-        return "text-secondary bg-secondary/10 border-2 border-secondary/10";
-      case "negative":
-        return "text-[#ffd6a5] bg-[#ffd6a5]/20 border-2 border-[#ffd6a5]/40";
-      default:
-        return "text-secondary bg-secondary/10 border-2  border-secondary/10";
-    }
-  };
-
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <span
@@ -157,7 +144,7 @@ const ReviewsSection = () => {
                 </div>
               </div>
               <p className="text-secondary text-left w-full max-w-md mb-0">
-                {review.comment}
+                {review.comment.replace(/'/g, "&apos;")}
               </p>
               {!review.replied && (
                 <div className="flex justify-end mt-4 space-x-2">

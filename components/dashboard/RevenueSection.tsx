@@ -86,7 +86,9 @@ const RevenueSection = () => {
         <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <h3 className="text-sm font-medium text-gray-600">Occupancy Rate</h3>
           <p className="text-2xl font-bold text-gray-900">78%</p>
-          <p className="text-sm text-gray-600 mt-1">Dec '24 - Jul '25</p>
+          <p className="text-sm text-gray-600 mt-1">
+            Dec &apos;24 - Jul &apos;25
+          </p>
         </div>
       </div>
 
