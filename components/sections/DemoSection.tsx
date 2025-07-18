@@ -5,17 +5,15 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { RiPlayFill, RiCloseLine } from "@remixicon/react";
-import Image from "next/image";
 import { useWaitlist } from "@/hooks/use-waitlist";
 import DemoPreview from "@/components/ui/demo-preview";
 
 const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ";
-const CUSTOM_THUMBNAIL = "/demo-thumbnail.jpg";
 
 export default function DemoSection() {
   const [videoOpen, setVideoOpen] = useState(false);
   const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const { email, validateEmail } = useWaitlist();
+  const {} = useWaitlist();
 
   return (
     <section

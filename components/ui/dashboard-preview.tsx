@@ -4,7 +4,6 @@ import {
   RiMoneyDollarCircleLine,
   RiStarLine,
   RiSettings3Line,
-  RiMenuLine,
   RiHome6Line,
   RiDashboardLine,
 } from "@remixicon/react";

@@ -1,10 +1,5 @@
-import {
-  RiCheckboxCircleFill,
-  RiEdit2Line,
-  RiUpload2Line,
-  RiSettings3Line,
-} from "@remixicon/react";
-import { useRef, useState } from "react";
+import { RiCheckboxCircleFill, RiSettings3Line } from "@remixicon/react";
+import { useState } from "react";
 
 const SettingsSection = () => {
   const setupItems = [
@@ -33,8 +28,6 @@ const SettingsSection = () => {
   const completedItems = setupItems.filter((item) => item.completed).length;
   const progressPercentage = (completedItems / setupItems.length) * 100;
 
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [profilePic, setProfilePic] = useState<string>("");
   const [profile] = useState({
     fullName: "Kadyn Pearce",
     email: "kadyn.pearce@propertypilot.com",
@@ -45,15 +38,6 @@ const SettingsSection = () => {
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [smsAlerts, setSmsAlerts] = useState(false);
   const [autoReply, setAutoReply] = useState(true);
-
-  function handleProfilePicChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (ev) => setProfilePic(ev.target?.result as string);
-      reader.readAsDataURL(file);
-    }
-  }
 
   return (
     <div className="space-y-6">

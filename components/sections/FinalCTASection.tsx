@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { RiUserLine } from "@remixicon/react";
 
