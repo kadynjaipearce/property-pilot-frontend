@@ -165,8 +165,12 @@ const PropertiesSection = () => {
         if (!res.ok)
           throw new Error(data.error || "Failed to extract property data.");
         handleAddProperty(data);
-      } catch (err: any) {
-        setError(err.message || "Failed to extract property data.");
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(err.message || "Failed to extract property data.");
+        } else {
+          setError("An unexpected error occurred.");
+        }
       } finally {
         setLoading(false);
       }
