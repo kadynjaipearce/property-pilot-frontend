@@ -67,7 +67,7 @@ export default function FeaturesSection() {
                 <div className="flex flex-col flex-1 items-center text-center justify-between">
                   <div>
                     <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6 mx-auto">
-                      <feature.icon size={32} color="var(--secondary)" />
+                      <feature.icon size={32} color="white" />
                     </div>
                     <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
                     <p className="text-[var(--color-text-muted)] mb-4 leading-relaxed">

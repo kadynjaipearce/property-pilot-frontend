@@ -7,6 +7,7 @@ import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { RiPlayFill, RiCloseLine } from "@remixicon/react";
 import Image from "next/image";
 import { useWaitlist } from "@/hooks/use-waitlist";
+import DemoPreview from "@/components/ui/demo-preview";
 
 const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ";
 const CUSTOM_THUMBNAIL = "/demo-thumbnail.jpg";
@@ -34,7 +35,7 @@ export default function DemoSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="inline-block mb-6 px-4 py-2 rounded-full bg-[var(--color-accent-peach)] text-secondary font-semibold text-sm"
+          className="inline-block mb-6 px-4 py-2 rounded-full bg-[var(--primary)] text-white font-semibold text-sm shadow-md"
         >
           Exclusive Preview
         </motion.span>
@@ -71,14 +72,13 @@ export default function DemoSection() {
               className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group cursor-pointer"
               onClick={() => setVideoOpen(true)}
             >
-              <Image
-                src={CUSTOM_THUMBNAIL}
-                alt="Demo video thumbnail"
-                width={800}
-                height={450}
-                className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0"
-                draggable={false}
-              />
+              {/* Blurred DemoPreview as background */}
+              <div className="absolute inset-0 w-full h-full z-0">
+                <div className="w-full h-full scale-105 blur-[3px]">
+                  <DemoPreview />
+                </div>
+              </div>
+              {/* Overlay content */}
               <Button
                 className="button-accent relative z-10 h-16 w-36 rounded-xl flex items-center justify-center text-xl px-0 cursor-pointer group-hover:scale-105 transition-transform"
                 aria-label="Play demo video"
@@ -91,14 +91,12 @@ export default function DemoSection() {
             </div>
           ) : (
             <div className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group">
-              <Image
-                src={CUSTOM_THUMBNAIL}
-                alt="Demo video thumbnail"
-                width={800}
-                height={450}
-                className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0 opacity-60"
-                draggable={false}
-              />
+              {/* Blurred DemoPreview as background */}
+              <div className="absolute inset-0 w-full h-full z-0">
+                <div className="w-full h-full scale-105 blur-[2px]">
+                  <DemoPreview />
+                </div>
+              </div>
               <div className="z-10">
                 <p className="text-lg font-semibold text-secondary mb-4">
                   Enter your email to watch the demo
@@ -118,7 +116,7 @@ export default function DemoSection() {
           {/* Video Modal */}
           {videoOpen && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-[2px]"
               style={{ animation: "fadeIn 0.2s" }}
             >
               {/* Responsive modal: fullscreen black on md and below, centered and max-w-3xl on larger screens */}

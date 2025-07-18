@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start gap-2 w-full md:w-auto">
             <div className="flex items-center gap-2 flex-nowrap whitespace-nowrap">
               <Image
-                src="/logo.png"
+                src="/favblue.png"
                 alt="Property Pilot Logo"
                 width={24}
                 height={24}

@@ -50,7 +50,7 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/logo.png"
+                  src="/favblue.png"
                   alt="Property Pilot Logo"
                   width={32}
                   height={32}

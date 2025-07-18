@@ -23,7 +23,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight text-secondary">
             Affordable Airbnb
             <br />
             <span className="block text-primary">Management Made Simple</span>
@@ -56,7 +56,7 @@ export default function HeroSection() {
         {/* Right: Larger Image, No Border */}
         <div className="w-full md:w-1/2 flex items-center justify-center mb-8 md:mb-0 relative">
           {/* Gradient blur underlay (hide on mobile) */}
-          <div className="hidden md:block absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] h-20 md:h-32 bg-gradient-to-r from-[#ffd6a5]/60 via-[#b8c0ff]/40 to-[#ffd6a5]/60 blur-2xl z-0" />
+          <div className="hidden md:block absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] h-20 md:h-32 bg-gradient-to-r from-[#249ffb]/40 via-[#0e6ae0]/30 to-[#249ffb]/40 blur-2xl z-0" />
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -165,12 +165,12 @@ const DemoPreview = () => {
                             className={`px-2 py-0.5 sm:px-3 sm:py-1 rounded-full border ${
                               i === 0
                                 ? "bg-[#6ee7b7]/20 border-[#6ee7b7]/30"
-                                : "bg-[#ffd6a5]/20 border-[#ffd6a5]/30"
+                                : "bg-[#b8c0ff]/20 border-[#b8c0ff]/30"
                             }`}
                           >
                             <div
                               className={`w-10 sm:w-12 h-1 sm:h-2 rounded ${
-                                i === 0 ? "bg-[#6ee7b7]" : "bg-[#ffd6a5]"
+                                i === 0 ? "bg-[#6ee7b7]" : "bg-[#b8c0ff]"
                               }`}
                             />
                           </div>

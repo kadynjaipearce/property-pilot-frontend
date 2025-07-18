@@ -38,7 +38,7 @@ export default function NavbarComponent() {
             <Link href="/">
               <span className="flex items-center space-x-2">
                 <Image
-                  src="/logo.png"
+                  src="/favblue.png"
                   alt="Property Pilot Logo"
                   width={32}
                   height={32}

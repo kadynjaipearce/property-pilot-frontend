@@ -29,7 +29,7 @@ export default function HowItWorksSection() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="flex flex-col items-center text-center flex-1 z-10"
           >
-            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-4 shadow-[var(--color-shadow)] text-3xl font-bold text-secondary">
+            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-4 shadow-[var(--color-shadow)] text-3xl font-bold text-white">
               1
             </div>
             <h3 className="text-lg font-semibold mb-1">
@@ -48,7 +48,7 @@ export default function HowItWorksSection() {
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             className="flex flex-col items-center text-center flex-1 z-10"
           >
-            <div className="w-16 h-16 rounded-full bg-[var(--color-accent-mint)] flex items-center justify-center mb-4 shadow-[var(--color-shadow)] text-3xl font-bold text-secondary">
+            <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4 shadow-[var(--color-shadow)] text-3xl font-bold text-white">
               2
             </div>
             <h3 className="text-lg font-semibold mb-1">We Parse & Automate</h3>
@@ -66,7 +66,7 @@ export default function HowItWorksSection() {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="flex flex-col items-center text-center flex-1 z-10"
           >
-            <div className="w-16 h-16 rounded-full bg-[var(--color-accent-peach)] flex items-center justify-center mb-4 shadow-[var(--color-shadow)] text-3xl font-bold text-secondary">
+            <div className="w-16 h-16 rounded-full bg-[#23272f] flex items-center justify-center mb-4 shadow-[var(--color-shadow)] text-3xl font-bold text-white">
               3
             </div>
             <h3 className="text-lg font-semibold mb-1">Enjoy Automation</h3>
