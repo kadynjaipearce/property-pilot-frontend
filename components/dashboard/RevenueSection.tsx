@@ -53,7 +53,7 @@ const RevenueSection = () => {
         </h4>
         <p className="text-secondary">
           December is looking hot! Consider raising your rates by 15-20% for New
-          Year's week.
+          Year&apos;s week.
         </p>
       </div>
 

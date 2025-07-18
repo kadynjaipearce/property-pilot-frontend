@@ -46,7 +46,6 @@ async function extractWithOpenAI(
   content: string,
   url: string
 ): Promise<PropertyData> {
-  const propertyIdMatch = url.match(/rooms\/(\d+)/);
   const prompt = `Extract the following fields from this Airbnb HTML/meta content and return as JSON.\n\nFields:\n- property_id (from URL if not in content)\n- name (property title)\n- image (main property image URL)\n- guests (number)\n- beds (number)\n- baths (number)\n- rating (number, e.g. 4.8, not a string or with stars)\n- review_count (number, e.g. 127)\n- platform ('airbnb')\n- extracted_at (current ISO date)\n\nReturn only the JSON object, no explanation.\n\nContent:\n${content}`;
 
   const apiKey = process.env.OPENAI_API_KEY;
