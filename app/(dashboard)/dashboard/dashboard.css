@@ -1,26 +1,91 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Dashboard-specific styles */
-/* This file is separate from globals.css for dashboard-specific styling */
-
-/* CSS Variables for dashboard colors */
-:root {
-  --primary: #a594f9;
-  --primary-foreground: #ffffff;
-  --primary-hover: #8b7cf6;
-  --primary-light: #c4b5fd;
-  --primary-lighter: #ddd6fe;
-  --primary-lightest: #f3f4f6;
-  --secondary: #22223b;
-  --secondary-foreground: #ffffff;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
 }
 
-/* Basic dashboard styles */
-body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  background: #f8fafc;
-  color: #1e293b;
-  font-size: 14px;
-  line-height: 1.5;
+:root {
+  --font-sans: "Inter", "Geist", system-ui, sans-serif;
+  --color-bg: #f7faff;
+  --color-bg-alt: #f0f6fd;
+  --color-bg-accent: #eaf3fb;
+  --color-bg-peach: #eaf3fb;
+  --color-accent-lavender: #a3bffa;
+  --color-accent-mint: #6ee7b7;
+  --color-accent-peach: #249ffb;
+  --color-text-main: var(--secondary);
+  --color-text-muted: #6d6a7c;
+  --color-card: #ffffff;
+  --color-border: #e3eaf3;
+  --color-shadow: 0 4px 32px 0 rgba(36, 159, 251, 0.1);
+  --radius: 1.25rem;
+  --background: #f7faff;
+  --foreground: #17407b; /* updated to darker blue */
+  --card: #ffffff;
+  --card-foreground: #17407b;
+  --popover: #ffffff;
+  --popover-foreground: #17407b;
+  --primary: #249ffb;
+  --primary-dark: #0e6ae0;
+  --primary-light: #b8e0ff;
+  --secondary: #17407b; /* darker blue */
+  --secondary-dark: #10294b;
+  --secondary-light: #4e7bbf;
+  --accent-blue: #3b82f6;
+  --accent-gray: #e5e7eb;
+  --primary-foreground: #ffffff;
+  --secondary-foreground: #ffffff;
+  --muted: #eaf3fb;
+  --muted-foreground: #6d6a7c;
+  --accent: #249ffb;
+  --accent-foreground: #ffffff;
+  --destructive: #e53e3e;
+  --input: #e3eaf3;
+  --ring: #249ffb;
+  --chart-1: #249ffb;
+  --chart-2: #17407b;
+  --chart-3: #a3bffa;
+  --chart-4: #eaf3fb;
+  --chart-5: #b8c0ff;
+  --sidebar: #f7faff;
+  --sidebar-foreground: #17407b;
+  --sidebar-primary: #17407b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #249ffb;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e3eaf3;
+  --sidebar-ring: #249ffb;
 }

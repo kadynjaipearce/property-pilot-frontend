@@ -16,9 +16,10 @@ export default function Footer() {
               <Image
                 src="/favblue.png"
                 alt="Property Pilot Logo"
-                width={24}
-                height={24}
-                style={{ objectFit: "contain" }}
+                width={100}
+                height={100}
+                priority
+                className="w-8 h-8"
               />
               <span className="text-lg font-bold text-secondary">
                 Property Pilot

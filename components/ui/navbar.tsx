@@ -40,8 +40,10 @@ export default function NavbarComponent() {
                 <Image
                   src="/favblue.png"
                   alt="Property Pilot Logo"
-                  width={32}
-                  height={32}
+                  width={100}
+                  height={100}
+                  priority
+                  className="w-8 h-8"
                 />
                 <span className="text-xl font-bold text-secondary tracking-tight">
                   Property Pilot
