@@ -8,6 +8,7 @@ import {
   RiTimeLine,
   RiMapPinLine,
 } from "@remixicon/react";
+import { useEffect, useState } from "react";
 
 const OverviewSection = () => {
   // Mock data for demonstration
@@ -100,6 +101,11 @@ const OverviewSection = () => {
     },
   ];
 
+  const [lastUpdated, setLastUpdated] = useState<string>("");
+  useEffect(() => {
+    setLastUpdated(new Date().toLocaleDateString());
+  }, []);
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -115,7 +121,7 @@ const OverviewSection = () => {
         </div>
         <div className="flex items-center space-x-2 text-sm text-gray-500">
           <RiTimeLine size={16} />
-          <span>Last updated: {new Date().toLocaleDateString()}</span>
+          <span>Last updated: {lastUpdated}</span>
         </div>
       </div>
 

@@ -87,11 +87,10 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
-    const { url } = parse.data;
     // Fetch HTML
     let html = "";
     try {
-      html = await fetchHtml(url);
+      html = await fetchHtml(parse.data.url);
     } catch (err: unknown) {
       return NextResponse.json(
         { error: "Failed to fetch property page: " + (err as Error).message },
@@ -110,7 +109,7 @@ export async function POST(req: NextRequest) {
     // Use OpenAI to extract property data
     let propertyData: PropertyData;
     try {
-      propertyData = await extractWithOpenAI(trimmedContent, url);
+      propertyData = await extractWithOpenAI(trimmedContent, parse.data.url);
     } catch (err: unknown) {
       return NextResponse.json(
         { error: "OpenAI extraction failed: " + (err as Error).message },
