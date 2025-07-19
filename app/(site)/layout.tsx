@@ -94,13 +94,9 @@ export default function MainSiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} font-sans antialiased overflow-x-hidden`}
-      >
-        {children}
-        <Toaster />
-      </body>
-    </html>
+    <>
+      {children}
+      <Toaster />
+    </>
   );
 }

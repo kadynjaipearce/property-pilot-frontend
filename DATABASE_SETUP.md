@@ -18,9 +18,10 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ### 3. Database Schema
 
-Run this SQL in your Supabase SQL editor to create the waitlist table:
+Run this SQL in your Supabase SQL editor to create the waitlist and video tables:
 
 ```sql
+-- Waitlist table
 CREATE TABLE waitlist (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   email TEXT UNIQUE NOT NULL,
@@ -28,31 +29,47 @@ CREATE TABLE waitlist (
   source TEXT DEFAULT 'website'
 );
 
--- Create index for faster email lookups
+-- Video table for YouTube video configuration
+CREATE TABLE video (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  source TEXT -- This field contains the YouTube video ID
+);
+
+-- Insert default video config
+INSERT INTO video (source)
+VALUES ('dQw4w9WgXcQ');
+
+-- Create indexes for faster lookups
 CREATE INDEX idx_waitlist_email ON waitlist(email);
-
--- Create index for source tracking
 CREATE INDEX idx_waitlist_source ON waitlist(source);
-
--- Create index for date queries
 CREATE INDEX idx_waitlist_created_at ON waitlist(created_at);
 ```
 
 ### 4. Row Level Security (RLS)
 
-Enable RLS and create policies for the waitlist table:
+Enable RLS and create policies for the tables:
 
 ```sql
 -- Enable RLS
 ALTER TABLE waitlist ENABLE ROW LEVEL SECURITY;
+ALTER TABLE video ENABLE ROW LEVEL SECURITY;
 
--- Allow inserts from authenticated and anonymous users
+-- Allow inserts from authenticated and anonymous users for waitlist
 CREATE POLICY "Allow inserts" ON waitlist
   FOR INSERT WITH CHECK (true);
 
 -- Allow reads for count queries (no sensitive data)
 CREATE POLICY "Allow reads" ON waitlist
   FOR SELECT USING (true);
+
+-- Allow reads for video (public data)
+CREATE POLICY "Allow video reads" ON video
+  FOR SELECT USING (true);
+
+-- Allow updates for video (admin only - you can restrict this later)
+CREATE POLICY "Allow video updates" ON video
+  FOR UPDATE USING (true);
 ```
 
 ### 5. API Endpoints
@@ -61,8 +78,35 @@ The following API endpoints are automatically created:
 
 - `POST /api/waitlist` - Add email to waitlist
 - `GET /api/waitlist/count` - Get total signup count
+- `GET /api/config` - Get video configuration including YouTube video ID
 
-### 6. Testing
+### 6. Updating YouTube Video ID
+
+To update the YouTube video ID, you can:
+
+1. **Via Supabase Dashboard:**
+
+   - Go to your Supabase project
+   - Navigate to Table Editor
+   - Select the `video` table
+   - Update the `source` field with your new video ID
+
+2. **Via SQL:**
+
+   ```sql
+   UPDATE video
+   SET source = 'your_new_video_id_here'
+   WHERE id = (SELECT id FROM video LIMIT 1);
+   ```
+
+3. **Via API (if you add admin authentication later):**
+   ```bash
+   curl -X PUT /api/config \
+     -H "Content-Type: application/json" \
+     -d '{"youtube_video_id": "your_new_video_id"}'
+   ```
+
+### 7. Testing
 
 Test the integration by:
 
@@ -70,8 +114,9 @@ Test the integration by:
 2. Submitting an email through the waitlist form
 3. Checking the Supabase dashboard to see the new record
 4. Verifying the count updates in real-time
+5. Testing the demo video with your YouTube video ID
 
-### 7. Analytics Queries
+### 8. Analytics Queries
 
 Useful queries for analytics:
 
@@ -80,35 +125,29 @@ Useful queries for analytics:
 SELECT COUNT(*) FROM waitlist;
 
 -- Signups by source
-SELECT source, COUNT(*) FROM waitlist GROUP BY source;
+SELECT source, COUNT(*) as count
+FROM waitlist
+GROUP BY source
+ORDER BY count DESC;
 
--- Daily signups
-SELECT DATE(created_at), COUNT(*)
+-- Signups by date
+SELECT DATE(created_at) as date, COUNT(*) as signups
 FROM waitlist
 GROUP BY DATE(created_at)
-ORDER BY DATE(created_at) DESC;
+ORDER BY date DESC;
 
--- Recent signups
-SELECT email, created_at, source
-FROM waitlist
-ORDER BY created_at DESC
-LIMIT 10;
+-- Get current video config
+SELECT * FROM video LIMIT 1;
 ```
 
-### 8. Export Data
+### 9. YouTube Video ID Format
 
-To export your waitlist data:
+The YouTube video ID is the part after `v=` in a YouTube URL:
 
-```sql
--- Export all emails
-SELECT email, created_at, source
-FROM waitlist
-ORDER BY created_at;
+- Full URL: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`
+- Video ID: `dQw4w9WgXcQ`
 
--- Export for CSV (copy results to spreadsheet)
-COPY (
-  SELECT email, created_at, source
-  FROM waitlist
-  ORDER BY created_at
-) TO STDOUT WITH CSV HEADER;
-```
+You can also get it from:
+
+- Short URL: `https://youtu.be/dQw4w9WgXcQ`
+- Embed URL: `https://www.youtube.com/embed/dQw4w9WgXcQ`

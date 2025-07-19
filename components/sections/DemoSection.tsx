@@ -6,14 +6,32 @@ import { Button } from "@/components/ui/button";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { RiPlayFill, RiCloseLine } from "@remixicon/react";
 import { useWaitlist } from "@/hooks/use-waitlist";
+import { useConfig } from "@/hooks/use-config";
+import { toast } from "sonner";
 import DemoPreview from "@/components/ui/demo-preview";
-
-const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ";
 
 export default function DemoSection() {
   const [videoOpen, setVideoOpen] = useState(false);
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const {} = useWaitlist();
+  const { config, isLoading: configLoading } = useConfig();
+
+  const handlePlayVideo = () => {
+    if (!config?.youtube_video_id) {
+      toast.error(
+        "Demo video is currently unavailable. Please check back later.",
+        {
+          style: {
+            background: "var(--error-bg)",
+            color: "var(--error-text)",
+            border: "1px solid var(--error-border)",
+          },
+        }
+      );
+      return;
+    }
+    setVideoOpen(true);
+  };
 
   return (
     <section
@@ -68,7 +86,7 @@ export default function DemoSection() {
           {emailSubmitted ? (
             <div
               className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group cursor-pointer"
-              onClick={() => setVideoOpen(true)}
+              onClick={handlePlayVideo}
             >
               {/* Blurred DemoPreview as background */}
               <div className="absolute inset-0 w-full h-full z-0">
@@ -134,7 +152,7 @@ export default function DemoSection() {
                 {/* Responsive iframe wrapper */}
                 <div className="w-full h-full flex items-center justify-center">
                   <iframe
-                    src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`}
+                    src={`https://www.youtube.com/embed/${config?.youtube_video_id}?autoplay=1&rel=0`}
                     title="Demo Video"
                     allow="autoplay; encrypted-media"
                     allowFullScreen
