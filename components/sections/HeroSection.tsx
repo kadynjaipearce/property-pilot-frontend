@@ -18,14 +18,14 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-6 grid lg:grid-cols-2 gap-40 items-center">
+      <div className="relative z-10 px-6 grid lg:grid-cols-2 gap-20 sm:gap-40 items-center mt-20 mb-20 md:mb-0 md:mt-0">
         {/* Left Column - Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-8"
+          className="space-y-8 order-2 lg:order-1"
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary px-4 py-2 rounded-full text-white text-sm font-medium shadow-lg">
@@ -51,15 +51,21 @@ export default function HeroSection() {
           </div>
 
           {/* Pricing Highlight */}
-          <div className="flex items-center gap-6 p-4 bg-white rounded-sm shadow-lg border border-[var(--color-border)]">
+          <div className="flex items-center gap-3 lg:gap-6 p-3 lg:p-4 bg-white rounded-sm shadow-lg border border-[var(--color-border)]">
             <div className="flex items-center gap-2">
-              <RiStarLine className="w-5 h-5 text-yellow-500" />
-              <span className="font-semibold text-black">From $15/month</span>
+              <RiStarLine className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-500" />
+              <span className="font-semibold text-black text-sm lg:text-base">
+                From $15/month
+              </span>
             </div>
-            <div className="h-6 w-px bg-[var(--color-border)]"></div>
-            <span className="text-[var(--color-text-muted)]">Per property</span>
-            <div className="h-6 w-px bg-[var(--color-border)]"></div>
-            <span className="text-green-600 font-medium">No contracts</span>
+            <div className="h-4 lg:h-6 w-px bg-[var(--color-border)]"></div>
+            <span className="text-[var(--color-text-muted)] text-sm lg:text-base">
+              Per property
+            </span>
+            <div className="h-4 lg:h-6 w-px bg-[var(--color-border)]"></div>
+            <span className="text-green-600 font-medium text-sm lg:text-base">
+              No contracts
+            </span>
           </div>
 
           {/* Waitlist Form */}
@@ -71,13 +77,13 @@ export default function HeroSection() {
               buttonText="Join Waitlist"
               showCount={false}
             />
-            <div className="mt-2 text-xs text-primary">
+            <div className="mt-4 text-xs text-primary sm:ml-2 text-center">
               Early users get beta access + launch pricing
             </div>
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap items-center gap-6 text-sm text-[var(--color-text-muted)]">
+          <div className="flex flex-wrap items-center gap-4 lg:gap-6 text-sm text-[var(--color-text-muted)]">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span>14-day free trial</span>
@@ -115,52 +121,54 @@ export default function HeroSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative"
+          className="relative order-1 lg:order-2 mt-12 lg:mt-0"
         >
           {/* Dashboard Preview Background */}
-          <div className="absolute inset-0 z-0 opacity-40 -top-40">
+          <div className="absolute inset-0 z-0 opacity-40 -top-20 sm:-top-40">
             <DemoPreview />
           </div>
 
           {/* Floating Cards */}
           <div className="relative z-10">
             {/* Main Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl border border-[var(--color-border)]">
-              <div className="space-y-6">
+            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl border border-[var(--color-border)] pb-4 lg:pb-8">
+              <div className="space-y-3 lg:space-y-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-secondary">
+                  <h3 className="text-base lg:text-lg font-semibold text-secondary">
                     Property Performance
                   </h3>
-                  <div className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                  <div className="px-2 lg:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs lg:text-sm font-medium">
                     +23% Revenue
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 bg-[var(--color-bg-alt)] rounded-sm">
-                    <div className="text-2xl font-bold text-green-600">
+                <div className="grid grid-cols-2 gap-3 lg:gap-4">
+                  <div className="p-3 lg:p-4 bg-[var(--color-bg-alt)] rounded-sm">
+                    <div className="text-xl lg:text-2xl font-bold text-green-600">
                       $2,847
                     </div>
-                    <div className="text-sm text-[var(--color-text-muted)]">
+                    <div className="text-xs lg:text-sm text-[var(--color-text-muted)]">
                       This Month
                     </div>
                   </div>
-                  <div className="p-4 bg-[var(--color-bg-alt)] rounded-sm">
-                    <div className="text-2xl font-bold text-green-600">94%</div>
-                    <div className="text-sm text-[var(--color-text-muted)]">
+                  <div className="p-3 lg:p-4 bg-[var(--color-bg-alt)] rounded-sm">
+                    <div className="text-xl lg:text-2xl font-bold text-green-600">
+                      94%
+                    </div>
+                    <div className="text-xs lg:text-sm text-[var(--color-text-muted)]">
                       Occupancy
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between text-sm">
+                <div className="space-y-1 lg:space-y-3">
+                  <div className="flex items-center justify-between text-xs lg:text-sm">
                     <span className="text-[var(--color-text-muted)]">
                       Automated Messages
                     </span>
                     <span className="text-green-600 font-medium">156 sent</span>
                   </div>
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex items-center justify-between text-xs lg:text-sm">
                     <span className="text-[var(--color-text-muted)]">
                       Price Optimizations
                     </span>
@@ -168,7 +176,7 @@ export default function HeroSection() {
                       23 this week
                     </span>
                   </div>
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex items-center justify-between text-xs lg:text-sm">
                     <span className="text-[var(--color-text-muted)]">
                       Tasks Completed
                     </span>
@@ -179,10 +187,10 @@ export default function HeroSection() {
             </div>
 
             {/* Floating Cost Comparison */}
-            <div className="absolute -top-6 -right-6 bg-primary text-white px-4 py-3 rounded-[4px] shadow-lg transform rotate-3">
+            <div className="absolute -top-4 lg:-top-6 -right-4 lg:-right-6 bg-primary text-white px-3 lg:px-4 py-2 lg:py-3 rounded-sm shadow-lg transform rotate-3">
               <div className="text-center">
-                <div className="text-sm font-medium">Save up to</div>
-                <div className="text-2xl font-bold">62%</div>
+                <div className="text-xs lg:text-sm font-medium">Save up to</div>
+                <div className="text-lg lg:text-2xl font-bold">62%</div>
                 <div className="text-xs">vs Hostaway & Guestly</div>
               </div>
             </div>
