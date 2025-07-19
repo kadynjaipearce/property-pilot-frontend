@@ -30,7 +30,7 @@ export default function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary px-4 py-2 rounded-full text-white text-sm font-medium shadow-lg">
             <RiRidingLine className="w-4 h-4" />
-            <span>Australia's Most Affordable Airbnb Management</span>
+            <span>Australia&apos;s Most Affordable Airbnb Management</span>
           </div>
 
           {/* Headline */}
