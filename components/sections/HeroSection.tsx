@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useWaitlist } from "@/hooks/use-waitlist";
-import { RiRidingLine, RiStarLine, RiArrowRightLine } from "@remixicon/react";
+import { RiRidingLine, RiStarLine } from "@remixicon/react";
 import DemoPreview from "../ui/demo-preview";
 
 export default function HeroSection() {
