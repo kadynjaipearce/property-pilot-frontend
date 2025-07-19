@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useWaitlist } from "@/hooks/use-waitlist";
-import { RiRidingLine, RiStarLine } from "@remixicon/react";
+import { RiHome6Line, RiStarLine } from "@remixicon/react";
 import DemoPreview from "../ui/demo-preview";
 
 export default function HeroSection() {
@@ -29,7 +29,7 @@ export default function HeroSection() {
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary px-4 py-2 rounded-full text-white text-sm font-medium shadow-lg">
-            <RiRidingLine className="w-4 h-4" />
+            <RiHome6Line className="w-4 h-4" />
             <span>Australia&apos;s Most Affordable Airbnb Management</span>
           </div>
 
