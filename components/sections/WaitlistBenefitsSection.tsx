@@ -42,7 +42,7 @@ export default function WaitlistBenefitsSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)]"
+            className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)] text-left"
           >
             <RiCheckLine
               size={24}
@@ -58,7 +58,7 @@ export default function WaitlistBenefitsSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)]"
+            className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)] text-left"
           >
             <RiCheckLine
               size={24}
@@ -76,7 +76,7 @@ export default function WaitlistBenefitsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)]"
+          className="flex items-center p-6 bg-[var(--color-bg-alt)] rounded-xl border border-[var(--color-border)] text-left"
         >
           <RiCheckLine
             size={24}

@@ -119,8 +119,8 @@ const Header = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-xl flex items-center justify-center">
-            <span className="text-white font-semibold text-sm">KP</span>
+          <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center shadow-md border-2 border-white hover:shadow-lg transition-all duration-200 cursor-pointer">
+            <span className="text-white font-bold text-sm">KP</span>
           </div>
         </div>
       </div>

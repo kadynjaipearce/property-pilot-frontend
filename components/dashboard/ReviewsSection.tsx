@@ -71,7 +71,7 @@ const ReviewsSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
           <h3 className="text-sm font-medium text-gray-600">Average Rating</h3>
           <p className="text-2xl font-bold text-gray-900">4.8</p>

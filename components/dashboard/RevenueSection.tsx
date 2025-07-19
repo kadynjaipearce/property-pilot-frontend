@@ -124,14 +124,14 @@ const RevenueSection = () => {
                     borderRadius: 8,
                     color: "#374151",
                   }}
-                  cursor={{ fill: "#3b82f6", fillOpacity: 0.08 }}
+                  cursor={{ fill: "#249ffb", fillOpacity: 0.08 }}
                   formatter={(value, name) => [
                     name === "Earnings" ? (
-                      <span style={{ color: "#374151", fontWeight: 600 }}>
+                      <span style={{ color: "#249ffb", fontWeight: 600 }}>
                         ${value.toLocaleString()}
                       </span>
                     ) : (
-                      <span style={{ color: "#374151" }}>
+                      <span style={{ color: "#17407b" }}>
                         ${value.toLocaleString()}
                       </span>
                     ),
@@ -142,27 +142,27 @@ const RevenueSection = () => {
                   wrapperStyle={{ fontSize: 14 }}
                   formatter={(value) =>
                     value === "Earnings" ? (
-                      <span style={{ color: "#3b82f6", fontWeight: 600 }}>
+                      <span style={{ color: "#249ffb", fontWeight: 600 }}>
                         {value}
                       </span>
                     ) : (
-                      <span style={{ color: "#374151" }}>{value}</span>
+                      <span style={{ color: "#17407b" }}>{value}</span>
                     )
                   }
                 />
                 <Bar
                   dataKey="earnings"
                   name="Earnings"
-                  fill="#3b82f6"
-                  radius={[6, 6, 0, 0]}
+                  fill="#249ffb"
+                  radius={[0, 0, 0, 0]}
                   barSize={32}
                   legendType="rect"
                 />
                 <Bar
                   dataKey="expenses"
                   name="Expenses"
-                  fill="#6b7280"
-                  radius={[6, 6, 0, 0]}
+                  fill="#17407b"
+                  radius={[0, 0, 0, 0]}
                   barSize={32}
                 />
               </BarChart>
