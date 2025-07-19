@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { RiUserLine } from "@remixicon/react";
+import { useWaitlist } from "@/hooks/use-waitlist";
 
 export default function FinalCTASection() {
+  const { signupCount, isLoading } = useWaitlist();
+
   return (
     <section
       id="final-cta"
@@ -31,9 +34,23 @@ export default function FinalCTASection() {
             buttonText="Reserve Spot"
             showCount={false}
           />
-          <div className="flex items-center justify-center mt-6 text-sm text-primary">
-            <RiUserLine size={16} className="mr-2" />
-            <span>Join Australian Airbnb hosts already on the waitlist</span>
+          {/* Custom count display */}
+          <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-lg">
+            <div className="flex items-center justify-center gap-2">
+              <RiUserLine size={18} className="text-primary" />
+              <p className="text-sm text-primary font-medium">
+                {!isLoading && signupCount >= 10 ? (
+                  <>
+                    <span className="font-bold">
+                      {signupCount.toLocaleString()}
+                    </span>{" "}
+                    Australian Airbnb hosts already on the waitlist
+                  </>
+                ) : (
+                  "Be the first to join the waitlist!"
+                )}
+              </p>
+            </div>
           </div>
         </div>
       </motion.div>

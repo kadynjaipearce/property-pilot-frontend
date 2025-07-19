@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { WaitlistForm } from "@/components/ui/waitlist-form";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import DashboardPreview from "@/components/ui/dashboard-preview";
+import { useWaitlist } from "@/hooks/use-waitlist";
 
 export default function HeroSection() {
+  const { signupCount, isLoading } = useWaitlist();
+
   return (
     <section
       id="hero"
@@ -43,6 +46,21 @@ export default function HeroSection() {
             />
             <div className="mt-2 text-xs text-primary text-center md:text-left">
               Early users get beta access + launch pricing
+            </div>
+            {/* Custom count display */}
+            <div className="mt-4 p-3 bg-primary/5 border border-primary/20 rounded-lg">
+              <p className="text-sm text-primary font-medium text-center">
+                {!isLoading && signupCount >= 10 ? (
+                  <>
+                    <span className="font-bold">
+                      {signupCount.toLocaleString()}
+                    </span>{" "}
+                    Australian Airbnb hosts ahead of you
+                  </>
+                ) : (
+                  "Be the first to join the waitlist!"
+                )}
+              </p>
             </div>
             <div className="mt-6 text-sm text-[var(--color-text-muted)] text-center md:text-left">
               Expected pricing:{" "}
