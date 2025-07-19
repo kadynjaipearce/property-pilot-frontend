@@ -46,7 +46,7 @@ export default function WaitlistBenefitsSection() {
           >
             <RiCheckLine
               size={24}
-              color="var(--primary)"
+              color="#10b981"
               className="mr-4 flex-shrink-0"
             />
             <span className="text-secondary font-medium">
@@ -62,7 +62,7 @@ export default function WaitlistBenefitsSection() {
           >
             <RiCheckLine
               size={24}
-              color="var(--primary)"
+              color="#10b981"
               className="mr-4 flex-shrink-0"
             />
             <span className="text-secondary font-medium">
@@ -80,7 +80,7 @@ export default function WaitlistBenefitsSection() {
         >
           <RiCheckLine
             size={24}
-            color="var(--primary)"
+            color="#10b981"
             className="mr-4 flex-shrink-0"
           />
           <span className="text-secondary font-medium">

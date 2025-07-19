@@ -10,11 +10,11 @@ const DemoPreview = () => {
     <div className="w-full max-w-7xl mx-auto p-2 sm:p-4 lg:p-6">
       {/* Container with 16:9 aspect ratio */}
       <div className="w-full" style={{ aspectRatio: "16/9" }}>
-        <div className="h-full bg-gray-50 rounded-lg overflow-hidden shadow-lg border border-gray-200 flex text-[10px] sm:text-xs md:text-sm">
+        <div className="h-full bg-gray-50 rounded-t-lg overflow-hidden shadow-lg flex text-[10px] sm:text-xs md:text-sm">
           {/* Sidebar - Collapsed */}
           <div className="w-12 sm:w-14 md:w-16 bg-white border-r border-gray-200 flex flex-col">
             {/* Sidebar Header */}
-            <div className="h-[12%] border-b border-gray-200 flex items-center justify-center px-1 sm:px-2">
+            <div className="h-[20%] border-b border-gray-200 flex items-center justify-center px-1 sm:px-2">
               <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-primary rounded-md"></div>
             </div>
 

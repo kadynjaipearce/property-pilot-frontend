@@ -85,7 +85,7 @@ export default function DemoSection() {
           {/* Only show the thumbnail and play button if email has been submitted */}
           {emailSubmitted ? (
             <div
-              className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group cursor-pointer"
+              className="aspect-video bg-[var(--color-bg-peach)] rounded-t-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group cursor-pointer"
               onClick={handlePlayVideo}
             >
               {/* Blurred DemoPreview as background */}
@@ -106,7 +106,7 @@ export default function DemoSection() {
               </div>
             </div>
           ) : (
-            <div className="aspect-video bg-[var(--color-bg-peach)] rounded-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group">
+            <div className="aspect-video bg-[var(--color-bg-peach)] rounded-t-2xl shadow-[var(--color-shadow)] flex items-center justify-center relative overflow-hidden group">
               {/* Blurred DemoPreview as background */}
               <div className="absolute inset-0 w-full h-full z-0">
                 <div className="w-full h-full scale-105 blur-[2px]">
