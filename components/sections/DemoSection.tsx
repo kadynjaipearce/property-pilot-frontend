@@ -14,7 +14,7 @@ export default function DemoSection() {
   const [videoOpen, setVideoOpen] = useState(false);
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const {} = useWaitlist();
-  const { config, isLoading: configLoading } = useConfig();
+  const { config, isLoading: _configLoading } = useConfig();
 
   const handlePlayVideo = () => {
     if (!config?.youtube_video_id) {
