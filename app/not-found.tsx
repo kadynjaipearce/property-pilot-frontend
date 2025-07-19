@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import "./globals.css";
 import { RiHome6Line, RiArrowRightLine } from "@remixicon/react";
 
 export default function NotFound() {
